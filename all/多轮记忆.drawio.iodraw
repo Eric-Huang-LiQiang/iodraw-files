@@ -189,8 +189,8 @@
         <mxCell id="o9" value="⑨ 扫增量+水位线" style="endArrow=classic;html=1;strokeColor=#d79b00;strokeWidth=1.5;dashed=1;fontSize=10;edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="convmsg" target="jobmain" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1120" y="626" />
-              <mxPoint x="30" y="626" />
+              <mxPoint x="1120" y="660" />
+              <mxPoint x="30" y="660" />
               <mxPoint x="30" y="778" />
             </Array>
           </mxGeometry>
