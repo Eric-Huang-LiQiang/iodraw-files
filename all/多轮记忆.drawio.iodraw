@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) ioDraw.com/3.6.1 Chrome/124.0.6367.49 Electron/30.0.0 Safari/537.36" version="24.7.17">
   <diagram id="mem" name="记忆平台架构">
-    <mxGraphModel dx="3174" dy="823" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1820" pageHeight="1180" math="0" shadow="0">
+    <mxGraphModel dx="2934" dy="823" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1820" pageHeight="1180" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -206,17 +206,12 @@
         <mxCell id="o12a" value="⑫ 写长尾" style="endArrow=classic;html=1;strokeColor=#d79b00;strokeWidth=1.5;dashed=1;fontSize=10;edgeStyle=orthogonalEdgeStyle;rounded=1;" parent="1" source="apply" target="vecwrite" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="o12b" value="批量 upsert / 连锁失效软删" style="endArrow=classic;html=1;strokeColor=#d79b00;strokeWidth=1.5;dashed=1;fontSize=10;edgeStyle=orthogonalEdgeStyle;rounded=1;" parent="1" source="vecwrite" target="vecdev" edge="1">
+        <mxCell id="o12b" value="批量 upsert / 连锁失效软删" style="endArrow=classic;html=1;strokeColor=#82b366;strokeWidth=1.5;dashed=1;fontSize=10;edgeStyle=orthogonalEdgeStyle;rounded=1;fillColor=#d5e8d4;" parent="1" source="vecwrite" target="vecdev" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1420" y="680" />
               <mxPoint x="565" y="680" />
             </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="A4uDerRQPPJof-SWk61b-1" value="Text" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="o12b">
-          <mxGeometry x="-0.868" y="3" relative="1" as="geometry">
-            <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="lg" value="图例  Legend" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=12;fontStyle=1;verticalAlign=top;align=left;spacingLeft=8;spacingTop=6;" parent="1" vertex="1">
