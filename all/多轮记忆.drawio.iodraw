@@ -16,7 +16,7 @@
         <mxCell id="car" value="车机&#xa;DeviceId · SessionId · 用户问题 · 车况/配置" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;fontSize=11;" parent="lane-edge" vertex="1">
           <mxGeometry x="80" y="28" width="300" height="48" as="geometry" />
         </mxCell>
-        <mxCell id="lane-cs" value="C# 编排层" style="swimlane;horizontal=0;html=1;startSize=28;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;verticalAlign=middle;" parent="1" vertex="1">
+        <mxCell id="lane-cs" value="gate way" style="swimlane;horizontal=0;html=1;startSize=28;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;verticalAlign=middle;" parent="1" vertex="1">
           <mxGeometry x="40" y="172" width="1740" height="150" as="geometry" />
         </mxCell>
         <mxCell id="agent" value="Agent 编排&#xa;ChatClientAgent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=11;" parent="lane-cs" vertex="1">
