@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) ioDraw.com/3.6.1 Chrome/124.0.6367.49 Electron/30.0.0 Safari/537.36" version="24.7.17">
   <diagram id="memory-platform-arch" name="记忆平台架构">
-    <mxGraphModel dx="1934" dy="1176" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1593" dy="968" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -19,7 +19,7 @@
         <mxCell id="lane-cs" value="C# 编排层&#xa;Assistant.Library.Cloud" style="swimlane;horizontal=0;html=1;startSize=28;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;verticalAlign=middle;" parent="1" vertex="1">
           <mxGeometry x="40" y="180" width="1620" height="360" as="geometry" />
         </mxCell>
-        <mxCell id="sql" value="对话原文&lt;br&gt;SQL Server？" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" parent="lane-cs" vertex="1">
+        <mxCell id="sql" value="对话原文&lt;br&gt;SQL Server" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" parent="lane-cs" vertex="1">
           <mxGeometry x="1110" y="30" width="110" height="70" as="geometry" />
         </mxCell>
         <mxCell id="lane-py" value="Python 存储层&#xa;Assistant.Library.Cloud.Python" style="swimlane;horizontal=0;html=1;startSize=28;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=13;verticalAlign=middle;" parent="1" vertex="1">
