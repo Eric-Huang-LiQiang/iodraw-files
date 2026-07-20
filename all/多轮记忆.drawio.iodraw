@@ -162,7 +162,12 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="gen" value="⑥ 组 prompt → 生成" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=1.5;fontSize=10;edgeStyle=orthogonalEdgeStyle;rounded=1;" parent="1" source="promptasm" target="llm-ans" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="785" y="670" />
+              <mxPoint x="830" y="670" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="ans" value="⑦ 答案返回" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=1.5;fontSize=10;edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="llm-ans" target="car" edge="1">
           <mxGeometry relative="1" as="geometry">
