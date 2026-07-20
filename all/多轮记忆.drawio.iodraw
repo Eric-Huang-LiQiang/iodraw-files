@@ -206,7 +206,7 @@
         <mxCell id="o12a" value="⑫ 写长尾" style="endArrow=classic;html=1;strokeColor=#d79b00;strokeWidth=1.5;dashed=1;fontSize=10;edgeStyle=orthogonalEdgeStyle;rounded=1;" parent="1" source="apply" target="vecwrite" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="o12b" value="批量 upsert / 连锁失效软删" style="endArrow=classic;html=1;strokeColor=#82b366;strokeWidth=1.5;dashed=1;fontSize=10;edgeStyle=orthogonalEdgeStyle;rounded=1;fillColor=#d5e8d4;" parent="1" source="vecwrite" target="vecdev" edge="1">
+        <mxCell id="o12b" value="批量 upsert / 连锁失效" style="endArrow=classic;html=1;strokeColor=#b85450;strokeWidth=1.5;dashed=1;fontSize=10;edgeStyle=orthogonalEdgeStyle;rounded=1;fillColor=#f8cecc;" parent="1" source="vecwrite" target="vecdev" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1420" y="680" />
