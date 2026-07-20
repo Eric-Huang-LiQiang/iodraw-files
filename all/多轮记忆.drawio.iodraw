@@ -138,9 +138,9 @@
         <mxCell id="e-emb1" value="嵌入" style="endArrow=classic;html=1;strokeColor=#666666;strokeWidth=1.5;dashed=1;fontSize=10;edgeStyle=orthogonalEdgeStyle;rounded=1;" parent="1" source="fanout" target="embed" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="440" y="395" />
-              <mxPoint x="440" y="658" />
-              <mxPoint x="565" y="658" />
+              <mxPoint x="440" y="420" />
+              <mxPoint x="440" y="700" />
+              <mxPoint x="540" y="700" />
             </Array>
           </mxGeometry>
         </mxCell>
