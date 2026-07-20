@@ -193,7 +193,12 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="o-fnd" value="⑩ 调 LLM 提炼" style="endArrow=classic;html=1;strokeColor=#666666;strokeWidth=1.5;dashed=1;fontSize=10;edgeStyle=orthogonalEdgeStyle;rounded=1;" parent="1" source="llmd" target="foundry" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="980" y="778" />
+              <mxPoint x="980" y="917" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="o11" value="⑪ 写画像+实体(UPSERT)" style="endArrow=classic;html=1;strokeColor=#d79b00;strokeWidth=1.5;dashed=1;fontSize=10;edgeStyle=orthogonalEdgeStyle;rounded=1;" parent="1" source="apply" target="sql3" edge="1">
           <mxGeometry relative="1" as="geometry">
