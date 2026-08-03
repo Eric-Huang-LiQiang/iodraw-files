@@ -64,7 +64,7 @@
         <mxCell id="sql-label" value="SQL Server 语料表&#xa;(规划/Phase2)" style="text;html=1;fontSize=11;align=center;fontColor=#CC6600;" parent="1" vertex="1">
           <mxGeometry x="985" y="384" width="120" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="sql-info" value="&lt;b&gt;Sink&lt;/b&gt; 语料表&lt;br&gt;&lt;b&gt;内容&lt;/b&gt; 筛选后的对话语料&lt;br&gt;&lt;b&gt;供&lt;/b&gt; 业务查询/训练" style="text;html=1;fontSize=9;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;spacing=4;whiteSpace=wrap;align=left;spacingLeft=6;" parent="1" vertex="1">
+        <mxCell id="sql-info" value="&lt;b&gt;Sink&lt;/b&gt; 语料表&lt;br&gt;&lt;b&gt;内容&lt;/b&gt; 筛选后的对话语料&lt;br&gt;&lt;b&gt;供&lt;/b&gt;&amp;nbsp;提炼长期记忆&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;fontSize=9;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;spacing=4;whiteSpace=wrap;align=left;spacingLeft=6;" parent="1" vertex="1">
           <mxGeometry x="975" y="418" width="170" height="45" as="geometry" />
         </mxCell>
         <mxCell id="adx-icon" value="" style="shape=image;image=img/lib/azure2/analytics/Azure_Data_Explorer_Clusters.svg;aspect=fixed;imageWidth=30;imageHeight=30;" parent="1" vertex="1">
