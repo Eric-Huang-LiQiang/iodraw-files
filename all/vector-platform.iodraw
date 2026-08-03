@@ -101,37 +101,37 @@
           <mxGeometry x="888" y="772" width="525" height="60" as="geometry" />
         </mxCell>
         <mxCell id="ais-box" value="" style="rounded=1;fillColor=#FCE4EC;opacity=55;dashed=1;dashPattern=6 6;strokeColor=#C2185B;" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="260" y="890" width="900" height="330" as="geometry" />
+          <mxGeometry x="260" y="980" width="900" height="330" as="geometry" />
         </mxCell>
         <mxCell id="ais-hdr" value="&lt;b&gt;检索目标 · 语义缓存（Azure AI Search）&lt;/b&gt;　与车书/QA、长尾偏好并列" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#880E4F;align=left;verticalAlign=middle;" parent="1" vertex="1">
-          <mxGeometry x="314" y="902" width="700" height="28" as="geometry" />
+          <mxGeometry x="314" y="992" width="700" height="28" as="geometry" />
         </mxCell>
         <mxCell id="ais-lib1" value="&lt;b&gt;bymodel-cache&lt;/b&gt;&#xa;车型维度缓存条目（按车型共享）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C2185B;fontSize=12;fontColor=#880E4F;verticalAlign=top;spacingTop=8;dashed=1;dashPattern=4 4;" parent="1" vertex="1">
-          <mxGeometry x="288" y="948" width="410" height="66" as="geometry" />
+          <mxGeometry x="288" y="1038" width="410" height="66" as="geometry" />
         </mxCell>
         <mxCell id="ais-lib2" value="&lt;b&gt;bydevice-cache&lt;/b&gt;&#xa;device 维度缓存条目（按 device）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C2185B;fontSize=12;fontColor=#880E4F;verticalAlign=top;spacingTop=8;dashed=1;dashPattern=4 4;" parent="1" vertex="1">
-          <mxGeometry x="718" y="948" width="410" height="66" as="geometry" />
+          <mxGeometry x="718" y="1038" width="410" height="66" as="geometry" />
         </mxCell>
         <mxCell id="ais-content" value="&lt;b&gt;内容独立自成一类&lt;/b&gt;　缓存条目不是从车书/QA/长尾库查出来再复制（那样无意义），而是它自身承载的一类内容（如高频直答、预置问答对等）。" style="text;html=1;fontSize=10.5;fillColor=#FFF0F5;strokeColor=#E091B4;rounded=1;align=left;spacingLeft=8;spacingTop=6;whiteSpace=wrap;fontColor=#880E4F;" parent="1" vertex="1">
-          <mxGeometry x="288" y="1024" width="840" height="46" as="geometry" />
+          <mxGeometry x="288" y="1114" width="840" height="46" as="geometry" />
         </mxCell>
         <mxCell id="ais-info" value="&lt;b&gt;缓存键&lt;/b&gt;　向量近似匹配（cosine ≥ 阈值）+ 分区(customer/车型/lang/type/modelVersion)&#xa;&lt;b&gt;保存&lt;/b&gt;　结果写回，打 expiresAt 时间戳（bymodel 长 / bydevice 短）&#xa;&lt;b&gt;过期&lt;/b&gt;　查询按 expiresAt 过滤实现逻辑过期；另需定时任务物理清理（AI Search 无原生 TTL）" style="text;html=1;fontSize=10.5;fillColor=#F5F5F5;strokeColor=#BBBBBB;rounded=1;align=left;spacingLeft=8;spacingTop=6;whiteSpace=wrap;fontColor=#37474F;" parent="1" vertex="1">
-          <mxGeometry x="288" y="1080" width="840" height="126" as="geometry" />
+          <mxGeometry x="288" y="1170" width="840" height="126" as="geometry" />
         </mxCell>
         <mxCell id="st-box" value="" style="rounded=1;fillColor=#E8EAF6;opacity=55;dashed=1;dashPattern=6 6;strokeColor=#3949AB;" parent="1" connectable="0" vertex="1">
-          <mxGeometry x="1190" y="890" width="250" height="330" as="geometry" />
+          <mxGeometry x="1190" y="980" width="250" height="330" as="geometry" />
         </mxCell>
         <mxCell id="st-icon" value="" style="shape=image;image=img/lib/azure2/storage/Storage_Accounts.svg;aspect=fixed;imageWidth=28;imageHeight=28;" parent="1" vertex="1">
-          <mxGeometry x="1208" y="902" width="28" height="28" as="geometry" />
+          <mxGeometry x="1208" y="992" width="28" height="28" as="geometry" />
         </mxCell>
         <mxCell id="st-hdr" value="&lt;b&gt;Storage Account&lt;/b&gt;" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#1A237E;align=left;verticalAlign=middle;" parent="1" vertex="1">
-          <mxGeometry x="1244" y="902" width="180" height="28" as="geometry" />
+          <mxGeometry x="1244" y="992" width="180" height="28" as="geometry" />
         </mxCell>
         <mxCell id="blob" value="&lt;b&gt;Blob Storage&lt;/b&gt;&#xa;source of truth" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=14;fillColor=#DAE8FC;strokeColor=#4472C4;fontSize=11.5;fontColor=#1F3864;" parent="1" vertex="1">
-          <mxGeometry x="1260" y="960" width="120" height="110" as="geometry" />
+          <mxGeometry x="1260" y="1050" width="120" height="110" as="geometry" />
         </mxCell>
         <mxCell id="st-note" value="离线建库产出 + 有状态库写回灌，都落这里作为权威副本。" style="text;html=1;fontSize=10;align=left;spacingLeft=8;whiteSpace=wrap;fontColor=#283593;" parent="1" vertex="1">
-          <mxGeometry x="1208" y="1090" width="215" height="60" as="geometry" />
+          <mxGeometry x="1208" y="1180" width="215" height="60" as="geometry" />
         </mxCell>
         <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#333333;fontColor=#333333;endArrow=block;strokeWidth=2;" parent="1" source="client" target="gw-entry" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -201,7 +201,7 @@
           <mxGeometry x="270" y="1466" width="730" height="18" as="geometry" />
         </mxCell>
         <mxCell id="2" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/Search_Services.svg;" parent="1" vertex="1">
-          <mxGeometry x="270.23" y="902" width="41.53" height="30" as="geometry" />
+          <mxGeometry x="270.23" y="992" width="41.53" height="30" as="geometry" />
         </mxCell>
         <mxCell id="3" value="" style="shape=image;image=img/lib/azure2/app_services/App_Services.svg;aspect=fixed;imageWidth=28;imageHeight=28;" parent="1" vertex="1">
           <mxGeometry x="276.99" y="451" width="28" height="28" as="geometry" />
