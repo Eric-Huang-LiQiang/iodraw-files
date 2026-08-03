@@ -348,8 +348,8 @@
         <mxCell id="yFy1p2oUVh9DSKfpmP5x-49" value="type=车书/QA　轮询" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;endArrow=block;strokeWidth=2;" parent="1" source="yFy1p2oUVh9DSKfpmP5x-15" target="yFy1p2oUVh9DSKfpmP5x-25" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1000" y="540" />
-              <mxPoint x="540" y="540" />
+              <mxPoint x="1000" y="620" />
+              <mxPoint x="540" y="620" />
             </Array>
           </mxGeometry>
         </mxCell>
