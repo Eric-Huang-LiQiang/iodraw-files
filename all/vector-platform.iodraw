@@ -68,37 +68,37 @@
           <mxGeometry x="290" y="552" width="1130" height="28" as="geometry" />
         </mxCell>
         <mxCell id="bm-box" value="" style="rounded=1;fillColor=#E3F2FD;opacity=60;dashed=1;dashPattern=6 6;strokeColor=#1565C0;" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="260" y="630" width="580" height="220" as="geometry" />
+          <mxGeometry x="268" y="680" width="580" height="220" as="geometry" />
         </mxCell>
         <mxCell id="bm-icon" value="" style="shape=image;image=img/lib/azure2/app_services/App_Services.svg;aspect=fixed;imageWidth=28;imageHeight=28;" parent="1" vertex="1">
-          <mxGeometry x="278" y="642" width="28" height="28" as="geometry" />
+          <mxGeometry x="286" y="692" width="28" height="28" as="geometry" />
         </mxCell>
         <mxCell id="bm-hdr" value="&lt;b&gt;检索目标 · ByModel 只读库 App Service&lt;/b&gt;（无 HRW / 粘性）" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#0D47A1;align=left;verticalAlign=middle;" parent="1" vertex="1">
-          <mxGeometry x="314" y="642" width="510" height="28" as="geometry" />
+          <mxGeometry x="322" y="692" width="510" height="28" as="geometry" />
         </mxCell>
         <mxCell id="bm-lib1" value="&lt;b&gt;车书库&lt;/b&gt;&#xa;UserManual（FAISS）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1976D2;fontSize=12;fontColor=#0D47A1;verticalAlign=top;spacingTop=8;" parent="1" vertex="1">
-          <mxGeometry x="288" y="688" width="255" height="72" as="geometry" />
+          <mxGeometry x="296" y="738" width="255" height="72" as="geometry" />
         </mxCell>
         <mxCell id="bm-lib2" value="&lt;b&gt;QA 库&lt;/b&gt;&#xa;QnA（FAISS）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1976D2;fontSize=12;fontColor=#0D47A1;verticalAlign=top;spacingTop=8;" parent="1" vertex="1">
-          <mxGeometry x="558" y="688" width="255" height="72" as="geometry" />
+          <mxGeometry x="566" y="738" width="255" height="72" as="geometry" />
         </mxCell>
         <mxCell id="bm-note" value="离线建库经 Blob 只读同步下来；权威内容源，运行时只读、不承载缓存。" style="text;html=1;fontSize=10.5;align=left;spacingLeft=8;whiteSpace=wrap;fontColor=#37474F;" parent="1" vertex="1">
-          <mxGeometry x="288" y="772" width="525" height="60" as="geometry" />
+          <mxGeometry x="296" y="822" width="525" height="60" as="geometry" />
         </mxCell>
         <mxCell id="bd-box" value="" style="rounded=1;fillColor=#FFF3E0;opacity=55;dashed=1;dashPattern=6 6;strokeColor=#CC6600;" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="860" y="630" width="580" height="220" as="geometry" />
+          <mxGeometry x="868" y="680" width="580" height="220" as="geometry" />
         </mxCell>
         <mxCell id="bd-icon" value="" style="shape=image;image=img/lib/azure2/app_services/App_Services.svg;aspect=fixed;imageWidth=28;imageHeight=28;" parent="1" vertex="1">
-          <mxGeometry x="878" y="642" width="28" height="28" as="geometry" />
+          <mxGeometry x="886" y="692" width="28" height="28" as="geometry" />
         </mxCell>
         <mxCell id="bd-hdr" value="&lt;b&gt;检索目标 · ByDevice 有状态库 App Service&lt;/b&gt;（pool，N 实例）" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#BF360C;align=left;verticalAlign=middle;" parent="1" vertex="1">
-          <mxGeometry x="914" y="642" width="510" height="28" as="geometry" />
+          <mxGeometry x="922" y="692" width="510" height="28" as="geometry" />
         </mxCell>
         <mxCell id="bd-lib" value="&lt;b&gt;长尾偏好库&lt;/b&gt;　long-tail-pref&#xa;（每 device 一份 persist）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CC6600;fontSize=12;fontColor=#BF360C;verticalAlign=top;spacingTop=8;" parent="1" vertex="1">
-          <mxGeometry x="888" y="688" width="525" height="72" as="geometry" />
+          <mxGeometry x="896" y="738" width="525" height="72" as="geometry" />
         </mxCell>
         <mxCell id="bd-note" value="同一 deviceId 经 HRW + Affinity 落固定 instance；写路径 persist 落盘 → 推回 Blob（source of truth）。" style="text;html=1;fontSize=10.5;fillColor=#FFEBEE;strokeColor=#EF5350;rounded=1;align=left;spacingLeft=8;spacingTop=6;whiteSpace=wrap;fontColor=#B71C1C;" parent="1" vertex="1">
-          <mxGeometry x="888" y="772" width="525" height="60" as="geometry" />
+          <mxGeometry x="896" y="822" width="525" height="60" as="geometry" />
         </mxCell>
         <mxCell id="ais-box" value="" style="rounded=1;fillColor=#FCE4EC;opacity=55;dashed=1;dashPattern=6 6;strokeColor=#C2185B;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="260" y="980" width="900" height="330" as="geometry" />
