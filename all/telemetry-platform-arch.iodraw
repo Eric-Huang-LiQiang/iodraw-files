@@ -183,6 +183,9 @@
         <mxCell id="aIbU0j8Se3Ruk7KionyQ-1" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/databases/Data_Factory.svg;" vertex="1" parent="1">
           <mxGeometry x="830" y="350" width="29" height="29" as="geometry" />
         </mxCell>
+        <mxCell id="aIbU0j8Se3Ruk7KionyQ-2" value="" style="rounded=1;fillColor=none;strokeColor=#CC6600;dashed=1;dashPattern=6 4;strokeWidth=2;" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="821.5" y="338" width="46" height="46" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
