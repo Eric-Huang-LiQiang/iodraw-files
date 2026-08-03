@@ -96,9 +96,7 @@
         </mxCell>
         <mxCell id="e-eh-blob" value="Capture (Avro)" style="endArrow=block;html=1;dashed=1;strokeColor=#666666;fontColor=#666666;labelBackgroundColor=#FFFFFF;" parent="1" source="eh-icon" target="blob-icon" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="543" y="400" />
-            </Array>
+            <Array as="points" />
           </mxGeometry>
         </mxCell>
         <mxCell id="e-eh-adx" value="原生流式接入" style="endArrow=block;html=1;strokeColor=#009900;fontColor=#009900;labelBackgroundColor=#FFFFFF;" parent="1" source="eh-icon" target="adx-icon" edge="1">
