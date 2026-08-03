@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) ioDraw.com/3.6.1 Chrome/124.0.6367.49 Electron/30.0.0 Safari/537.36" version="24.7.17">
   <diagram id="telemetry-arch" name="Telemetry Platform">
-    <mxGraphModel dx="1354" dy="823" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="740" math="0" shadow="0">
+    <mxGraphModel dx="1114" dy="823" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="740" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -106,12 +106,8 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="e-eh-asa" value="流式消费" style="endArrow=block;html=1;strokeColor=#009900;fontColor=#009900;labelBackgroundColor=#FFFFFF;" parent="1" source="eh-icon" target="asa-icon" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="520" y="250" />
-            </Array>
-          </mxGeometry>
+        <mxCell id="e-eh-asa" value="流式消费" style="endArrow=block;html=1;strokeColor=#009900;fontColor=#009900;labelBackgroundColor=#FFFFFF;edgeStyle=orthogonalEdgeStyle;" parent="1" source="eh-icon" target="asa-icon" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e-asa-alert" value="阈值告警" style="endArrow=block;html=1;dashed=1;strokeColor=#9673A6;fontColor=#9673A6;labelBackgroundColor=#FFFFFF;" parent="1" source="asa-icon" target="alert-box" edge="1">
           <mxGeometry relative="1" as="geometry" />
