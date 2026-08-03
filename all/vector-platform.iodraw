@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) ioDraw.com/3.6.1 Chrome/124.0.6367.49 Electron/30.0.0 Safari/537.36" version="24.7.17">
   <diagram id="vecplat" name="向量平台-vector-gateway">
-    <mxGraphModel dx="1354" dy="823" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1680" pageHeight="1320" math="0" shadow="0">
+    <mxGraphModel dx="2083" dy="1266" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1680" pageHeight="1320" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -139,11 +139,11 @@
         <mxCell id="e2" value="改写+向量化" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#333333;fontColor=#333333;labelBackgroundColor=#FFFFFF;startArrow=block;endArrow=block;strokeWidth=2;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="870" y="390" />
+              <mxPoint x="800" y="390" />
               <mxPoint x="824" y="390" />
             </Array>
             <mxPoint x="824" y="440" as="targetPoint" />
-            <mxPoint x="870" y="370" as="sourcePoint" />
+            <mxPoint x="800" y="340" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="e3" value="type=车书/QA　轮询" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;endArrow=block;strokeWidth=2;" parent="1" source="gw-route" target="bm-box" edge="1">
