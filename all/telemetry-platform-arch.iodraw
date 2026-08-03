@@ -102,8 +102,7 @@
         <mxCell id="e-eh-adx" value="原生流式接入" style="endArrow=block;html=1;strokeColor=#009900;fontColor=#009900;labelBackgroundColor=#FFFFFF;" parent="1" source="eh-icon" target="adx-icon" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="505" y="330" />
-              <mxPoint x="410" y="180" />
+              <mxPoint x="460" y="180" />
             </Array>
           </mxGeometry>
         </mxCell>
