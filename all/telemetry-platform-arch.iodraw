@@ -107,7 +107,13 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="e-eh-asa" value="流式消费" style="endArrow=block;html=1;strokeColor=#009900;fontColor=#009900;labelBackgroundColor=#FFFFFF;edgeStyle=orthogonalEdgeStyle;" parent="1" source="eh-icon" target="asa-icon" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="540" y="365" />
+              <mxPoint x="540" y="260" />
+              <mxPoint x="760" y="260" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="e-asa-alert" value="阈值告警" style="endArrow=block;html=1;dashed=1;strokeColor=#9673A6;fontColor=#9673A6;labelBackgroundColor=#FFFFFF;" parent="1" source="asa-icon" target="alert-box" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -151,7 +157,7 @@
         <mxCell id="sql-mark" value="" style="rounded=1;fillColor=none;strokeColor=#CC6600;dashed=1;dashPattern=6 4;strokeWidth=2;" parent="1" connectable="0" vertex="1">
           <mxGeometry x="1022" y="342" width="46" height="46" as="geometry" />
         </mxCell>
-        <mxCell id="adx-mark" value="" style="rounded=1;fillColor=none;strokeColor=#9673A6;dashed=1;dashPattern=6 4;strokeWidth=2;" parent="1" connectable="0" vertex="1">
+        <mxCell id="adx-mark" value="" style="rounded=1;fillColor=none;strokeColor=#9673A6;dashed=1;dashPattern=6 4;strokeWidth=2;shape=image;labelBackgroundColor=default;verticalAlign=top;verticalLabelPosition=bottom;aspect=fixed;html=1;points=[];image=img/lib/azure2/databases/Azure_Data_Explorer_Clusters.svg;" parent="1" connectable="0" vertex="1">
           <mxGeometry x="537" y="157" width="46" height="46" as="geometry" />
         </mxCell>
         <mxCell id="asa-mark" value="" style="rounded=1;fillColor=none;strokeColor=#9673A6;dashed=1;dashPattern=6 4;strokeWidth=2;" parent="1" connectable="0" vertex="1">
