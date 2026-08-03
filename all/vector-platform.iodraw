@@ -463,6 +463,190 @@
         <mxCell id="yFy1p2oUVh9DSKfpmP5x-73" value="- - 绿/橙虚线 离线 pipeline 产出 → Blob（车书/QnA 建库产出；记忆提炼偏好写回）(#2e7d32)" style="text;html=1;fontSize=11;align=left;fontColor=#2E7D32;" vertex="1" parent="1">
           <mxGeometry x="270" y="1458" width="730" height="18" as="geometry" />
         </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-74" value="遥测日志平台架构（方案1：Event Hubs Capture → Blob → ADF → SQL Server）" style="text;html=1;fontSize=16;fontStyle=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="120" y="16" width="960" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-75" value="接入 / 采集" style="rounded=1;fillColor=#E8F5E9;opacity=40;dashed=1;dashPattern=5 5;strokeColor=#009900;verticalAlign=top;fontStyle=1;fontColor=#009900;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="40" y="300" width="330" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-76" value="消息管道" style="rounded=1;fillColor=#E0F0FF;opacity=40;dashed=1;dashPattern=5 5;strokeColor=#0066CC;verticalAlign=top;fontStyle=1;fontColor=#0066CC;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="385" y="300" width="150" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-77" value="数据落地 / 存储" style="rounded=1;fillColor=#FFF8E1;opacity=40;dashed=1;dashPattern=5 5;strokeColor=#CC6600;verticalAlign=top;fontStyle=1;fontColor=#CC6600;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="550" y="300" width="600" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-78" value="实时分析 / 告警" style="rounded=1;fillColor=#F3E5F5;opacity=40;dashed=1;dashPattern=5 5;strokeColor=#9673A6;verticalAlign=top;fontStyle=1;fontColor=#9673A6;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="470" y="120" width="620" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-79" value="用量统计" style="rounded=1;fillColor=#FFE0E0;opacity=40;dashed=1;dashPattern=5 5;strokeColor=#CC0000;verticalAlign=top;fontStyle=1;fontColor=#CC0000;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="470" y="540" width="360" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-80" value="" style="shape=image;image=img/lib/azure2/iot/IoT_Edge.svg;aspect=fixed;imageWidth=30;imageHeight=30;" vertex="1" parent="1">
+          <mxGeometry x="75" y="350" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-81" value="设备端&#xa;(TelemetryService 5分钟批量flush)" style="text;html=1;fontSize=11;align=center;" vertex="1" parent="1">
+          <mxGeometry x="45" y="384" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-82" value="" style="shape=image;image=img/lib/azure2/app_services/App_Services.svg;aspect=fixed;imageWidth=30;imageHeight=30;" vertex="1" parent="1">
+          <mxGeometry x="240" y="350" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-83" value="Device Gateway&#xa;UploadTelemetry" style="text;html=1;fontSize=11;align=center;" vertex="1" parent="1">
+          <mxGeometry x="195" y="384" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-84" value="" style="shape=image;image=img/lib/azure2/analytics/Event_Hubs.svg;aspect=fixed;imageWidth=30;imageHeight=30;" vertex="1" parent="1">
+          <mxGeometry x="445" y="350" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-85" value="Azure Event Hubs&#xa;(规划/Phase2)" style="text;html=1;fontSize=11;align=center;fontStyle=1;fontColor=#0066CC;" vertex="1" parent="1">
+          <mxGeometry x="400" y="384" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-86" value="&lt;b&gt;SKU&lt;/b&gt; Standard&lt;br&gt;&lt;b&gt;保留&lt;/b&gt; 1~7天(可重放)&lt;br&gt;&lt;b&gt;消费组&lt;/b&gt; 多组fan-out" style="text;html=1;fontSize=9;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;spacing=4;whiteSpace=wrap;align=left;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="388" y="450" width="150" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-87" value="" style="shape=image;image=img/lib/azure2/storage/Storage_Accounts.svg;aspect=fixed;imageWidth=30;imageHeight=30;" vertex="1" parent="1">
+          <mxGeometry x="620" y="350" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-88" value="Blob / Data Lake Gen2&#xa;(规划/Phase2)" style="text;html=1;fontSize=11;align=center;fontColor=#CC6600;" vertex="1" parent="1">
+          <mxGeometry x="575" y="384" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-89" value="&lt;b&gt;来源&lt;/b&gt; EH Capture(零代码)&lt;br&gt;&lt;b&gt;格式&lt;/b&gt; Avro&lt;br&gt;&lt;b&gt;用途&lt;/b&gt; 归档 + ADF数据源" style="text;html=1;fontSize=9;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;spacing=4;whiteSpace=wrap;align=left;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="560" y="418" width="175" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-90" value="" style="shape=image;image=img/lib/azure2/analytics/Data_Factories.svg;aspect=fixed;imageWidth=30;imageHeight=30;" vertex="1" parent="1">
+          <mxGeometry x="830" y="350" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-91" value="Azure Data Factory&#xa;(规划/Phase2)" style="text;html=1;fontSize=11;align=center;fontStyle=1;fontColor=#CC6600;" vertex="1" parent="1">
+          <mxGeometry x="785" y="384" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-92" value="&lt;b&gt;用例(新增)&lt;/b&gt;&lt;br&gt;Copy Activity 定时批处理&lt;br&gt;从 Blob 筛选&lt;b&gt;特定语料数据&lt;/b&gt;&lt;br&gt;写入 SQL Server" style="text;html=1;fontSize=9;fillColor=#FFF3CD;strokeColor=#CC6600;strokeWidth=2;rounded=1;spacing=4;whiteSpace=wrap;align=left;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="765" y="415" width="185" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-93" value="" style="shape=image;image=img/lib/azure2/databases/SQL_Server.svg;aspect=fixed;imageWidth=30;imageHeight=30;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="350" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-94" value="SQL Server 语料表&#xa;(规划/Phase2)" style="text;html=1;fontSize=11;align=center;fontColor=#CC6600;" vertex="1" parent="1">
+          <mxGeometry x="985" y="384" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-95" value="&lt;b&gt;Sink&lt;/b&gt; 语料表&lt;br&gt;&lt;b&gt;内容&lt;/b&gt; 筛选后的对话语料&lt;br&gt;&lt;b&gt;供&lt;/b&gt; 业务查询/训练" style="text;html=1;fontSize=9;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;spacing=4;whiteSpace=wrap;align=left;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="975" y="418" width="170" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-96" value="" style="shape=image;image=img/lib/azure2/analytics/Azure_Data_Explorer_Clusters.svg;aspect=fixed;imageWidth=30;imageHeight=30;" vertex="1" parent="1">
+          <mxGeometry x="545" y="165" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-97" value="Azure Data Explorer&#xa;近实时明细/看板 (规划/Phase2)" style="text;html=1;fontSize=11;align=center;fontColor=#9673A6;" vertex="1" parent="1">
+          <mxGeometry x="490" y="199" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-98" value="" style="shape=image;image=img/lib/azure2/analytics/Stream_Analytics_Jobs.svg;aspect=fixed;imageWidth=30;imageHeight=30;" vertex="1" parent="1">
+          <mxGeometry x="745" y="165" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-99" value="Stream Analytics&#xa;窗口聚合/阈值 (规划/Phase2)" style="text;html=1;fontSize=11;align=center;fontColor=#9673A6;" vertex="1" parent="1">
+          <mxGeometry x="690" y="199" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-100" value="告警动作&#xa;Service Bus / Function&#xa;(规划/Phase2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#9673A6;dashed=1;dashPattern=6 4;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="940" y="150" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-101" value="用量统计消费者&#xa;EventProcessorClient&#xa;(现有Broadcast逻辑迁入/Phase2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE0E0;strokeColor=#CC0000;dashed=1;dashPattern=6 4;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="495" y="562" width="170" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-102" value="第三方 TSP&#xa;(用量入账/加密签名)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="565" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-103" value="HTTPS 批量上报" style="endArrow=block;html=1;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="yFy1p2oUVh9DSKfpmP5x-80" target="yFy1p2oUVh9DSKfpmP5x-82">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-104" value="enqueue 事件" style="endArrow=block;html=1;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="yFy1p2oUVh9DSKfpmP5x-82" target="yFy1p2oUVh9DSKfpmP5x-84">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-105" value="Capture (Avro)" style="endArrow=block;html=1;dashed=1;strokeColor=#666666;fontColor=#666666;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="yFy1p2oUVh9DSKfpmP5x-84" target="yFy1p2oUVh9DSKfpmP5x-87">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="543" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-106" value="原生流式接入" style="endArrow=block;html=1;strokeColor=#009900;fontColor=#009900;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="yFy1p2oUVh9DSKfpmP5x-84" target="yFy1p2oUVh9DSKfpmP5x-96">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="505" y="330" />
+              <mxPoint x="560" y="290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-107" value="流式消费" style="endArrow=block;html=1;strokeColor=#009900;fontColor=#009900;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="yFy1p2oUVh9DSKfpmP5x-84" target="yFy1p2oUVh9DSKfpmP5x-98">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="760" y="330" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-108" value="阈值告警" style="endArrow=block;html=1;dashed=1;strokeColor=#9673A6;fontColor=#9673A6;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="yFy1p2oUVh9DSKfpmP5x-98" target="yFy1p2oUVh9DSKfpmP5x-100">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-109" value="消费用量" style="endArrow=block;html=1;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="yFy1p2oUVh9DSKfpmP5x-84" target="yFy1p2oUVh9DSKfpmP5x-101">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="460" y="600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-110" value="用量→TSP" style="endArrow=block;html=1;dashed=1;strokeColor=#CC0000;fontColor=#CC0000;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="yFy1p2oUVh9DSKfpmP5x-101" target="yFy1p2oUVh9DSKfpmP5x-102">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="675" y="600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-111" value="读取语料文件" style="endArrow=block;html=1;dashed=1;strokeColor=#CC6600;fontColor=#CC6600;strokeWidth=2;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="yFy1p2oUVh9DSKfpmP5x-87" target="yFy1p2oUVh9DSKfpmP5x-90">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-112" value="筛选语料→写入" style="endArrow=block;html=1;dashed=1;strokeColor=#CC6600;fontColor=#CC6600;strokeWidth=2;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="yFy1p2oUVh9DSKfpmP5x-90" target="yFy1p2oUVh9DSKfpmP5x-93">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-113" value="[现有]" style="text;html=1;fontSize=9;fontColor=#009900;fontStyle=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="75" y="336" width="30" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-114" value="[现有]" style="text;html=1;fontSize=9;fontColor=#009900;fontStyle=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="240" y="336" width="30" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-115" value="" style="rounded=1;fillColor=none;strokeColor=#0066CC;dashed=1;dashPattern=6 4;strokeWidth=2;" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="437" y="342" width="46" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-116" value="" style="rounded=1;fillColor=none;strokeColor=#CC6600;dashed=1;dashPattern=6 4;strokeWidth=2;" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="612" y="342" width="46" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-117" value="" style="rounded=1;fillColor=none;strokeColor=#CC6600;dashed=1;dashPattern=6 4;strokeWidth=2;" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="822" y="342" width="46" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-118" value="" style="rounded=1;fillColor=none;strokeColor=#CC6600;dashed=1;dashPattern=6 4;strokeWidth=2;" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="1022" y="342" width="46" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-119" value="" style="rounded=1;fillColor=none;strokeColor=#9673A6;dashed=1;dashPattern=6 4;strokeWidth=2;" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="537" y="157" width="46" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-120" value="" style="rounded=1;fillColor=none;strokeColor=#9673A6;dashed=1;dashPattern=6 4;strokeWidth=2;" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="737" y="157" width="46" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-121" value="图例 (Legend)&#xa;虚线边框 = 规划新增(Phase2)；实线 = 现有" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#333333;verticalAlign=top;fontStyle=1;align=left;spacingLeft=8;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="40" y="672" width="1110" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-122" value="—— 网络请求/事件写入" style="text;html=1;fontSize=10;fontColor=#0066CC;align=left;" vertex="1" parent="1">
+          <mxGeometry x="55" y="712" width="180" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-123" value="—— 流式接入(实时分析)" style="text;html=1;fontSize=10;fontColor=#009900;align=left;" vertex="1" parent="1">
+          <mxGeometry x="245" y="712" width="180" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-124" value="- - - 原生托管落地(Capture)" style="text;html=1;fontSize=10;fontColor=#666666;align=left;" vertex="1" parent="1">
+          <mxGeometry x="435" y="712" width="200" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-125" value="=== ADF 批量ETL 捞语料→SQL (橙 cc6600)" style="text;html=1;fontSize=10;fontColor=#CC6600;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="645" y="712" width="240" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-126" value="- - - 告警动作 (紫 9673a6)" style="text;html=1;fontSize=10;fontColor=#9673A6;align=left;" vertex="1" parent="1">
+          <mxGeometry x="885" y="712" width="140" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-127" value="- - - 外部依赖(TSP)" style="text;html=1;fontSize=10;fontColor=#CC0000;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1025" y="712" width="120" height="18" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
