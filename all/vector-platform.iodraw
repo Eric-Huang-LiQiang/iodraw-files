@@ -164,13 +164,13 @@
         <mxCell id="e-cache" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#C2185B;fontColor=#C2185B;labelBackgroundColor=#FFFFFF;endArrow=block;startArrow=oval;dashed=1;strokeWidth=2;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1080" y="352" />
-              <mxPoint x="1490" y="352" />
-              <mxPoint x="1490" y="870" />
-              <mxPoint x="730" y="870" />
+              <mxPoint x="990" y="454" />
+              <mxPoint x="1560" y="454" />
+              <mxPoint x="1560" y="972" />
+              <mxPoint x="640" y="972" />
             </Array>
-            <mxPoint x="1080" y="218" as="sourcePoint" />
-            <mxPoint x="730" y="890" as="targetPoint" />
+            <mxPoint x="990" y="320" as="sourcePoint" />
+            <mxPoint x="640" y="992" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="e6" value="只读同步" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#6C8EBF;fontColor=#6C8EBF;labelBackgroundColor=#FFFFFF;dashed=1;endArrow=block;" parent="1" source="blob" target="bm-box" edge="1">
