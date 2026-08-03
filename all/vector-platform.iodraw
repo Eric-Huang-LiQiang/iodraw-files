@@ -139,10 +139,11 @@
         <mxCell id="e2" value="改写+向量化" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#333333;fontColor=#333333;labelBackgroundColor=#FFFFFF;startArrow=block;endArrow=block;strokeWidth=2;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="800" y="390" />
-              <mxPoint x="824" y="390" />
+              <mxPoint x="800" y="380" />
+              <mxPoint x="824" y="380" />
+              <mxPoint x="824" y="440" />
             </Array>
-            <mxPoint x="824" y="440" as="targetPoint" />
+            <mxPoint x="470" y="440" as="targetPoint" />
             <mxPoint x="800" y="340" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
