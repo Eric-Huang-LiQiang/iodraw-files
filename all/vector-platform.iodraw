@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) ioDraw.com/3.6.1 Chrome/124.0.6367.49 Electron/30.0.0 Safari/537.36" version="24.7.17">
   <diagram id="vecplat" name="向量平台-vector-gateway">
-    <mxGraphModel dx="3009" dy="1829" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1680" pageHeight="1320" math="0" shadow="0">
+    <mxGraphModel dx="1693" dy="1029" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1680" pageHeight="1320" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -451,13 +451,14 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="yFy1p2oUVh9DSKfpmP5x-72" value="偏好写回 → Blob" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#CC6600;fontColor=#CC6600;labelBackgroundColor=#FFFFFF;endArrow=block;dashed=1;dashPattern=8 8;strokeWidth=2;" edge="1" parent="1" source="yFy1p2oUVh9DSKfpmP5x-67" target="yFy1p2oUVh9DSKfpmP5x-45">
+        <mxCell id="yFy1p2oUVh9DSKfpmP5x-72" value="偏好写回 → Blob" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#CC6600;fontColor=#CC6600;labelBackgroundColor=#FFFFFF;endArrow=block;dashed=1;dashPattern=8 8;strokeWidth=2;" edge="1" parent="1" source="yFy1p2oUVh9DSKfpmP5x-67">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1240" y="1520" />
               <mxPoint x="1470" y="1520" />
               <mxPoint x="1470" y="1135" />
             </Array>
+            <mxPoint x="1450" y="840" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="yFy1p2oUVh9DSKfpmP5x-73" value="- - 绿/橙虚线 离线 pipeline 产出 → Blob（车书/QnA 建库产出；记忆提炼偏好写回）(#2e7d32)" style="text;html=1;fontSize=11;align=left;fontColor=#2E7D32;" vertex="1" parent="1">
