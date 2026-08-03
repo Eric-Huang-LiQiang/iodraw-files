@@ -186,16 +186,16 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="lg-box" value="图例（Legend）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#90A4AE;verticalAlign=top;fontStyle=1;fontSize=12.5;fontColor=#37474F;align=left;spacingLeft=10;spacingTop=8;shadow=1;" parent="1" vertex="1">
-          <mxGeometry x="40" y="1190" width="760" height="110" as="geometry" />
+          <mxGeometry x="250" y="1270" width="760" height="110" as="geometry" />
         </mxCell>
         <mxCell id="lg1" value="━━ 深灰实线 主链路（Client → Gateway；Gateway ↔ 改写服务）　　　━━ 蓝实线 只读检索（车书/QA，轮询）" style="text;html=1;fontSize=11;align=left;fontColor=#333333;" parent="1" vertex="1">
-          <mxGeometry x="60" y="1222" width="730" height="18" as="geometry" />
+          <mxGeometry x="270" y="1302" width="730" height="18" as="geometry" />
         </mxCell>
         <mxCell id="lg2" value="- - ○ 洋红虚线 语义缓存（与车书/QA、长尾偏好并列的检索目标，虚线标识“缓存类”非权威库）(#c2185b)" style="text;html=1;fontSize=11;align=left;fontColor=#C2185B;" parent="1" vertex="1">
-          <mxGeometry x="60" y="1244" width="730" height="18" as="geometry" />
+          <mxGeometry x="270" y="1324" width="730" height="18" as="geometry" />
         </mxCell>
         <mxCell id="lg3" value="━━ 橙实线 有状态检索（长尾偏好，HRW → Affinity）　　- - 蓝灰虚线 Blob 同步/写回灌/恢复(#6c8ebf)" style="text;html=1;fontSize=11;align=left;fontColor=#CC6600;" parent="1" vertex="1">
-          <mxGeometry x="60" y="1266" width="730" height="18" as="geometry" />
+          <mxGeometry x="270" y="1346" width="730" height="18" as="geometry" />
         </mxCell>
         <mxCell id="2" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/Search_Services.svg;" parent="1" vertex="1">
           <mxGeometry x="270.23" y="902" width="41.53" height="30" as="geometry" />
