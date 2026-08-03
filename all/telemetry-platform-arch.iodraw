@@ -109,7 +109,7 @@
         <mxCell id="e-eh-asa" value="流式消费" style="endArrow=block;html=1;strokeColor=#009900;fontColor=#009900;labelBackgroundColor=#FFFFFF;" parent="1" source="eh-icon" target="asa-icon" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="760" y="330" />
+              <mxPoint x="520" y="250" />
             </Array>
           </mxGeometry>
         </mxCell>
