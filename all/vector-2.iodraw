@@ -290,155 +290,155 @@
     </mxGraphModel>
   </diagram>
   <diagram id="cmp" name="AI Search vs 自研-对比">
-    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1060" pageHeight="1210" math="0" shadow="0">
+    <mxGraphModel dx="1354" dy="823" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1060" pageHeight="1210" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="cmp-title" value="向量检索方案对比：Azure AI Search（托管）vs Python 自研（FAISS + LlamaIndex）" style="rounded=0;html=1;fillColor=#1A237E;strokeColor=none;fontColor=#FFFFFF;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="0" y="0" width="1060" height="60" as="geometry" />
+        <mxCell id="cmp-title" value="向量检索方案对比：Azure AI Search（托管）vs Python 自研（FAISS + LlamaIndex）" style="rounded=0;html=1;fillColor=#1A237E;strokeColor=none;fontColor=#FFFFFF;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry width="1060" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="cmp-sub" value="数据取自 2026-08 CarBookBench 同区实测（Korea Central，MG4车书 6509向量，51组ground-truth）" style="text;html=1;fontSize=11;fontColor=#5C6BC0;align=center;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="0" y="60" width="1060" height="24" as="geometry" />
+        <mxCell id="cmp-sub" value="数据取自 2026-08 CarBookBench 同区实测（Korea Central，MG4车书 6509向量，51组ground-truth）" style="text;html=1;fontSize=11;fontColor=#5C6BC0;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry y="60" width="1060" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="h-dim" value="对比维度" style="rounded=0;html=1;fillColor=#37474F;strokeColor=#263238;fontColor=#FFFFFF;fontSize=13;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="h-dim" value="对比维度" style="rounded=0;html=1;fillColor=#37474F;strokeColor=#263238;fontColor=#FFFFFF;fontSize=13;fontStyle=1;align=center;verticalAlign=middle;" parent="1" vertex="1">
           <mxGeometry x="40" y="120" width="220" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="h-ai" value="🟦 Azure AI Search（托管）" style="rounded=0;html=1;fillColor=#1565C0;strokeColor=#0D47A1;fontColor=#FFFFFF;fontSize=13;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="h-ai" value="🟦 Azure AI Search（托管）" style="rounded=0;html=1;fillColor=#1565C0;strokeColor=#0D47A1;fontColor=#FFFFFF;fontSize=13;fontStyle=1;align=center;verticalAlign=middle;" parent="1" vertex="1">
           <mxGeometry x="260" y="120" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="h-py" value="🟩 Python 自研（FAISS 进程内）" style="rounded=0;html=1;fillColor=#2E7D32;strokeColor=#1B5E20;fontColor=#FFFFFF;fontSize=13;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="h-py" value="🟩 Python 自研（FAISS 进程内）" style="rounded=0;html=1;fillColor=#2E7D32;strokeColor=#1B5E20;fontColor=#FFFFFF;fontSize=13;fontStyle=1;align=center;verticalAlign=middle;" parent="1" vertex="1">
           <mxGeometry x="640" y="120" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="d0" value="性能·纯检索延迟" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" vertex="1" parent="1">
+        <mxCell id="d0" value="性能·纯检索延迟" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" parent="1" vertex="1">
           <mxGeometry x="40" y="182" width="220" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="a0" value="P50 41ms / P90 50ms&lt;br&gt;(HNSW,跨网络一跳)" style="rounded=0;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="a0" value="P50 41ms / P90 50ms&lt;br&gt;(HNSW,跨网络一跳)" style="rounded=0;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="260" y="182" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="p0" value="P50 8ms(内存O(N)直查)&lt;br&gt;小库更快" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="p0" value="P50 8ms(内存O(N)直查)&lt;br&gt;小库更快" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="640" y="182" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="d1" value="性能·端到端" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" vertex="1" parent="1">
+        <mxCell id="d1" value="性能·端到端" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" parent="1" vertex="1">
           <mxGeometry x="40" y="244" width="220" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="a1" value="P50 ~200-500ms&lt;br&gt;瓶颈在嵌入非检索" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="a1" value="P50 ~200-500ms&lt;br&gt;瓶颈在嵌入非检索" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="260" y="244" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="p1" value="P50 ~200ms&lt;br&gt;同样被嵌入主导" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="p1" value="P50 ~200ms&lt;br&gt;同样被嵌入主导" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="640" y="244" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="d2" value="性能·单副本吞吐" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" vertex="1" parent="1">
+        <mxCell id="d2" value="性能·单副本吞吐" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" parent="1" vertex="1">
           <mxGeometry x="40" y="306" width="220" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="a2" value="~28 QPS(Basic 1副本)&lt;br&gt;加replica线性扩" style="rounded=0;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="a2" value="~28 QPS(Basic 1副本)&lt;br&gt;加replica线性扩" style="rounded=0;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="260" y="306" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="p2" value="~577 QPS(进程内)&lt;br&gt;受CPU核数限" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="p2" value="~577 QPS(进程内)&lt;br&gt;受CPU核数限" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="640" y="306" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="d3" value="检索准确性(实测Hit@5)" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" vertex="1" parent="1">
+        <mxCell id="d3" value="检索准确性(实测Hit@5)" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" parent="1" vertex="1">
           <mxGeometry x="40" y="368" width="220" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="a3" value="1.00&lt;br&gt;filter精确隔离" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="a3" value="1.00&lt;br&gt;filter精确隔离" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="260" y="368" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="p3" value="0.98&lt;br&gt;与AI Search 99.3%一致" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="p3" value="0.98&lt;br&gt;与AI Search 99.3%一致" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="640" y="368" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="d4" value="成本" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" vertex="1" parent="1">
+        <mxCell id="d4" value="成本" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" parent="1" vertex="1">
           <mxGeometry x="40" y="430" width="220" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="a4" value="Basic $75/月固定&lt;br&gt;(不管流量全天扣)" style="rounded=0;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="a4" value="Basic $75/月固定&lt;br&gt;(不管流量全天扣)" style="rounded=0;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="260" y="430" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="p4" value="近零边际(复用现有&lt;br&gt;App Service计算)" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="p4" value="近零边际(复用现有&lt;br&gt;App Service计算)" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="640" y="430" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="d5" value="跨云 / 可移植" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" vertex="1" parent="1">
+        <mxCell id="d5" value="跨云 / 可移植" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" parent="1" vertex="1">
           <mxGeometry x="40" y="492" width="220" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="a5" value="锁定 Azure&lt;br&gt;仅Azure/世纪互联" style="rounded=0;html=1;fillColor=#FFEBEE;strokeColor=#C62828;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="a5" value="锁定 Azure&lt;br&gt;仅Azure/世纪互联" style="rounded=0;html=1;fillColor=#FFEBEE;strokeColor=#C62828;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="260" y="492" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="p5" value="任意云/本地/离线&lt;br&gt;FAISS纯文件可搬" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="p5" value="任意云/本地/离线&lt;br&gt;FAISS纯文件可搬" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="640" y="492" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="d6" value="厂商锁定" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" vertex="1" parent="1">
+        <mxCell id="d6" value="厂商锁定" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" parent="1" vertex="1">
           <mxGeometry x="40" y="554" width="220" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="a6" value="高(专有服务+API)" style="rounded=0;html=1;fillColor=#FFEBEE;strokeColor=#C62828;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="a6" value="高(专有服务+API)" style="rounded=0;html=1;fillColor=#FFEBEE;strokeColor=#C62828;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="260" y="554" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="p6" value="无(开源FAISS+&lt;br&gt;LlamaIndex)" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="p6" value="无(开源FAISS+&lt;br&gt;LlamaIndex)" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="640" y="554" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="d7" value="技术复杂度" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" vertex="1" parent="1">
+        <mxCell id="d7" value="技术复杂度" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" parent="1" vertex="1">
           <mxGeometry x="40" y="616" width="220" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="a7" value="低:托管,发SDK即可&lt;br&gt;删除三级缓存/blob同步" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="a7" value="低:托管,发SDK即可&lt;br&gt;删除三级缓存/blob同步" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="260" y="616" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="p7" value="高:自管内存→本地→&lt;br&gt;Blob三级+az同步" style="rounded=0;html=1;fillColor=#FFEBEE;strokeColor=#C62828;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="p7" value="高:自管内存→本地→&lt;br&gt;Blob三级+az同步" style="rounded=0;html=1;fillColor=#FFEBEE;strokeColor=#C62828;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="640" y="616" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="d8" value="一致性 / 并发写" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" vertex="1" parent="1">
+        <mxCell id="d8" value="一致性 / 并发写" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" parent="1" vertex="1">
           <mxGeometry x="40" y="678" width="220" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="a8" value="托管仲裁+乐观并发&lt;br&gt;(ETag)根治覆盖" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="a8" value="托管仲裁+乐观并发&lt;br&gt;(ETag)根治覆盖" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="260" y="678" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="p8" value="last-writer-wins&lt;br&gt;整目录覆盖有丢数据点" style="rounded=0;html=1;fillColor=#FFEBEE;strokeColor=#C62828;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="p8" value="last-writer-wins&lt;br&gt;整目录覆盖有丢数据点" style="rounded=0;html=1;fillColor=#FFEBEE;strokeColor=#C62828;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="640" y="678" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="d9" value="运维负担" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" vertex="1" parent="1">
+        <mxCell id="d9" value="运维负担" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" parent="1" vertex="1">
           <mxGeometry x="40" y="740" width="220" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="a9" value="零:扩缩/加载/落盘&lt;br&gt;全托管" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="a9" value="零:扩缩/加载/落盘&lt;br&gt;全托管" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="260" y="740" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="p9" value="自扛:实例一致性/&lt;br&gt;/home持久化/冷加载" style="rounded=0;html=1;fillColor=#FFEBEE;strokeColor=#C62828;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="p9" value="自扛:实例一致性/&lt;br&gt;/home持久化/冷加载" style="rounded=0;html=1;fillColor=#FFEBEE;strokeColor=#C62828;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="640" y="740" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="d10" value="可扩展性" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" vertex="1" parent="1">
+        <mxCell id="d10" value="可扩展性" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" parent="1" vertex="1">
           <mxGeometry x="40" y="802" width="220" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="a10" value="加replica/partition&lt;br&gt;配置即生效" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="a10" value="加replica/partition&lt;br&gt;配置即生效" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="260" y="802" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="p10" value="加实例需自研HRW&lt;br&gt;亲和路由" style="rounded=0;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="p10" value="加实例需自研HRW&lt;br&gt;亲和路由" style="rounded=0;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="640" y="802" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="d11" value="数据规模上限" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" vertex="1" parent="1">
+        <mxCell id="d11" value="数据规模上限" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" parent="1" vertex="1">
           <mxGeometry x="40" y="864" width="220" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="a11" value="托管分区,可到&lt;br&gt;TB级/千万向量" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="a11" value="托管分区,可到&lt;br&gt;TB级/千万向量" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="260" y="864" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="p11" value="单机内存O(N)&lt;br&gt;百万级需换FAISS-IVF" style="rounded=0;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="p11" value="单机内存O(N)&lt;br&gt;百万级需换FAISS-IVF" style="rounded=0;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="640" y="864" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="d12" value="检索能力" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" vertex="1" parent="1">
+        <mxCell id="d12" value="检索能力" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" parent="1" vertex="1">
           <mxGeometry x="40" y="926" width="220" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="a12" value="向量+关键词Hybrid&lt;br&gt;+语义重排(内置)" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="a12" value="向量+关键词Hybrid&lt;br&gt;+语义重排(内置)" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="260" y="926" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="p12" value="纯向量,Hybrid/重排&lt;br&gt;需自己拼" style="rounded=0;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="p12" value="纯向量,Hybrid/重排&lt;br&gt;需自己拼" style="rounded=0;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="640" y="926" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="d13" value="过滤(多租户隔离)" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" vertex="1" parent="1">
+        <mxCell id="d13" value="过滤(多租户隔离)" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" parent="1" vertex="1">
           <mxGeometry x="40" y="988" width="220" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="a13" value="引擎级filtered&lt;br&gt;vector search" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="a13" value="引擎级filtered&lt;br&gt;vector search" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="260" y="988" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="p13" value="Python遍历O(N)&lt;br&gt;metadata_filter" style="rounded=0;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="p13" value="Python遍历O(N)&lt;br&gt;metadata_filter" style="rounded=0;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="640" y="988" width="380" height="62" as="geometry" />
         </mxCell>
-        <mxCell id="lg-legend" value="图例：  🟢 绿=占优 / 更省 / 更简单     🟡 黄=中等 / 有条件     🔴 红=劣势 / 需自研 / 有风险" style="rounded=1;html=1;fillColor=#F5F5F5;strokeColor=#BDBDBD;fontColor=#424242;fontSize=11;align=center;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="lg-legend" value="图例：  🟢 绿=占优 / 更省 / 更简单     🟡 黄=中等 / 有条件     🔴 红=劣势 / 需自研 / 有风险" style="rounded=1;html=1;fillColor=#F5F5F5;strokeColor=#BDBDBD;fontColor=#424242;fontSize=11;align=center;verticalAlign=middle;" parent="1" vertex="1">
           <mxGeometry x="40" y="1070" width="980" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="concl" value="&lt;b&gt;结论（基于实测）&lt;/b&gt;&lt;br&gt;• &lt;b&gt;性能不是分水岭&lt;/b&gt;：端到端都被嵌入(~150-230ms)与网络主导，纯检索差异(41ms vs 8ms)在端到端里被淹没。&lt;br&gt;• &lt;b&gt;选 AI Search 的理由是运维/一致性/准确性，不是速度&lt;/b&gt;：删掉三级缓存+blob同步、根治并发写覆盖、Hit@5略优(1.0 vs 0.98)。&lt;br&gt;• &lt;b&gt;选 Python 自研的理由是跨云/成本/无锁定&lt;/b&gt;：可搬任意云或离线、近零边际成本、开源无厂商锁定。&lt;br&gt;• &lt;b&gt;务实路线&lt;/b&gt;：只读小库(车书/QA)留 FAISS 省成本；多租户可写库(长尾偏好)迁 AI Search 换一致性托管。" style="rounded=1;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;fontColor=#263238;fontSize=12;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="concl" value="&lt;b&gt;结论（基于实测）&lt;/b&gt;&lt;br&gt;• &lt;b&gt;性能不是分水岭&lt;/b&gt;：端到端都被嵌入(~150-230ms)与网络主导，纯检索差异(41ms vs 8ms)在端到端里被淹没。&lt;br&gt;• &lt;b&gt;选 AI Search 的理由是运维/一致性/准确性，不是速度&lt;/b&gt;：删掉三级缓存+blob同步、根治并发写覆盖、Hit@5略优(1.0 vs 0.98)。&lt;br&gt;• &lt;b&gt;选 Python 自研的理由是跨云/成本/无锁定&lt;/b&gt;：可搬任意云或离线、近零边际成本、开源无厂商锁定。&lt;br&gt;• &lt;b&gt;务实路线&lt;/b&gt;：只读小库(车书/QA)留 FAISS 省成本；多租户可写库(长尾偏好)迁 AI Search 换一致性托管。" style="rounded=1;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;fontColor=#263238;fontSize=12;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="40" y="1114" width="980" height="128" as="geometry" />
         </mxCell>
       </root>
