@@ -1,0 +1,447 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) ioDraw.com/3.6.1 Chrome/124.0.6367.49 Electron/30.0.0 Safari/537.36" version="24.7.17" pages="2">
+  <diagram id="vecplat" name="向量平台-vector-gateway">
+    <mxGraphModel dx="2462" dy="1496" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1680" pageHeight="1760" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="titlebar" value="" style="rounded=0;fillColor=#1A237E;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry width="1680" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="title" value="向量平台架构 · Vector Gateway 统一编排（车书/QA · 长尾偏好 · 语义缓存 三类并列检索目标）" style="text;html=1;fontSize=20;fontStyle=1;fontColor=#FFFFFF;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="30" y="12" width="1300" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Gateway：改写 → 向量化 → 按 type 路由到检索目标；语义缓存与车书/QA、长尾偏好并列（不是前置短路），缓存库与 Python 服务同驻（bymodel-cache 挂 ByModel、bydevice-cache 挂 ByDevice），内容独立自成一类" style="text;html=1;fontSize=12;fontColor=#C5CAE9;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="32" y="44" width="1560" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="client" value="&lt;b&gt;Client&lt;/b&gt;&#xa;query · update" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#546E7A;fontSize=13;fontColor=#263238;verticalAlign=top;spacingTop=10;" parent="1" vertex="1">
+          <mxGeometry x="40" y="150" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="client-info" value="&lt;b&gt;入参&lt;/b&gt;&#xa;customer · deviceModel&#xa;language · deviceId · type" style="text;html=1;fontSize=10;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;align=left;spacingLeft=8;spacingTop=4;whiteSpace=wrap;fontColor=#455A64;" parent="1" vertex="1">
+          <mxGeometry x="40" y="250" width="150" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="gw-box" value="" style="rounded=1;fillColor=#EDE7F6;opacity=60;dashed=1;dashPattern=6 6;strokeColor=#5E35B1;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="250" y="100" width="1180" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="gw-icon" value="" style="shape=image;image=img/lib/azure2/app_services/App_Services.svg;aspect=fixed;imageWidth=28;imageHeight=28;" parent="1" vertex="1">
+          <mxGeometry x="268" y="112" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="gw-hdr" value="&lt;b&gt;Vector Gateway&lt;/b&gt;　查询/更新统一入口 · 编排层（无状态，可横向扩）" style="text;html=1;fontSize=13.5;fontStyle=1;fontColor=#4527A0;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="300" y="112" width="604" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="gw-entry" value="①　统一入口&#xa;/vector　query + update" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7E57C2;fontSize=12;fontColor=#311B92;" parent="1" vertex="1">
+          <mxGeometry x="280" y="158" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gw-rw" value="②　调改写服务&#xa;→ 改写后 query" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7E57C2;fontSize=12;fontColor=#311B92;" parent="1" vertex="1">
+          <mxGeometry x="510" y="158" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gw-embed" value="③　向量化&#xa;→ query 向量 q" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7E57C2;fontSize=12;fontColor=#311B92;" parent="1" vertex="1">
+          <mxGeometry x="720" y="158" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gw-route" value="④　按 type 路由到检索目标&#xa;（透传 q，后端不再 embed）&#xa;车书/QA｜长尾偏好｜语义缓存 三类并列" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7E57C2;fontSize=12;fontColor=#311B92;" parent="1" vertex="1">
+          <mxGeometry x="930" y="158" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gw-hrw" value="&lt;b&gt;HRW&lt;/b&gt;　key=deviceId · N 选一（抖动 1/N）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#CC6600;fontSize=11;fontColor=#BF360C;" parent="1" vertex="1">
+          <mxGeometry x="1190" y="158" width="220" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="gw-aff" value="&lt;b&gt;Session Affinity&lt;/b&gt;　钉 deviceId 到固定 instance" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#CC6600;fontSize=11;fontColor=#BF360C;" parent="1" vertex="1">
+          <mxGeometry x="1190" y="190" width="220" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="gw-note" value="只读库（车书/QA）与 bymodel-cache 按车型共享、任意副本轮询，不走 HRW。长尾偏好与 bydevice-cache 都按 deviceId 走 HRW + Session Affinity 落固定 instance。语义缓存是与车书/QA、长尾偏好并列的一类检索目标 —— 命中与否不改变其它目标的调用（不是前置短路）。" style="text;html=1;fontSize=10.5;fillColor=#F3E5F5;strokeColor=#CE93D8;rounded=1;align=left;spacingLeft=8;spacingTop=6;whiteSpace=wrap;fontColor=#6A1B9A;" parent="1" vertex="1">
+          <mxGeometry x="280" y="240" width="1130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rw-box" value="" style="rounded=1;fillColor=#E8F5E9;opacity=60;dashed=1;dashPattern=6 6;strokeColor=#2E7D32;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="260" y="430" width="680" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="rw-svc-icon" value="" style="shape=image;image=img/lib/azure2/app_services/App_Services.svg;aspect=fixed;imageWidth=28;imageHeight=28;" parent="1" vertex="1">
+          <mxGeometry x="277" y="441" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="rw-hdr" value="&lt;b&gt;改写服务 App Service&lt;/b&gt;（无状态 · 可横向扩）" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#1B5E20;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="312" y="442" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="rw1" value="多轮改写 rewrite&#xa;(query, 上下文)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#43A047;fontSize=11.5;fontColor=#1B5E20;" parent="1" vertex="1">
+          <mxGeometry x="290" y="490" width="200" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="rw2" value="向量化 embed → q&#xa;（带 modelVersion）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#43A047;fontSize=11.5;fontColor=#1B5E20;" parent="1" vertex="1">
+          <mxGeometry x="520" y="490" width="200" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="rw-note" value="改写 + 向量化供全部检索目标复用；embedding 模型只在此常驻，Gateway 保持轻量。改写+向量化算出的 q，透传给下方检索目标；后端不再 embed。" style="text;html=1;fontSize=10.5;align=left;spacingLeft=8;whiteSpace=wrap;fontColor=#2E7D32;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="750" y="490" width="170" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="bm-box" value="" style="rounded=1;fillColor=#E3F2FD;opacity=60;dashed=1;dashPattern=6 6;strokeColor=#1565C0;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="260" y="660" width="590" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="bm-icon" value="" style="shape=image;image=img/lib/azure2/app_services/App_Services.svg;aspect=fixed;imageWidth=28;imageHeight=28;" parent="1" vertex="1">
+          <mxGeometry x="278" y="672" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="bm-hdr" value="&lt;b&gt;检索目标 · ByModel App Service&lt;/b&gt;（按车型共享 · 无 HRW / 粘性 · 轮询）" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#0D47A1;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="314" y="672" width="520" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="bm-lib1" value="&lt;b&gt;车书库&lt;/b&gt;&#xa;UserManual（FAISS · 只读）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1976D2;fontSize=12;fontColor=#0D47A1;verticalAlign=top;spacingTop=8;" parent="1" vertex="1">
+          <mxGeometry x="284" y="712" width="270" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="bm-lib2" value="&lt;b&gt;QA 库&lt;/b&gt;&#xa;QnA（FAISS · 只读）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1976D2;fontSize=12;fontColor=#0D47A1;verticalAlign=top;spacingTop=8;" parent="1" vertex="1">
+          <mxGeometry x="564" y="712" width="266" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="bm-cache" value="&lt;b&gt;bymodel-cache&lt;/b&gt;　车型维度语义缓存（SimpleVectorStore · 可写 · 带 expiresAt）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#C2185B;fontSize=12;fontColor=#880E4F;verticalAlign=middle;dashed=1;dashPattern=4 4;spacingLeft=8;align=left;" parent="1" vertex="1">
+          <mxGeometry x="284" y="790" width="546" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="bm-note" value="车书/QA 离线建库经 Blob 只读同步下来（权威内容源）；缓存库运行时可写、库小用 Simple，删过期条目干净。" style="text;html=1;fontSize=10.5;align=left;spacingLeft=8;whiteSpace=wrap;fontColor=#37474F;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="284" y="858" width="546" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="bd-box" value="" style="rounded=1;fillColor=#FFF3E0;opacity=55;dashed=1;dashPattern=6 6;strokeColor=#CC6600;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="870" y="660" width="590" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="bd-icon" value="" style="shape=image;image=img/lib/azure2/app_services/App_Services.svg;aspect=fixed;imageWidth=28;imageHeight=28;" parent="1" vertex="1">
+          <mxGeometry x="888" y="672" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="bd-hdr" value="&lt;b&gt;检索目标 · ByDevice App Service&lt;/b&gt;（按 deviceId · HRW + Affinity · pool N 实例）" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#BF360C;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="924" y="672" width="520" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="bd-lib" value="&lt;b&gt;长尾偏好库&lt;/b&gt;　long-tail-pref（SimpleVectorStore）&#xa;每 device 一份 persist · 写路径 persist 落盘 → 推回 Blob" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CC6600;fontSize=12;fontColor=#BF360C;verticalAlign=top;spacingTop=8;" parent="1" vertex="1">
+          <mxGeometry x="894" y="712" width="546" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="bd-cache" value="&lt;b&gt;bydevice-cache&lt;/b&gt;　device 维度语义缓存（SimpleVectorStore · 可写 · 带 expiresAt）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#C2185B;fontSize=12;fontColor=#880E4F;verticalAlign=middle;dashed=1;dashPattern=4 4;spacingLeft=8;align=left;" parent="1" vertex="1">
+          <mxGeometry x="894" y="790" width="546" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="bd-note" value="长尾偏好 + bydevice-cache 都按 deviceId 经 HRW + Affinity 落固定 instance，是同库不同 lib（Type 标签区分），共用一套亲和路由；缓存 TTL 短、偏好 TTL 长。" style="text;html=1;fontSize=10.5;fillColor=#FFEBEE;strokeColor=#EF5350;rounded=1;align=left;spacingLeft=8;spacingTop=6;whiteSpace=wrap;fontColor=#B71C1C;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="894" y="858" width="546" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="cache-content" value="&lt;b&gt;缓存内容独立自成一类&lt;/b&gt;　缓存条目不是从车书/QA/长尾库查出来再复制（那样无意义），而是它自身承载的一类内容（如高频直答、预置问答对）。&lt;b&gt;缓存键&lt;/b&gt;=向量近似匹配(cosine≥阈值)+分区(customer/车型/lang/type/modelVersion)；&lt;b&gt;保存&lt;/b&gt;=结果写回打 expiresAt（bymodel 长 / bydevice 短）。" style="text;html=1;fontSize=10.5;fillColor=#FFF0F5;strokeColor=#E091B4;rounded=1;align=left;spacingLeft=8;spacingTop=6;whiteSpace=wrap;fontColor=#880E4F;" parent="1" vertex="1">
+          <mxGeometry x="260" y="1000" width="1180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="expire-note" value="&lt;b&gt;过期机制（底层向量库无原生 TTL，须自实现两步）&lt;/b&gt;&#xa;① 逻辑过期：查询后按 expiresAt&amp;lt;now 过滤，过期条目不返回（即时生效，条目仍在库里）。&#xa;② 物理过期：独立定时 job（Azure DevOps Pipeline）周期扫 expiresAt&amp;lt;now → delete_nodes 真删 + persist，回收内存/磁盘。&#xa;仅缓存库有 expiresAt；&lt;b&gt;长尾偏好不设 TTL&lt;/b&gt;，靠记忆提炼 pipeline 覆盖写更新，不自动过期。" style="text;html=1;fontSize=10.5;fillColor=#FFF8E1;strokeColor=#F9A825;rounded=1;align=left;spacingLeft=8;spacingTop=6;whiteSpace=wrap;fontColor=#6D4C00;" parent="1" vertex="1">
+          <mxGeometry x="260" y="1080" width="320" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="st-box" value="" style="rounded=1;fillColor=#E8EAF6;opacity=55;dashed=1;dashPattern=6 6;strokeColor=#3949AB;" parent="1" connectable="0" vertex="1">
+          <mxGeometry x="700" y="1100" width="500" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="st-icon" value="" style="shape=image;image=img/lib/azure2/storage/Storage_Accounts.svg;aspect=fixed;imageWidth=28;imageHeight=28;" parent="1" vertex="1">
+          <mxGeometry x="718" y="1112" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="st-hdr" value="&lt;b&gt;Storage Account&lt;/b&gt;" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#1A237E;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="754" y="1112" width="180" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="blob" value="&lt;b&gt;Blob Storage&lt;/b&gt;&#xa;source of truth" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=14;fillColor=#DAE8FC;strokeColor=#4472C4;fontSize=11.5;fontColor=#1F3864;" parent="1" vertex="1">
+          <mxGeometry x="800" y="1152" width="120" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="st-note" value="离线建库产出 + 有状态库写回灌，都落这里作为权威副本。车书/QA 只读同步下行；长尾偏好写回上行。缓存库轻量、可不落 Blob（丢了重建成本低）。" style="text;html=1;fontSize=10;align=left;spacingLeft=8;whiteSpace=wrap;fontColor=#283593;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="950" y="1140" width="235" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#333333;fontColor=#333333;endArrow=block;strokeWidth=2;" parent="1" source="client" target="gw-entry" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="改写+向量化" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#333333;fontColor=#333333;labelBackgroundColor=#FFFFFF;startArrow=block;endArrow=block;strokeWidth=2;" parent="1" source="gw-rw" target="rw1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="450" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" value="type=车书/QA　轮询" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;endArrow=block;strokeWidth=2;" parent="1" source="gw-route" target="bm-lib1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1000" y="620" />
+              <mxPoint x="420" y="620" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-bmcache" value="type=bymodel缓存　轮询" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#C2185B;fontColor=#C2185B;labelBackgroundColor=#FFFFFF;endArrow=block;startArrow=oval;dashed=1;strokeWidth=2;" parent="1" source="gw-route" target="bm-cache" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1030" y="630" />
+              <mxPoint x="230" y="630" />
+              <mxPoint x="230" y="820" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" value="type=长尾偏好　HRW+Affinity" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#CC6600;fontColor=#CC6600;labelBackgroundColor=#FFFFFF;endArrow=block;strokeWidth=2;" parent="1" source="gw-aff" target="bd-lib" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1490" y="410" />
+              <mxPoint x="1490" y="640" />
+              <mxPoint x="1167" y="640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-bdcache" value="type=bydevice缓存　HRW+Affinity" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#C2185B;fontColor=#C2185B;labelBackgroundColor=#FFFFFF;endArrow=block;startArrow=oval;dashed=1;strokeWidth=2;" parent="1" source="gw-aff" target="bd-cache" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1520" y="420" />
+              <mxPoint x="1520" y="820" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" value="只读同步" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#6C8EBF;fontColor=#6C8EBF;labelBackgroundColor=#FFFFFF;dashed=1;endArrow=block;" parent="1" source="blob" target="bm-box" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="555" y="1207" />
+              <mxPoint x="555" y="990" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" value="写回灌 / 恢复" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#6C8EBF;fontColor=#6C8EBF;labelBackgroundColor=#FFFFFF;dashed=1;startArrow=block;endArrow=block;" parent="1" source="blob" target="bd-box" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1165" y="1207" />
+              <mxPoint x="1165" y="990" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lg-box" value="图例（Legend）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#90A4AE;verticalAlign=top;fontStyle=1;fontSize=12.5;fontColor=#37474F;align=left;spacingLeft=10;spacingTop=8;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="250" y="1330" width="900" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="lg1" value="━━ 深灰实线 主链路（Client → Gateway；Gateway ↔ 改写服务）　　━━ 蓝实线 只读检索（车书/QA，轮询）" style="text;html=1;fontSize=11;align=left;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="270" y="1362" width="860" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="lg2" value="- - ○ 洋红虚线 语义缓存（与车书/QA、长尾偏好并列；bymodel-cache 走轮询、bydevice-cache 走 HRW+Affinity）(#c2185b)" style="text;html=1;fontSize=11;align=left;fontColor=#C2185B;" parent="1" vertex="1">
+          <mxGeometry x="270" y="1384" width="860" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="lg3" value="━━ 橙实线 有状态检索（长尾偏好，HRW → Affinity）　　- - 蓝灰虚线 Blob 同步/写回灌/恢复(#6c8ebf)" style="text;html=1;fontSize=11;align=left;fontColor=#CC6600;" parent="1" vertex="1">
+          <mxGeometry x="270" y="1406" width="860" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="lg4" value="- - 绿/橙虚线 离线 pipeline 产出 → Blob（车书/QnA 建库产出；记忆提炼偏好写回）(#2e7d32)" style="text;html=1;fontSize=11;align=left;fontColor=#2E7D32;" parent="1" vertex="1">
+          <mxGeometry x="270" y="1428" width="860" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="pl-box" value="" style="rounded=1;fillColor=#ECEFF1;opacity=70;dashed=1;dashPattern=8 8;strokeColor=#546E7A;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="250" y="1500" width="1190" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="pl-icon" value="" style="shape=image;image=img/lib/azure2/devops/Azure_DevOps.svg;aspect=fixed;imageWidth=28;imageHeight=28;" parent="1" vertex="1">
+          <mxGeometry x="268" y="1512" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="pl-hdr" value="&lt;b&gt;离线数据生产层 · Azure DevOps Pipeline&lt;/b&gt;（批处理，非实时；产出经 Blob 中转，被上方检索目标消费）" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#37474F;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="304" y="1512" width="900" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="pl-carbook" value="&lt;b&gt;车书向量库生成&lt;/b&gt;&#xa;Document Intelligence → 切块 → 嵌入 → 建 UserManual 索引" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1976D2;fontSize=11;fontColor=#0D47A1;verticalAlign=top;spacingTop=8;" parent="1" vertex="1">
+          <mxGeometry x="272" y="1560" width="272" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="pl-carbook-tag" value="Azure DevOps Pipeline" style="text;html=1;fontSize=9.5;align=left;fontColor=#607D8B;" parent="1" vertex="1">
+          <mxGeometry x="280" y="1626" width="200" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="pl-qna" value="&lt;b&gt;QnA 向量库生成&lt;/b&gt;&#xa;问答对 → 切块 → 嵌入 → 建 QnA 索引" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1976D2;fontSize=11;fontColor=#0D47A1;verticalAlign=top;spacingTop=8;" parent="1" vertex="1">
+          <mxGeometry x="564" y="1560" width="272" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="pl-qna-tag" value="Azure DevOps Pipeline" style="text;html=1;fontSize=9.5;align=left;fontColor=#607D8B;" parent="1" vertex="1">
+          <mxGeometry x="572" y="1626" width="200" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="pl-memory" value="&lt;b&gt;记忆提炼&lt;/b&gt;&#xa;对话历史 → 提炼长尾偏好 → 嵌入 → 写长尾偏好库" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CC6600;fontSize=11;fontColor=#BF360C;verticalAlign=top;spacingTop=8;" parent="1" vertex="1">
+          <mxGeometry x="856" y="1560" width="272" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="pl-memory-tag" value="Azure DevOps Pipeline" style="text;html=1;fontSize=9.5;align=left;fontColor=#607D8B;" parent="1" vertex="1">
+          <mxGeometry x="864" y="1626" width="200" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="pl-cleanup" value="&lt;b&gt;缓存过期清理&lt;/b&gt;&#xa;定时扫两个缓存库 → 删 expiresAt&amp;lt;now → persist" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C2185B;fontSize=11;fontColor=#880E4F;verticalAlign=top;spacingTop=8;" parent="1" vertex="1">
+          <mxGeometry x="1148" y="1560" width="272" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="pl-cleanup-tag" value="Azure DevOps Pipeline · 定时触发" style="text;html=1;fontSize=9.5;align=left;fontColor=#607D8B;" parent="1" vertex="1">
+          <mxGeometry x="1156" y="1626" width="240" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="pl-desc" value="四个 pipeline 都是离线批处理：车书/QnA 生成 = 建只读库产出 → Blob → ByModel 只读同步；记忆提炼 = 从对话提炼偏好 → 经 Blob → ByDevice 长尾偏好库；缓存过期清理 = 定时物理删除过期缓存条目（底层向量库无原生 TTL）。运行时服务只消费，不建库。" style="text;html=1;fontSize=10;fillColor=#F5F5F5;strokeColor=#B0BEC5;rounded=1;align=left;spacingLeft=8;spacingTop=4;whiteSpace=wrap;fontColor=#455A64;" parent="1" vertex="1">
+          <mxGeometry x="272" y="1660" width="1148" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pe1" value="离线产出 → Blob" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#2E7D32;fontColor=#2E7D32;labelBackgroundColor=#FFFFFF;endArrow=block;dashed=1;dashPattern=8 8;strokeWidth=2;" parent="1" source="pl-carbook" target="blob" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="240" y="1490" />
+              <mxPoint x="240" y="1207" />
+              <mxPoint x="820" y="1207" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pe2" value="离线产出 → Blob" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#2E7D32;fontColor=#2E7D32;labelBackgroundColor=#FFFFFF;endArrow=block;dashed=1;dashPattern=8 8;strokeWidth=2;" parent="1" source="pl-qna" target="blob" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="1500" />
+              <mxPoint x="860" y="1500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pe3" value="偏好 insert/update → Blob" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#CC6600;fontColor=#CC6600;labelBackgroundColor=#FFFFFF;endArrow=block;dashed=1;dashPattern=8 8;strokeWidth=2;" parent="1" source="pl-memory" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="992" y="1730" />
+              <mxPoint x="1600" y="1730" />
+              <mxPoint x="1600" y="830" />
+            </Array>
+            <mxPoint x="1450" y="830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pe4" value="定时删过期缓存条目" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#C2185B;fontColor=#C2185B;labelBackgroundColor=#FFFFFF;endArrow=block;dashed=1;dashPattern=8 8;strokeWidth=2;" parent="1" source="pl-cleanup" target="bd-cache" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1284" y="1470" />
+              <mxPoint x="1550" y="1470" />
+              <mxPoint x="1550" y="820" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3" value="定时删过期缓存条目" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#C2185B;fontColor=#C2185B;labelBackgroundColor=#FFFFFF;endArrow=block;dashed=1;dashPattern=8 8;strokeWidth=2;entryX=0.302;entryY=-0.124;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="cache-content" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1294" y="1480" />
+              <mxPoint x="1130" y="1480" />
+              <mxPoint x="1130" y="1090" />
+              <mxPoint x="616" y="1090" />
+            </Array>
+            <mxPoint x="1294" y="1570" as="sourcePoint" />
+            <mxPoint x="1450" y="830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="cmp" name="AI Search vs 自研-对比">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1060" pageHeight="1210" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cmp-title" value="向量检索方案对比：Azure AI Search（托管）vs Python 自研（FAISS + LlamaIndex）" style="rounded=0;html=1;fillColor=#1A237E;strokeColor=none;fontColor=#FFFFFF;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1060" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cmp-sub" value="数据取自 2026-08 CarBookBench 同区实测（Korea Central，MG4车书 6509向量，51组ground-truth）" style="text;html=1;fontSize=11;fontColor=#5C6BC0;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="0" y="60" width="1060" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="h-dim" value="对比维度" style="rounded=0;html=1;fillColor=#37474F;strokeColor=#263238;fontColor=#FFFFFF;fontSize=13;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="40" y="120" width="220" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="h-ai" value="🟦 Azure AI Search（托管）" style="rounded=0;html=1;fillColor=#1565C0;strokeColor=#0D47A1;fontColor=#FFFFFF;fontSize=13;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="260" y="120" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="h-py" value="🟩 Python 自研（FAISS 进程内）" style="rounded=0;html=1;fillColor=#2E7D32;strokeColor=#1B5E20;fontColor=#FFFFFF;fontSize=13;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="640" y="120" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="d0" value="性能·纯检索延迟" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="182" width="220" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="a0" value="P50 41ms / P90 50ms&lt;br&gt;(HNSW,跨网络一跳)" style="rounded=0;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="260" y="182" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="p0" value="P50 8ms(内存O(N)直查)&lt;br&gt;小库更快" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="640" y="182" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="d1" value="性能·端到端" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="244" width="220" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="P50 ~200-500ms&lt;br&gt;瓶颈在嵌入非检索" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="260" y="244" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="p1" value="P50 ~200ms&lt;br&gt;同样被嵌入主导" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="640" y="244" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="d2" value="性能·单副本吞吐" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="306" width="220" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="~28 QPS(Basic 1副本)&lt;br&gt;加replica线性扩" style="rounded=0;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="260" y="306" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="p2" value="~577 QPS(进程内)&lt;br&gt;受CPU核数限" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="640" y="306" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="d3" value="检索准确性(实测Hit@5)" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="368" width="220" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" value="1.00&lt;br&gt;filter精确隔离" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="260" y="368" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="p3" value="0.98&lt;br&gt;与AI Search 99.3%一致" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="640" y="368" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="d4" value="成本" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="430" width="220" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" value="Basic $75/月固定&lt;br&gt;(不管流量全天扣)" style="rounded=0;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="260" y="430" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="p4" value="近零边际(复用现有&lt;br&gt;App Service计算)" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="640" y="430" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="d5" value="跨云 / 可移植" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="492" width="220" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="a5" value="锁定 Azure&lt;br&gt;仅Azure/世纪互联" style="rounded=0;html=1;fillColor=#FFEBEE;strokeColor=#C62828;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="260" y="492" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="p5" value="任意云/本地/离线&lt;br&gt;FAISS纯文件可搬" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="640" y="492" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="d6" value="厂商锁定" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="554" width="220" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="a6" value="高(专有服务+API)" style="rounded=0;html=1;fillColor=#FFEBEE;strokeColor=#C62828;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="260" y="554" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="p6" value="无(开源FAISS+&lt;br&gt;LlamaIndex)" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="640" y="554" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="d7" value="技术复杂度" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="616" width="220" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="a7" value="低:托管,发SDK即可&lt;br&gt;删除三级缓存/blob同步" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="260" y="616" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="p7" value="高:自管内存→本地→&lt;br&gt;Blob三级+az同步" style="rounded=0;html=1;fillColor=#FFEBEE;strokeColor=#C62828;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="640" y="616" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="d8" value="一致性 / 并发写" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="678" width="220" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="a8" value="托管仲裁+乐观并发&lt;br&gt;(ETag)根治覆盖" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="260" y="678" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="p8" value="last-writer-wins&lt;br&gt;整目录覆盖有丢数据点" style="rounded=0;html=1;fillColor=#FFEBEE;strokeColor=#C62828;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="640" y="678" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="d9" value="运维负担" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="740" width="220" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="a9" value="零:扩缩/加载/落盘&lt;br&gt;全托管" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="260" y="740" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="p9" value="自扛:实例一致性/&lt;br&gt;/home持久化/冷加载" style="rounded=0;html=1;fillColor=#FFEBEE;strokeColor=#C62828;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="640" y="740" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="d10" value="可扩展性" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="802" width="220" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="a10" value="加replica/partition&lt;br&gt;配置即生效" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="260" y="802" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="p10" value="加实例需自研HRW&lt;br&gt;亲和路由" style="rounded=0;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="640" y="802" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="d11" value="数据规模上限" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="864" width="220" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="a11" value="托管分区,可到&lt;br&gt;TB级/千万向量" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="260" y="864" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="p11" value="单机内存O(N)&lt;br&gt;百万级需换FAISS-IVF" style="rounded=0;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="640" y="864" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="d12" value="检索能力" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="926" width="220" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="a12" value="向量+关键词Hybrid&lt;br&gt;+语义重排(内置)" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="260" y="926" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="p12" value="纯向量,Hybrid/重排&lt;br&gt;需自己拼" style="rounded=0;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="640" y="926" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="d13" value="过滤(多租户隔离)" style="rounded=0;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#263238;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="988" width="220" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="a13" value="引擎级filtered&lt;br&gt;vector search" style="rounded=0;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="260" y="988" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="p13" value="Python遍历O(N)&lt;br&gt;metadata_filter" style="rounded=0;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;fontColor=#263238;fontSize=11;align=left;verticalAlign=middle;spacingLeft=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="640" y="988" width="380" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="lg-legend" value="图例：  🟢 绿=占优 / 更省 / 更简单     🟡 黄=中等 / 有条件     🔴 红=劣势 / 需自研 / 有风险" style="rounded=1;html=1;fillColor=#F5F5F5;strokeColor=#BDBDBD;fontColor=#424242;fontSize=11;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1070" width="980" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="concl" value="&lt;b&gt;结论（基于实测）&lt;/b&gt;&lt;br&gt;• &lt;b&gt;性能不是分水岭&lt;/b&gt;：端到端都被嵌入(~150-230ms)与网络主导，纯检索差异(41ms vs 8ms)在端到端里被淹没。&lt;br&gt;• &lt;b&gt;选 AI Search 的理由是运维/一致性/准确性，不是速度&lt;/b&gt;：删掉三级缓存+blob同步、根治并发写覆盖、Hit@5略优(1.0 vs 0.98)。&lt;br&gt;• &lt;b&gt;选 Python 自研的理由是跨云/成本/无锁定&lt;/b&gt;：可搬任意云或离线、近零边际成本、开源无厂商锁定。&lt;br&gt;• &lt;b&gt;务实路线&lt;/b&gt;：只读小库(车书/QA)留 FAISS 省成本；多租户可写库(长尾偏好)迁 AI Search 换一致性托管。" style="rounded=1;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;fontColor=#263238;fontSize=12;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1114" width="980" height="128" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
