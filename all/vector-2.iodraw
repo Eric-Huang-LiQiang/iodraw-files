@@ -229,9 +229,6 @@
         <mxCell id="pl-memory-tag" value="Azure DevOps Pipeline" style="text;html=1;fontSize=9.5;align=left;fontColor=#607D8B;" parent="1" vertex="1">
           <mxGeometry x="864" y="1626" width="200" height="16" as="geometry" />
         </mxCell>
-        <mxCell id="pl-cleanup" value="&lt;b&gt;缓存过期清理&lt;/b&gt;&#xa;定时扫两个缓存库 → 删 expiresAt&amp;lt;now → persist" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C2185B;fontSize=11;fontColor=#880E4F;verticalAlign=top;spacingTop=8;" parent="1" vertex="1">
-          <mxGeometry x="1148" y="1560" width="272" height="90" as="geometry" />
-        </mxCell>
         <mxCell id="pl-cleanup-tag" value="Azure DevOps Pipeline · 定时触发" style="text;html=1;fontSize=9.5;align=left;fontColor=#607D8B;" parent="1" vertex="1">
           <mxGeometry x="1156" y="1626" width="240" height="16" as="geometry" />
         </mxCell>
