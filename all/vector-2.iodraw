@@ -267,15 +267,6 @@
             <mxPoint x="1430" y="190" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="pe4" value="定时删过期缓存条目" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#C2185B;fontColor=#C2185B;labelBackgroundColor=#FFFFFF;endArrow=block;dashed=1;dashPattern=8 8;strokeWidth=2;" parent="1" source="pl-cleanup" target="bd-cache" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1284" y="1470" />
-              <mxPoint x="1550" y="1470" />
-              <mxPoint x="1550" y="820" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
         <mxCell id="3" value="定时删过期缓存条目" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#C2185B;fontColor=#C2185B;labelBackgroundColor=#FFFFFF;endArrow=block;dashed=1;dashPattern=8 8;strokeWidth=2;entryX=0.302;entryY=-0.124;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="cache-content" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
