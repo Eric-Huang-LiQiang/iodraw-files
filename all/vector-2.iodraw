@@ -148,17 +148,8 @@
         <mxCell id="e4" value="type=长尾偏好　HRW+Affinity" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#CC6600;fontColor=#CC6600;labelBackgroundColor=#FFFFFF;endArrow=block;strokeWidth=2;" parent="1" source="gw-aff" target="bd-lib" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1490" y="410" />
-              <mxPoint x="1490" y="640" />
+              <mxPoint x="1300" y="640" />
               <mxPoint x="1167" y="640" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="e-bdcache" value="type=bydevice缓存　HRW+Affinity" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#C2185B;fontColor=#C2185B;labelBackgroundColor=#FFFFFF;endArrow=block;startArrow=oval;dashed=1;strokeWidth=2;" parent="1" source="gw-aff" target="bd-cache" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1520" y="420" />
-              <mxPoint x="1520" y="820" />
             </Array>
           </mxGeometry>
         </mxCell>
