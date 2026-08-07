@@ -25,7 +25,7 @@
         <mxCell id="gw-icon" value="" style="shape=image;image=img/lib/azure2/app_services/App_Services.svg;aspect=fixed;imageWidth=28;imageHeight=28;" parent="1" vertex="1">
           <mxGeometry x="268" y="112" width="28" height="28" as="geometry" />
         </mxCell>
-        <mxCell id="gw-hdr" value="&lt;b&gt;Vector Gateway&lt;/b&gt;　查询/更新统一入口 · 编排层（无状态，可横向扩）" style="text;html=1;fontSize=13.5;fontStyle=1;fontColor=#4527A0;align=left;verticalAlign=middle;" parent="1" vertex="1">
+        <mxCell id="gw-hdr" value="&lt;b&gt;Vector Gateway&lt;/b&gt;　查询/更新统一入口 · 编排层（无状态，可横向扩）1 instance" style="text;html=1;fontSize=13.5;fontStyle=1;fontColor=#4527A0;align=left;verticalAlign=middle;" parent="1" vertex="1">
           <mxGeometry x="300" y="112" width="604" height="28" as="geometry" />
         </mxCell>
         <mxCell id="gw-entry" value="①　统一入口&#xa;/vector　query + update" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7E57C2;fontSize=12;fontColor=#311B92;" parent="1" vertex="1">
@@ -96,9 +96,6 @@
         </mxCell>
         <mxCell id="bd-lib" value="&lt;b&gt;长尾偏好库&lt;/b&gt;　long-tail-pref（SimpleVectorStore）&#xa;每 device 一份 persist · 写路径 persist 落盘 → 推回 Blob" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CC6600;fontSize=12;fontColor=#BF360C;verticalAlign=top;spacingTop=8;" parent="1" vertex="1">
           <mxGeometry x="894" y="712" width="546" height="66" as="geometry" />
-        </mxCell>
-        <mxCell id="bd-cache" value="&lt;b&gt;bydevice-cache&lt;/b&gt;　device 维度语义缓存（SimpleVectorStore · 可写 · 带 expiresAt）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#C2185B;fontSize=12;fontColor=#880E4F;verticalAlign=middle;dashed=1;dashPattern=4 4;spacingLeft=8;align=left;" parent="1" vertex="1">
-          <mxGeometry x="894" y="790" width="546" height="60" as="geometry" />
         </mxCell>
         <mxCell id="bd-note" value="长尾偏好 + bydevice-cache 都按 deviceId 经 HRW + Affinity 落固定 instance，是同库不同 lib（Type 标签区分），共用一套亲和路由；缓存 TTL 短、偏好 TTL 长。" style="text;html=1;fontSize=10.5;fillColor=#FFEBEE;strokeColor=#EF5350;rounded=1;align=left;spacingLeft=8;spacingTop=6;whiteSpace=wrap;fontColor=#B71C1C;verticalAlign=middle;" parent="1" vertex="1">
           <mxGeometry x="894" y="858" width="546" height="110" as="geometry" />
