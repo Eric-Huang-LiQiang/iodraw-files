@@ -261,8 +261,10 @@
               <mxPoint x="992" y="1730" />
               <mxPoint x="1600" y="1730" />
               <mxPoint x="1600" y="830" />
+              <mxPoint x="1620" y="830" />
+              <mxPoint x="1620" y="190" />
             </Array>
-            <mxPoint x="1450" y="830" as="targetPoint" />
+            <mxPoint x="1430" y="190" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="pe4" value="定时删过期缓存条目" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#C2185B;fontColor=#C2185B;labelBackgroundColor=#FFFFFF;endArrow=block;dashed=1;dashPattern=8 8;strokeWidth=2;" parent="1" source="pl-cleanup" target="bd-cache" edge="1">
