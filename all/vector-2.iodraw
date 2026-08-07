@@ -82,9 +82,6 @@
         <mxCell id="bm-lib2" value="&lt;b&gt;QA 库&lt;/b&gt;&#xa;QnA（FAISS · 只读）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1976D2;fontSize=12;fontColor=#0D47A1;verticalAlign=top;spacingTop=8;" parent="1" vertex="1">
           <mxGeometry x="564" y="712" width="266" height="66" as="geometry" />
         </mxCell>
-        <mxCell id="bm-cache" value="&lt;b&gt;bymodel-cache&lt;/b&gt;　车型维度语义缓存（SimpleVectorStore · 可写 · 带 expiresAt）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#C2185B;fontSize=12;fontColor=#880E4F;verticalAlign=middle;dashed=1;dashPattern=4 4;spacingLeft=8;align=left;" parent="1" vertex="1">
-          <mxGeometry x="284" y="790" width="546" height="60" as="geometry" />
-        </mxCell>
         <mxCell id="bm-note" value="车书/QA 离线建库经 Blob 只读同步下来（权威内容源）；缓存库运行时可写、库小用 Simple，删过期条目干净。" style="text;html=1;fontSize=10.5;align=left;spacingLeft=8;whiteSpace=wrap;fontColor=#37474F;verticalAlign=middle;" parent="1" vertex="1">
           <mxGeometry x="284" y="858" width="546" height="110" as="geometry" />
         </mxCell>
