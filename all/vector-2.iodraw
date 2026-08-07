@@ -231,8 +231,7 @@
         <mxCell id="pe3" value="偏好 insert/update → Blob" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#CC6600;fontColor=#CC6600;labelBackgroundColor=#FFFFFF;endArrow=block;dashed=1;dashPattern=8 8;strokeWidth=2;" parent="1" source="pl-memory" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="992" y="1730" />
-              <mxPoint x="1600" y="1730" />
+              <mxPoint x="1600" y="1610" />
               <mxPoint x="1600" y="830" />
               <mxPoint x="1620" y="830" />
               <mxPoint x="1620" y="190" />
