@@ -91,7 +91,7 @@
         <mxCell id="cache-a-info" value="&lt;b&gt;piple line 传入&lt;span style=&quot;font-size: 18px; text-wrap: nowrap;&quot;&gt;storage account 路径&lt;/span&gt;&lt;/b&gt;&lt;div&gt;&lt;b&gt;清除已失效缓存后推送到Storage account&lt;/b&gt;&lt;span style=&quot;font-size: 18px; text-wrap: nowrap;&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;从Storage account 下载向量库并加载进内存&lt;/b&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;fontSize=14;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;spacing=8;whiteSpace=wrap;align=left;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="1755" y="305" width="315" height="85" as="geometry" />
         </mxCell>
-        <mxCell id="cache-a" value="A：共享索引 + 关联记录&lt;br&gt;&lt;br&gt;Q4：模型兼容 + 未过期&lt;br&gt;非空标签过滤 → 问题向量 Top 1&lt;br&gt;&lt;br&gt;W4：保存问题 / 向量 / 答案&lt;br&gt;内部计算到期时间并标记变更" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=15;spacing=10;" parent="1" vertex="1">
+        <mxCell id="cache-a" value="&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Q：共享索引 + 关联记录.返回&lt;span style=&quot;background-color: initial;&quot;&gt;未过期&lt;/span&gt;&lt;div&gt;非空标签过滤 → 问题向量 Top 1&lt;/div&gt;&lt;div&gt;W：保存问题 / 向量 / 答案/到期时间&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=15;spacing=10;" parent="1" vertex="1">
           <mxGeometry x="1755" y="460" width="320" height="200" as="geometry" />
         </mxCell>
         <mxCell id="cache-b-icon" style="shape=image;image=img/lib/azure2/app_services/App_Services.svg;aspect=fixed;imageWidth=30;imageHeight=30;" parent="1" vertex="1">
