@@ -101,7 +101,7 @@
           <mxGeometry x="760" y="1250" width="330" height="120" as="geometry" />
         </mxCell>
         <mxCell id="maintenance-trigger" value="B / P：每个目标后端的维护任务&lt;br&gt;定时触发或管理接口触发&lt;br&gt;同后端串行；A / B 各自执行" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=14;spacing=8;" parent="1" vertex="1">
-          <mxGeometry x="1140" y="1250" width="305" height="120" as="geometry" />
+          <mxGeometry x="810" y="1450" width="305" height="120" as="geometry" />
         </mxCell>
         <mxCell id="cleanup" value="B1：先批量清理过期记录&lt;br&gt;删除向量与对应内容&lt;br&gt;无新写入也要检查过期&lt;br&gt;有变化或主动备份才生成快照" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=14;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="1495" y="1250" width="285" height="120" as="geometry" />
@@ -157,16 +157,6 @@
               <mxPoint x="2160" y="1268" />
               <mxPoint x="2160" y="1265" />
             </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="deployment-restore" value="发布启动；普通重启也执行 R" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=block;strokeColor=#666666;fontColor=#666666;labelBackgroundColor=#FFFFFF;fontSize=13;exitX=0.5;exitY=1;entryX=0.3;entryY=1;" parent="1" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="925" y="1620" />
-              <mxPoint x="2016" y="1620" />
-            </Array>
-            <mxPoint x="925" y="1595" as="sourcePoint" />
-            <mxPoint x="2016" y="1595" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="storage-download-restore" value="下载最近完整快照" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=block;strokeColor=#CC6600;fontColor=#CC6600;labelBackgroundColor=#FFFFFF;fontSize=13;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" parent="1" source="storage-icon" edge="1">
