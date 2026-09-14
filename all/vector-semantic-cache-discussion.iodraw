@@ -49,9 +49,6 @@
         <mxCell id="query-embed" value="调用embedings 服务获取问题向量" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0066CC;fontSize=15;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="930" y="350" width="245" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="write-queue" value="W2 校验、选后端、入队&lt;br&gt;Vector Service 按设备身份选后端&lt;br&gt;固定目标 / TTL；队列满拒绝" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=15;spacing=8;" parent="1" vertex="1">
-          <mxGeometry x="760" y="655" width="230" height="100" as="geometry" />
-        </mxCell>
         <mxCell id="write-worker" value="W3 后台处理&lt;br&gt;拆分 Messages&lt;br&gt;调用 Embeddings" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=15;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="1040" y="655" width="245" height="100" as="geometry" />
         </mxCell>
@@ -85,7 +82,7 @@
         <mxCell id="cache-a-info" value="&lt;b&gt;piple line 传入&lt;span style=&quot;font-size: 18px; text-wrap: nowrap;&quot;&gt;storage account 路径&lt;/span&gt;&lt;/b&gt;&lt;div&gt;&lt;b&gt;清除已失效缓存后推送到Storage account&lt;/b&gt;&lt;span style=&quot;font-size: 18px; text-wrap: nowrap;&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;从Storage account 下载向量库并加载进内存&lt;/b&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;fontSize=14;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;spacing=8;whiteSpace=wrap;align=left;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="1755" y="305" width="315" height="85" as="geometry" />
         </mxCell>
-        <mxCell id="cache-a" value="&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Q：共享索引 + 关联记录.返回&lt;span style=&quot;background-color: initial;&quot;&gt;未过期&lt;/span&gt;&lt;div&gt;非空标签过滤 → 问题向量 Top 1&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; W：保存问题 / 向量 / 答案/到期时间&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=15;spacing=10;" parent="1" vertex="1">
+        <mxCell id="cache-a" value="&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Q：共享索引 + 关联记录.返回&lt;span style=&quot;background-color: initial;&quot;&gt;未过期&lt;/span&gt;&lt;div&gt;非空标签过滤 → 问题向量 Top 1&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; W：保存问题 / 向量 / 答案/到期时间&lt;/div&gt;&lt;div&gt;如果存在就更新TTL 时间&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=15;spacing=10;" parent="1" vertex="1">
           <mxGeometry x="1755" y="460" width="320" height="200" as="geometry" />
         </mxCell>
         <mxCell id="cache-b-icon" style="shape=image;image=img/lib/azure2/app_services/App_Services.svg;aspect=fixed;imageWidth=30;imageHeight=30;" parent="1" vertex="1">
@@ -148,11 +145,15 @@
         <mxCell id="query-embedding-request" value="改写 / 向量化" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;" parent="1" source="query-embed" target="embedding-query" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="write-request" value="Write" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=13;" parent="1" source="caller-write" target="write-queue" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="write-request" value="Write" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=13;" parent="1" source="caller-write" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="760" y="705.0000000000002" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="write-background-work" value="后台工作项" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;" parent="1" source="write-queue" target="write-worker" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="write-background-work" value="后台工作项" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;" parent="1" target="write-worker" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="990" y="704.9999999999998" as="sourcePoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="write-embedding-request" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;" parent="1" source="write-worker" target="embedding-write" edge="1">
           <mxGeometry relative="1" as="geometry" />
