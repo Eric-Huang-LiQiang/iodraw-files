@@ -106,7 +106,7 @@
         <mxCell id="cleanup" value="B1：先批量清理过期记录&lt;br&gt;删除向量与对应内容&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=14;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="1262.5" y="1250" width="285" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="snapshot" value="B2：一致快照 → 上传 → 提交清单&lt;br&gt;向量与问题 / 答案属于同一版本&lt;br&gt;失败保留上一份完整快照&lt;br&gt;不逐文件覆盖唯一现役文件组" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=14;spacing=8;" parent="1" vertex="1">
+        <mxCell id="snapshot" value="B2：备份上传" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=14;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="1670" y="1250" width="310" height="120" as="geometry" />
         </mxCell>
         <mxCell id="storage-icon" style="shape=image;image=img/lib/azure2/storage/Storage_Accounts.svg;aspect=fixed;imageWidth=30;imageHeight=30;" parent="1" vertex="1">
@@ -114,9 +114,6 @@
         </mxCell>
         <mxCell id="storage-label" value="Storage Account" style="text;html=1;fontSize=16;align=center;fontStyle=1;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="2180" y="1290" width="270" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="storage-info" value="&lt;b&gt;完整快照；非搜索运行盘&lt;/b&gt;&lt;br&gt;PoolId / BackendSlotId / SnapshotId&lt;br&gt;内含各模型空间文件 + manifest&lt;br&gt;账户 / 容器：实施前核实" style="text;html=1;fontSize=13;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;spacing=8;whiteSpace=wrap;align=left;" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="2180" y="1330" width="270" height="105" as="geometry" />
         </mxCell>
         <mxCell id="query-request" value="Search" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=13;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="caller-search" target="query-embed" edge="1">
           <mxGeometry relative="1" as="geometry" />
