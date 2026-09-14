@@ -98,10 +98,10 @@
           <mxGeometry x="55" y="1200" width="610" height="190" as="geometry" />
         </mxCell>
         <mxCell id="maintenance-trigger" value="B / P：每个目标后端的维护任务&lt;br&gt;定时触发或管理接口触发&lt;br&gt;同后端串行；A / B 各自执行" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=14;spacing=8;" parent="1" vertex="1">
-          <mxGeometry x="1140" y="1245" width="305" height="120" as="geometry" />
+          <mxGeometry x="860" y="1250" width="305" height="120" as="geometry" />
         </mxCell>
         <mxCell id="cleanup" value="B1：先批量清理过期记录&lt;br&gt;删除向量与对应内容&lt;br&gt;无新写入也要检查过期&lt;br&gt;有变化或主动备份才生成快照" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=14;spacing=8;" parent="1" vertex="1">
-          <mxGeometry x="1495" y="1250" width="285" height="120" as="geometry" />
+          <mxGeometry x="1262.5" y="1250" width="285" height="120" as="geometry" />
         </mxCell>
         <mxCell id="snapshot" value="B2：一致快照 → 上传 → 提交清单&lt;br&gt;向量与问题 / 答案属于同一版本&lt;br&gt;失败保留上一份完整快照&lt;br&gt;不逐文件覆盖唯一现役文件组" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=14;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="1830" y="1250" width="310" height="120" as="geometry" />
