@@ -151,12 +151,12 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="storage-download-restore" value="下载最近完整快照" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=block;strokeColor=#CC6600;fontColor=#CC6600;labelBackgroundColor=#FFFFFF;fontSize=13;exitX=1;exitY=0.5;entryX=0.786;entryY=1.011;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="storage-icon" target="pipeline" edge="1">
+        <mxCell id="storage-download-restore" value="下载最近完整快照" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=block;strokeColor=#CC6600;fontColor=#CC6600;labelBackgroundColor=#FFFFFF;fontSize=13;exitX=1;exitY=0.5;entryX=0.367;entryY=1.006;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="storage-icon" target="maintenance-trigger" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="2470" y="1265" />
               <mxPoint x="2470" y="1537" />
-              <mxPoint x="535" y="1537" />
+              <mxPoint x="972" y="1537" />
             </Array>
             <mxPoint x="2450" y="1537.5" as="targetPoint" />
           </mxGeometry>
