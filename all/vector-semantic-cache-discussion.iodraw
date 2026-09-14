@@ -26,7 +26,7 @@
           <mxGeometry x="50" y="215" width="270" height="35" as="geometry" />
         </mxCell>
         <mxCell id="caller-search" value="&lt;b&gt;Q1 查询｜POST /SemanticCache/Search&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#7B1FA2&quot;&gt;RoutingDeviceId: string&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#7B1FA2&quot;&gt;Locale: string&lt;/font&gt;&lt;br&gt;Messages: [{ Role: string, Value: string }]&lt;br&gt;Customer: string;&amp;nbsp;&lt;div&gt;DeviceModel: string&lt;br&gt;Language: string;&amp;nbsp;&lt;/div&gt;&lt;div&gt;DeviceId: string&lt;div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0066CC;fontSize=16;spacing=8;align=left;verticalAlign=top;spacing=12;fontSize=15;" parent="1" vertex="1">
-          <mxGeometry x="55" y="380" width="610" height="180" as="geometry" />
+          <mxGeometry x="55" y="365" width="610" height="180" as="geometry" />
         </mxCell>
         <mxCell id="caller-write" value="&lt;b&gt;W1 独立写入｜POST /SemanticCache/Write&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#7B1FA2&quot;&gt;RoutingDeviceId: string&lt;/font&gt;; &lt;font color=&quot;#7B1FA2&quot;&gt;Locale: string&lt;/font&gt;&lt;br&gt;Messages: [{ Role: string, Value: string }]&lt;br&gt;Answer: string（独立答案，不放入 Messages）&lt;br&gt;TTL: integer（分钟；未传用后台配置默认值）&lt;br&gt;Customer: string; DeviceModel: string&lt;br&gt;Language: string; DeviceId: string&lt;br&gt;&lt;b&gt;202 Accepted → 建议无响应体；无须先查询。&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0066CC;fontSize=15;spacing=8;align=left;verticalAlign=top;spacing=12;fontSize=15;" parent="1" vertex="1">
           <mxGeometry x="55" y="640" width="610" height="240" as="geometry" />
@@ -43,8 +43,8 @@
         <mxCell id="vector-label" value="Vector Service" style="text;html=1;fontSize=15;align=center;fontStyle=1;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="755" y="255" width="160" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="vector-info" value="&lt;b&gt;唯一业务与管理入口&lt;/b&gt;&lt;br&gt;路由由 Vector Service 内部统一执行&lt;br&gt;查写均向量化，不设精确命中短路&lt;br&gt;错误与无候选区分；不设业务分数阈值" style="text;html=1;fontSize=14;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;spacing=8;whiteSpace=wrap;align=left;" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="930" y="210" width="365" height="115" as="geometry" />
+        <mxCell id="vector-info" value="&lt;b&gt;Vector 平台唯一入口&lt;/b&gt;" style="text;html=1;fontSize=14;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;spacing=8;whiteSpace=wrap;align=left;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="930" y="210" width="320" height="40" as="geometry" />
         </mxCell>
         <mxCell id="query-entry" value="Q1 校验 + 稳定路由&lt;br&gt;部署配置选池&lt;br&gt;RoutingDeviceId 选后端" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0066CC;fontSize=15;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="760" y="410" width="230" height="90" as="geometry" />
