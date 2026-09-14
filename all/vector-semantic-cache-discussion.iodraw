@@ -52,8 +52,11 @@
         <mxCell id="write-worker" value="调用embedings 服务获取问题向量" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=15;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="937.5" y="725" width="245" height="100" as="geometry" />
         </mxCell>
+        <mxCell id="4E-vALEkcteG9tEwYn_--3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="write-dispatch" target="cache-a">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="write-dispatch" value="Route到对应的App Service&amp;nbsp;&lt;div&gt;(&lt;span style=&quot;background-color: initial;&quot;&gt;RoutingDeviceId,HRW 算法&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;)&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=15;spacing=8;" parent="1" vertex="1">
-          <mxGeometry x="950" y="870" width="245" height="95" as="geometry" />
+          <mxGeometry x="950" y="910" width="245" height="95" as="geometry" />
         </mxCell>
         <mxCell id="embedding-icon" style="shape=image;image=img/lib/azure2/app_services/App_Services.svg;aspect=fixed;imageWidth=30;imageHeight=30;" parent="1" vertex="1">
           <mxGeometry x="1390" y="215" width="30" height="30" as="geometry" />
