@@ -184,14 +184,6 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="management-pipeline-response" value="状态：全部 Completed 才通过" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;exitX=0.3;exitY=1;entryX=0.5;entryY=1;" parent="1" source="backup-management" target="pipeline" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="859" y="1400" />
-              <mxPoint x="185" y="1400" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
         <mxCell id="deployment-restore" value="发布启动；普通重启也执行 R" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=block;strokeColor=#666666;fontColor=#666666;labelBackgroundColor=#FFFFFF;fontSize=13;exitX=0.5;exitY=1;entryX=0.3;entryY=1;" parent="1" source="deployment" target="restore" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
