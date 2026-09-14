@@ -118,9 +118,6 @@
         <mxCell id="storage-info" value="&lt;b&gt;完整快照；非搜索运行盘&lt;/b&gt;&lt;br&gt;PoolId / BackendSlotId / SnapshotId&lt;br&gt;内含各模型空间文件 + manifest&lt;br&gt;账户 / 容器：实施前核实" style="text;html=1;fontSize=13;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;spacing=8;whiteSpace=wrap;align=left;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="2180" y="1330" width="270" height="105" as="geometry" />
         </mxCell>
-        <mxCell id="backup-status" value="P：逐后端确认完成&lt;br&gt;快照 ID / 修订 / 完成时间&lt;br&gt;支持跨入口实例查询状态&lt;br&gt;202 不等于 Completed" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#9673A6;fontSize=14;spacing=8;" parent="1" vertex="1">
-          <mxGeometry x="1140" y="1480" width="305" height="115" as="geometry" />
-        </mxCell>
         <mxCell id="restore" value="R：每次启动恢复本后端快照&lt;br&gt;校验 → 排除过期 → 加载 → 就绪&lt;br&gt;恢复不重算有效期；真正无快照可空库&lt;br&gt;下载失败 / 损坏不能当空库覆盖备份" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=14;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="1830" y="1480" width="620" height="115" as="geometry" />
         </mxCell>
@@ -165,20 +162,22 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="snapshot-completion-evidence" value="成功提交后的完成信息" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=13;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="snapshot" target="backup-status" edge="1">
+        <mxCell id="snapshot-completion-evidence" value="成功提交后的完成信息" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=13;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="snapshot" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1985" y="1420" />
               <mxPoint x="1292" y="1420" />
             </Array>
+            <mxPoint x="1292.5" y="1480" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="backup-status-through-vector" value="各后端状态" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;exitX=0;exitY=0.25;entryX=1;entryY=0.85;" parent="1" source="backup-status" target="backup-management" edge="1">
+        <mxCell id="backup-status-through-vector" value="各后端状态" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;exitX=0;exitY=0.25;entryX=1;entryY=0.85;" parent="1" target="backup-management" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1115" y="1509" />
               <mxPoint x="1115" y="1352" />
             </Array>
+            <mxPoint x="1140" y="1508.75" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="deployment-restore" value="发布启动；普通重启也执行 R" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=block;strokeColor=#666666;fontColor=#666666;labelBackgroundColor=#FFFFFF;fontSize=13;exitX=0.5;exitY=1;entryX=0.3;entryY=1;" parent="1" target="restore" edge="1">
