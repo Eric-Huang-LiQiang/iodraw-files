@@ -157,14 +157,6 @@
         <mxCell id="query-embedding-request" value="改写 / 向量化" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;" parent="1" source="query-embed" target="embedding-query" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="query-embedding-response" value="向量 + 模型版本" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=13;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" parent="1" source="embedding-query" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1510" y="575" />
-            </Array>
-            <mxPoint x="1285" y="577.4999999999998" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="write-request" value="Write" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=13;" parent="1" source="caller-write" target="write-queue" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -279,12 +271,13 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="query-backend-a" value="查询：目标为 A 时" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;exitX=1;exitY=0.2;entryX=0;entryY=0.15;" parent="1" target="cache-a" edge="1">
+        <mxCell id="query-backend-a" value="查询：目标为 A 时" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.15;exitDx=0;exitDy=0;" parent="1" source="query-entry" target="cache-a" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
+              <mxPoint x="1167" y="552" />
               <mxPoint x="1315" y="552" />
-              <mxPoint x="1315" y="365" />
-              <mxPoint x="1690" y="365" />
+              <mxPoint x="1315" y="510" />
+              <mxPoint x="1690" y="510" />
               <mxPoint x="1690" y="490" />
             </Array>
             <mxPoint x="1285" y="552" as="sourcePoint" />
