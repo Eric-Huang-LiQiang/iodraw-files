@@ -142,12 +142,6 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="management-trigger-backup" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;" parent="1" source="backup-management" target="maintenance-trigger" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="maintenance-cleanup" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=block;strokeColor=#CC6600;fontColor=#CC6600;labelBackgroundColor=#FFFFFF;" parent="1" source="maintenance-trigger" target="cleanup" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
         <mxCell id="cleanup-snapshot" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=block;strokeColor=#CC6600;fontColor=#CC6600;labelBackgroundColor=#FFFFFF;" parent="1" source="cleanup" target="snapshot" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
