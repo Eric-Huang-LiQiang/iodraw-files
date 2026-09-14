@@ -77,7 +77,7 @@
           <mxGeometry x="1500" y="210" width="150" height="125" as="geometry" />
         </mxCell>
         <mxCell id="embedding-query" value="Q2 查询改写 / 向量化&lt;br&gt;返回 embedding&lt;br&gt;rewrittenQuery / modelVersion" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0066CC;fontSize=14;spacing=8;" parent="1" vertex="1">
-          <mxGeometry x="1380" y="410" width="265" height="90" as="geometry" />
+          <mxGeometry x="1380" y="350" width="265" height="90" as="geometry" />
         </mxCell>
         <mxCell id="embedding-write" value="W3 写入改写 / 向量化&lt;br&gt;返回 embedding&lt;br&gt;rewrittenQuery / modelVersion" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=14;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="1380" y="655" width="265" height="90" as="geometry" />
@@ -288,19 +288,6 @@
               <mxPoint x="1690" y="490" />
             </Array>
             <mxPoint x="1285" y="552" as="sourcePoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="query-backend-b" value="查询：目标为 B 时" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.15;" parent="1" target="cache-b" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1325" y="577" />
-              <mxPoint x="1325" y="385" />
-              <mxPoint x="1710" y="385" />
-              <mxPoint x="1710" y="435" />
-              <mxPoint x="2100" y="435" />
-              <mxPoint x="2100" y="490" />
-            </Array>
-            <mxPoint x="1285" y="577.4999999999998" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="write-backend-a" value="后台写入：目标为 A 时" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;exitX=1;exitY=0.3;entryX=0;entryY=0.8;dashed=1;" parent="1" source="write-dispatch" target="cache-a" edge="1">
