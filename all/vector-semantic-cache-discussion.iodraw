@@ -20,7 +20,7 @@
           <mxGeometry x="1720" y="150" width="770" height="965" as="geometry" />
         </mxCell>
         <mxCell id="maintenance-section" value="维护与发布｜每个后端独立清理、备份和恢复" style="rounded=1;fillColor=#FFF8E1;fillOpacity=40;dashed=1;strokeColor=#CC6600;verticalAlign=top;align=left;spacing=15;fontSize=18;fontStyle=1;" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="730" y="1160" width="1760" height="475" as="geometry" />
+          <mxGeometry x="730" y="1160" width="1760" height="320" as="geometry" />
         </mxCell>
         <mxCell id="caller-info" value="&lt;b&gt;调用vector service&lt;/b&gt;" style="text;html=1;fontSize=14;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;spacing=8;whiteSpace=wrap;align=left;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="50" y="215" width="270" height="35" as="geometry" />
@@ -95,7 +95,7 @@
           <mxGeometry x="2130" y="460" width="320" height="200" as="geometry" />
         </mxCell>
         <mxCell id="pipeline" value="&lt;b&gt;piple line&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#9673A6;fontSize=15;spacing=10;align=left;verticalAlign=top;spacing=12;fontSize=14;" parent="1" vertex="1">
-          <mxGeometry x="55" y="1200" width="610" height="415" as="geometry" />
+          <mxGeometry x="55" y="1200" width="610" height="190" as="geometry" />
         </mxCell>
         <mxCell id="maintenance-trigger" value="B / P：每个目标后端的维护任务&lt;br&gt;定时触发或管理接口触发&lt;br&gt;同后端串行；A / B 各自执行" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=14;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="1140" y="1245" width="305" height="120" as="geometry" />
