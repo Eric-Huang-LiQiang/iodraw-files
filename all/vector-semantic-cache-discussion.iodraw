@@ -43,7 +43,7 @@
         <mxCell id="query-entry" value="Route 到对应的app service&lt;div&gt;(RoutingDeviceId,HRW 算法)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0066CC;fontSize=15;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="937.5" y="500" width="230" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="4E-vALEkcteG9tEwYn_--1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="query-embed" target="query-entry">
+        <mxCell id="4E-vALEkcteG9tEwYn_--1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="query-embed" target="query-entry" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="query-embed" value="调用embedings 服务获取问题向量" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0066CC;fontSize=15;spacing=8;" parent="1" vertex="1">
@@ -52,7 +52,7 @@
         <mxCell id="write-worker" value="调用embedings 服务获取问题向量" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=15;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="937.5" y="725" width="245" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="4E-vALEkcteG9tEwYn_--3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="write-dispatch" target="cache-a">
+        <mxCell id="4E-vALEkcteG9tEwYn_--3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="write-dispatch" target="cache-a" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="write-dispatch" value="Route到对应的App Service&amp;nbsp;&lt;div&gt;(&lt;span style=&quot;background-color: initial;&quot;&gt;RoutingDeviceId,HRW 算法&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;)&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=15;spacing=8;" parent="1" vertex="1">
@@ -97,7 +97,7 @@
         <mxCell id="pipeline" value="&lt;b&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;piple line&lt;/font&gt;&lt;/b&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;提供Storage account&amp;nbsp; 的参数&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#9673A6;fontSize=15;spacing=10;align=left;verticalAlign=top;spacing=12;fontSize=14;" parent="1" vertex="1">
           <mxGeometry x="55" y="1200" width="610" height="160" as="geometry" />
         </mxCell>
-        <mxCell id="4E-vALEkcteG9tEwYn_--4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="maintenance-trigger" target="cleanup">
+        <mxCell id="4E-vALEkcteG9tEwYn_--4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="maintenance-trigger" target="cleanup" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="maintenance-trigger" value="B / P：每个目标后端的维护任务&lt;br&gt;定时触发或管理接口触发&lt;br&gt;同后端串行；A / B 各自执行" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=14;spacing=8;" parent="1" vertex="1">
@@ -173,7 +173,7 @@
             <mxPoint x="1285" y="552" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="4E-vALEkcteG9tEwYn_--2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.446;entryY=0.057;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="write-worker" target="write-dispatch">
+        <mxCell id="4E-vALEkcteG9tEwYn_--2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.446;entryY=0.057;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="write-worker" target="write-dispatch" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
