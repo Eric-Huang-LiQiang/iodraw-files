@@ -141,18 +141,12 @@
         </mxCell>
         <mxCell id="write-request" value="Write" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=13;" parent="1" source="caller-write" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="760" y="705.0000000000002" as="targetPoint" />
+            <mxPoint x="940" y="705" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="write-embedding-request" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="write-worker" target="embedding-query" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1380" y="700.0000000000002" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="query-result-to-caller" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;" parent="1" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="760" y="1037.4285714285716" as="sourcePoint" />
-            <mxPoint x="665" y="1045" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="pipeline-backup-request" value="Backup / 状态查询" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;" parent="1" source="pipeline" target="backup-management" edge="1">
@@ -252,17 +246,6 @@
               <mxPoint x="1690" y="490" />
             </Array>
             <mxPoint x="1285" y="552" as="sourcePoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="backend-b-query-response" value="B 查询结果（仅查询 B 时）" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;exitX=1;exitY=0.5;entryX=1;entryY=0.7;" parent="1" source="cache-b" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2470" y="560" />
-              <mxPoint x="2470" y="970" />
-              <mxPoint x="1655" y="970" />
-              <mxPoint x="1655" y="1054" />
-            </Array>
-            <mxPoint x="1285.0000000000005" y="1054.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
