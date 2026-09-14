@@ -85,8 +85,8 @@
         <mxCell id="cache-a-label" value="缓存 App A" style="text;html=1;fontSize=15;align=center;fontStyle=1;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="1755" y="255" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="cache-a-info" value="&lt;b&gt;piple line 传入&lt;/b&gt;&lt;span style=&quot;font-size: 18px; font-weight: 700; text-wrap: nowrap;&quot;&gt;SemanticCache#&lt;/span&gt;" style="text;html=1;fontSize=14;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;spacing=8;whiteSpace=wrap;align=left;" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="1755" y="305" width="320" height="110" as="geometry" />
+        <mxCell id="cache-a-info" value="&lt;b&gt;piple line 传入&lt;span style=&quot;font-size: 18px; text-wrap: nowrap;&quot;&gt;storage account 路径&lt;/span&gt;&lt;/b&gt;&lt;div&gt;&lt;b&gt;清除已失效缓存后推送到Storage account&lt;/b&gt;&lt;span style=&quot;font-size: 18px; text-wrap: nowrap;&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;从Storage account 下载向量库并加载进内存&lt;/b&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;fontSize=14;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;spacing=8;whiteSpace=wrap;align=left;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="1755" y="305" width="320" height="45" as="geometry" />
         </mxCell>
         <mxCell id="cache-a" value="A：共享索引 + 关联记录&lt;br&gt;&lt;br&gt;Q4：模型兼容 + 未过期&lt;br&gt;非空标签过滤 → 问题向量 Top 1&lt;br&gt;&lt;br&gt;W4：保存问题 / 向量 / 答案&lt;br&gt;内部计算到期时间并标记变更" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=15;spacing=10;" parent="1" vertex="1">
           <mxGeometry x="1755" y="460" width="320" height="200" as="geometry" />
