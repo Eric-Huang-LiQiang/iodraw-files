@@ -85,7 +85,7 @@
         <mxCell id="cache-a-label" value="缓存 App A" style="text;html=1;fontSize=15;align=center;fontStyle=1;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="1755" y="255" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="cache-a-info" value="&lt;b&gt;固定后端编号 1&lt;/b&gt;&lt;br&gt;单活跃索引进程&lt;br&gt;D100 / D200 → A（示例）&lt;br&gt;同后端共享，不按设备建库" style="text;html=1;fontSize=14;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;spacing=8;whiteSpace=wrap;align=left;" parent="1" vertex="1" connectable="0">
+        <mxCell id="cache-a-info" value="&lt;b&gt;piple line 传入&lt;/b&gt;" style="text;html=1;fontSize=14;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;spacing=8;whiteSpace=wrap;align=left;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="1755" y="305" width="320" height="110" as="geometry" />
         </mxCell>
         <mxCell id="cache-a" value="A：共享索引 + 关联记录&lt;br&gt;&lt;br&gt;Q4：模型兼容 + 未过期&lt;br&gt;非空标签过滤 → 问题向量 Top 1&lt;br&gt;&lt;br&gt;W4：保存问题 / 向量 / 答案&lt;br&gt;内部计算到期时间并标记变更" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=15;spacing=10;" parent="1" vertex="1">
