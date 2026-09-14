@@ -49,8 +49,8 @@
         <mxCell id="query-embed" value="调用embedings 服务获取问题向量" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0066CC;fontSize=15;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="930" y="350" width="245" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="write-worker" value="W3 后台处理&lt;br&gt;拆分 Messages&lt;br&gt;调用 Embeddings" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=15;spacing=8;" parent="1" vertex="1">
-          <mxGeometry x="1040" y="655" width="245" height="100" as="geometry" />
+        <mxCell id="write-worker" value="调用embedings 服务获取问题向量" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=15;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="937.5" y="655" width="245" height="100" as="geometry" />
         </mxCell>
         <mxCell id="write-dispatch" value="W4 向已选后端写入&lt;br&gt;问题 / 向量 / 答案 / 标签 / TTL&lt;br&gt;后台重试沿用同一后端" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=15;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="1040" y="820" width="245" height="95" as="geometry" />
@@ -148,11 +148,6 @@
         <mxCell id="write-request" value="Write" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=13;" parent="1" source="caller-write" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="760" y="705.0000000000002" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="write-background-work" value="后台工作项" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;" parent="1" target="write-worker" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="990" y="704.9999999999998" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="write-embedding-request" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;" parent="1" source="write-worker" target="embedding-write" edge="1">
