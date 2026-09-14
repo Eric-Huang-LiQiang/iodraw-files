@@ -7,9 +7,6 @@
         <mxCell id="title" value="Vector Service 语义缓存｜Azure 部署与业务流程" style="text;html=1;align=left;fontSize=28;fontStyle=1;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="40" y="25" width="2430" height="45" as="geometry" />
         </mxCell>
-        <mxCell id="subtitle" value="2026-09-14 · 尚未实现 / 压测 / 部署 · 无具体 SKU / 真实账户 / 网络拓扑 · FAISS / SimpleVectorStore / Qdrant 尚未定案" style="text;html=1;align=left;fontSize=16;fontColor=#666666;" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="40" y="80" width="2430" height="35" as="geometry" />
-        </mxCell>
         <mxCell id="caller-section" value="调用方与客户端" style="rounded=1;fillColor=#E0F0FF;fillOpacity=40;dashed=1;strokeColor=#0066CC;verticalAlign=top;align=left;spacing=15;fontSize=18;fontStyle=1;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="30" y="150" width="660" height="965" as="geometry" />
         </mxCell>
@@ -25,7 +22,7 @@
         <mxCell id="maintenance-section" value="维护与发布｜每个后端独立清理、备份和恢复" style="rounded=1;fillColor=#FFF8E1;fillOpacity=40;dashed=1;strokeColor=#CC6600;verticalAlign=top;align=left;spacing=15;fontSize=18;fontStyle=1;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="730" y="1160" width="1760" height="475" as="geometry" />
         </mxCell>
-        <mxCell id="caller-info" value="&lt;b&gt;VA 调用方 / Library 客户端&lt;/b&gt;&lt;br&gt;仅传原始设备身份 RoutingDeviceId&lt;br&gt;只调用 Vector Service，不选择后端&lt;br&gt;不直连 Embeddings 或缓存 App&lt;br&gt;四标签可选；查询空值忽略" style="text;html=1;fontSize=14;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;spacing=8;whiteSpace=wrap;align=left;" parent="1" vertex="1" connectable="0">
+        <mxCell id="caller-info" value="&lt;b&gt;调用vector service&lt;/b&gt;" style="text;html=1;fontSize=14;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;spacing=8;whiteSpace=wrap;align=left;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="50" y="215" width="620" height="145" as="geometry" />
         </mxCell>
         <mxCell id="caller-search" value="&lt;b&gt;Q1 查询｜POST /SemanticCache/Search&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#7B1FA2&quot;&gt;RoutingDeviceId: string&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#7B1FA2&quot;&gt;Locale: string&lt;/font&gt;&lt;br&gt;Messages: [{ Role: string, Value: string }]&lt;br&gt;Customer: string; DeviceModel: string&lt;br&gt;Language: string; DeviceId: string&lt;br&gt;Messages 最后一项为当前问题；前面为历史。&lt;br&gt;四个筛选字段为空则忽略；Vector Service 负责选后端。&lt;br&gt;&lt;b&gt;200 → Match：匹配记录或 null，结构见下方 Q5。&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0066CC;fontSize=16;spacing=8;align=left;verticalAlign=top;spacing=12;fontSize=15;" parent="1" vertex="1">
