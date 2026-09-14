@@ -144,7 +144,12 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="pipeline-backup-request" value="Backup / 状态查询" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;" parent="1" source="pipeline" target="backup-management" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="713" y="1320" />
+              <mxPoint x="713" y="1310" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="management-trigger-backup" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;" parent="1" source="backup-management" target="maintenance-trigger" edge="1">
           <mxGeometry relative="1" as="geometry" />
