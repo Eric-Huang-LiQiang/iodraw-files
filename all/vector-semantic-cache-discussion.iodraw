@@ -97,11 +97,8 @@
         <mxCell id="pipeline" value="&lt;b&gt;发布 Pipeline → Vector Service 管理接口&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;POST /SemanticCache/Backup&lt;/b&gt;&lt;br&gt;请求：{ BackendSlotIds: integer[] }&lt;br&gt;建议 202：{ BackupId: string, Status: &amp;quot;Pending&amp;quot; }&lt;br&gt;&lt;br&gt;&lt;b&gt;GET /SemanticCache/Backup/{BackupId}&lt;/b&gt;&lt;br&gt;BackupId: string（路径参数）；无请求体&lt;br&gt;建议 200：{ BackupId: string, Status: string,&lt;br&gt; Backends: [{ BackendSlotId: integer, Status: string,&lt;br&gt; SnapshotId: string, RecordCount: integer, Revision: string,&lt;br&gt; CompletedAt: string, Error: string }] }&lt;br&gt;&lt;br&gt;Status：Pending / Running / Completed / Failed&lt;br&gt;CompletedAt 为 UTC 时间。&lt;br&gt;独立管理授权；所有目标 Completed 后才发布。" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#9673A6;fontSize=15;spacing=10;align=left;verticalAlign=top;spacing=12;fontSize=14;" parent="1" vertex="1">
           <mxGeometry x="55" y="1200" width="610" height="415" as="geometry" />
         </mxCell>
-        <mxCell id="backup-management" value="P：Vector Service 管理入口&lt;br&gt;Backup / Backup 状态查询&lt;br&gt;按明确后端编号触发，不按设备选一台&lt;br&gt;独立管理授权；不调用 Embeddings" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#9673A6;fontSize=14;spacing=8;" parent="1" vertex="1">
-          <mxGeometry x="760" y="1250" width="330" height="120" as="geometry" />
-        </mxCell>
         <mxCell id="maintenance-trigger" value="B / P：每个目标后端的维护任务&lt;br&gt;定时触发或管理接口触发&lt;br&gt;同后端串行；A / B 各自执行" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=14;spacing=8;" parent="1" vertex="1">
-          <mxGeometry x="810" y="1450" width="305" height="120" as="geometry" />
+          <mxGeometry x="1140" y="1245" width="305" height="120" as="geometry" />
         </mxCell>
         <mxCell id="cleanup" value="B1：先批量清理过期记录&lt;br&gt;删除向量与对应内容&lt;br&gt;无新写入也要检查过期&lt;br&gt;有变化或主动备份才生成快照" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=14;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="1495" y="1250" width="285" height="120" as="geometry" />
@@ -134,8 +131,9 @@
             <mxPoint x="1380" y="700.0000000000002" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="pipeline-backup-request" value="Backup / 状态查询" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;" parent="1" source="pipeline" target="backup-management" edge="1">
+        <mxCell id="pipeline-backup-request" value="Backup / 状态查询" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;" parent="1" source="pipeline" edge="1">
           <mxGeometry relative="1" as="geometry">
+            <mxPoint x="760" y="1310" as="targetPoint" />
             <Array as="points">
               <mxPoint x="713" y="1320" />
               <mxPoint x="713" y="1310" />
