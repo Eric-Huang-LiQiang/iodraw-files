@@ -97,7 +97,7 @@
         <mxCell id="cache-b-label" value="缓存 App B / 更多后端" style="text;html=1;fontSize=15;align=center;fontStyle=1;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="2120" y="255" width="250" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="cache-b-info" value="&lt;b&gt;固定后端编号 2 / …&lt;/b&gt;&lt;br&gt;单活跃索引进程&lt;br&gt;D300 → B（示例）&lt;br&gt;不自动查询 A 的记录" style="text;html=1;fontSize=14;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;spacing=8;whiteSpace=wrap;align=left;" parent="1" vertex="1" connectable="0">
+        <mxCell id="cache-b-info" value="&lt;b&gt;piple line 传入&lt;span style=&quot;font-size: 18px; text-wrap: nowrap;&quot;&gt;storage account 路径&lt;/span&gt;&lt;/b&gt;&lt;div&gt;&lt;b&gt;清除已失效缓存后推送到Storage account&lt;/b&gt;&lt;span style=&quot;font-size: 18px; text-wrap: nowrap;&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;从Storage account 下载向量库并加载进内存&lt;/b&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;fontSize=14;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;spacing=8;whiteSpace=wrap;align=left;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="2130" y="305" width="320" height="110" as="geometry" />
         </mxCell>
         <mxCell id="cache-b" value="B：独立共享索引 + 关联记录&lt;br&gt;&lt;br&gt;与 A 执行相同查写规则&lt;br&gt;数据和备份目录各自独立&lt;br&gt;&lt;br&gt;增加后端可能改变部分设备路由&lt;br&gt;允许重新积累缓存" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=15;spacing=10;" parent="1" vertex="1">
