@@ -187,13 +187,6 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="pipeline-release" value="备份完成后" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=block;strokeColor=#666666;fontColor=#666666;labelBackgroundColor=#FFFFFF;fontSize=13;exitX=0.2;exitY=1;entryX=0;entryY=0.5;" parent="1" source="pipeline" target="deployment" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="107" y="1537" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
         <mxCell id="deployment-restore" value="发布启动；普通重启也执行 R" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=block;strokeColor=#666666;fontColor=#666666;labelBackgroundColor=#FFFFFF;fontSize=13;exitX=0.5;exitY=1;entryX=0.3;entryY=1;" parent="1" source="deployment" target="restore" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
