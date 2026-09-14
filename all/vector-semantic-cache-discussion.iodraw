@@ -43,7 +43,7 @@
         <mxCell id="vector-label" value="Vector Service" style="text;html=1;fontSize=15;align=center;fontStyle=1;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="755" y="255" width="160" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="vector-info" value="&lt;b&gt;Vector 平台唯一入口&lt;/b&gt;" style="text;html=1;fontSize=14;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;spacing=8;whiteSpace=wrap;align=left;" parent="1" vertex="1" connectable="0">
+        <mxCell id="vector-info" value="&lt;b&gt;Vector 平台唯一入口，所有方法无状态&lt;/b&gt;" style="text;html=1;fontSize=14;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;spacing=8;whiteSpace=wrap;align=left;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="930" y="210" width="320" height="40" as="geometry" />
         </mxCell>
         <mxCell id="query-entry" value="Q1 校验 + 稳定路由&lt;br&gt;部署配置选池&lt;br&gt;RoutingDeviceId 选后端" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0066CC;fontSize=15;spacing=8;" parent="1" vertex="1">
