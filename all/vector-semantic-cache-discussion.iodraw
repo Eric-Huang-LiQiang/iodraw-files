@@ -70,9 +70,6 @@
         <mxCell id="embedding-query" value="Q2 查询改写 / 向量化&lt;br&gt;返回 embedding&lt;br&gt;rewrittenQuery / modelVersion" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0066CC;fontSize=14;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="1380" y="350" width="265" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="embedding-write" value="W3 写入改写 / 向量化&lt;br&gt;返回 embedding&lt;br&gt;rewrittenQuery / modelVersion" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=14;spacing=8;" parent="1" vertex="1">
-          <mxGeometry x="1380" y="655" width="265" height="90" as="geometry" />
-        </mxCell>
         <mxCell id="cache-a-icon" style="shape=image;image=img/lib/azure2/app_services/App_Services.svg;aspect=fixed;imageWidth=30;imageHeight=30;" parent="1" vertex="1">
           <mxGeometry x="1810" y="220" width="30" height="30" as="geometry" />
         </mxCell>
@@ -150,15 +147,18 @@
             <mxPoint x="760" y="705.0000000000002" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="write-embedding-request" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;" parent="1" source="write-worker" target="embedding-write" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="write-embedding-request" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="write-worker" target="embedding-query" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1380" y="700.0000000000002" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="write-embedding-response" value="向量 + 模型版本" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="embedding-write" target="write-dispatch" edge="1">
+        <mxCell id="write-embedding-response" value="向量 + 模型版本" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" target="write-dispatch" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1510" y="775" />
               <mxPoint x="1162" y="775" />
             </Array>
+            <mxPoint x="1512.5" y="744.9999999999998" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="query-result-to-caller" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;" parent="1" source="query-response" edge="1">
