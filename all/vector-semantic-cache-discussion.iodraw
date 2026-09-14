@@ -50,7 +50,7 @@
           <mxGeometry x="930" y="350" width="245" height="90" as="geometry" />
         </mxCell>
         <mxCell id="write-worker" value="调用embedings 服务获取问题向量" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=15;spacing=8;" parent="1" vertex="1">
-          <mxGeometry x="937.5" y="730" width="245" height="100" as="geometry" />
+          <mxGeometry x="937.5" y="725" width="245" height="100" as="geometry" />
         </mxCell>
         <mxCell id="write-dispatch" value="Route到对应的App Service&amp;nbsp;&lt;div&gt;(&lt;span style=&quot;background-color: initial;&quot;&gt;RoutingDeviceId,HRW 算法&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;)&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=15;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="950" y="870" width="245" height="95" as="geometry" />
@@ -139,7 +139,7 @@
         <mxCell id="query-embedding-request" value="改写 / 向量化" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;" parent="1" source="query-embed" target="embedding-query" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="write-request" value="Write" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=13;" parent="1" source="caller-write" edge="1">
+        <mxCell id="write-request" value="Write" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=13;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="caller-write" target="write-worker" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="940" y="705" as="targetPoint" />
           </mxGeometry>
