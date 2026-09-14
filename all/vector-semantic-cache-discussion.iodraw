@@ -94,7 +94,7 @@
         <mxCell id="cache-b" value="&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Q：共享索引 + 关联记录.返回&lt;span style=&quot;background-color: initial;&quot;&gt;未过期&lt;/span&gt;&lt;div&gt;非空标签过滤 → 问题向量 Top 1&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; W：保存问题 / 向量 / 答案/到期时间&lt;/div&gt;&lt;div&gt;如果存在就更新TTL 时间&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=15;spacing=10;" parent="1" vertex="1">
           <mxGeometry x="2130" y="460" width="320" height="200" as="geometry" />
         </mxCell>
-        <mxCell id="pipeline" value="&lt;b&gt;piple line&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#9673A6;fontSize=15;spacing=10;align=left;verticalAlign=top;spacing=12;fontSize=14;" parent="1" vertex="1">
+        <mxCell id="pipeline" value="&lt;b&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;piple line&lt;/font&gt;&lt;/b&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#9673A6;fontSize=15;spacing=10;align=left;verticalAlign=top;spacing=12;fontSize=14;" parent="1" vertex="1">
           <mxGeometry x="55" y="1200" width="610" height="190" as="geometry" />
         </mxCell>
         <mxCell id="4E-vALEkcteG9tEwYn_--4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="maintenance-trigger" target="cleanup">
