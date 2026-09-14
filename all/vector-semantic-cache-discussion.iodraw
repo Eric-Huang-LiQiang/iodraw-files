@@ -151,10 +151,7 @@
         <mxCell id="discussion-notes" value="&lt;b&gt;接口签名已标在客户端查询、写入、响应及 Pipeline 管理调用方框内。&lt;/b&gt;&lt;br&gt;待确认：底层选型、TTL 默认值、容量、去重、访问授权及性能基线。部署未标具体 SKU；详细依据见配套 Markdown。" style="text;html=1;whiteSpace=wrap;align=left;spacing=6;fontSize=15;fontColor=#555555;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="40" y="1770" width="2450" height="65" as="geometry" />
         </mxCell>
-        <mxCell id="query-request" value="Search" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=13;" parent="1" source="caller-search" target="query-entry" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="query-split" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;" parent="1" source="query-entry" target="query-embed" edge="1">
+        <mxCell id="query-request" value="Search" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=13;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="caller-search" target="query-embed" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="query-embedding-request" value="改写 / 向量化" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;" parent="1" source="query-embed" target="embedding-query" edge="1">
