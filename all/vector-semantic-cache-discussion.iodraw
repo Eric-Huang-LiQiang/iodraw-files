@@ -127,12 +127,6 @@
         <mxCell id="restore" value="R：每次启动恢复本后端快照&lt;br&gt;校验 → 排除过期 → 加载 → 就绪&lt;br&gt;恢复不重算有效期；真正无快照可空库&lt;br&gt;下载失败 / 损坏不能当空库覆盖备份" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=14;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="1830" y="1480" width="620" height="115" as="geometry" />
         </mxCell>
-        <mxCell id="lg-box" value="&lt;b&gt;图例&lt;/b&gt;　蓝色实线 #0066CC：HTTP 调用与响应　｜　蓝色虚线 #0066CC：后台 HTTP 查写　｜　橙色虚线 #CC6600：清理 / 快照 / 恢复数据流　｜　灰色虚线 #666666：部署顺序与生命周期依赖&lt;br&gt;Q = 查询；W = 独立异步写入；B = 定时维护；P = 发布管理；R = 启动恢复。箭头不代表已经配置专网或身份认证。" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;fontSize=14;spacing=12;align=left;" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="40" y="1670" width="2450" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="discussion-notes" value="&lt;b&gt;接口签名已标在客户端查询、写入、响应及 Pipeline 管理调用方框内。&lt;/b&gt;&lt;br&gt;待确认：底层选型、TTL 默认值、容量、去重、访问授权及性能基线。部署未标具体 SKU；详细依据见配套 Markdown。" style="text;html=1;whiteSpace=wrap;align=left;spacing=6;fontSize=15;fontColor=#555555;" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="40" y="1770" width="2450" height="65" as="geometry" />
-        </mxCell>
         <mxCell id="query-request" value="Search" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=13;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="caller-search" target="query-embed" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
