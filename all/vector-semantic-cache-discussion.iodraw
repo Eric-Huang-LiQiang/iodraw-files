@@ -97,6 +97,9 @@
         <mxCell id="pipeline" value="&lt;b&gt;piple line&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#9673A6;fontSize=15;spacing=10;align=left;verticalAlign=top;spacing=12;fontSize=14;" parent="1" vertex="1">
           <mxGeometry x="55" y="1200" width="610" height="190" as="geometry" />
         </mxCell>
+        <mxCell id="4E-vALEkcteG9tEwYn_--4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="maintenance-trigger" target="cleanup">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="maintenance-trigger" value="B / P：每个目标后端的维护任务&lt;br&gt;定时触发或管理接口触发&lt;br&gt;同后端串行；A / B 各自执行" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=14;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="860" y="1250" width="305" height="120" as="geometry" />
         </mxCell>
@@ -104,7 +107,7 @@
           <mxGeometry x="1262.5" y="1250" width="285" height="120" as="geometry" />
         </mxCell>
         <mxCell id="snapshot" value="B2：一致快照 → 上传 → 提交清单&lt;br&gt;向量与问题 / 答案属于同一版本&lt;br&gt;失败保留上一份完整快照&lt;br&gt;不逐文件覆盖唯一现役文件组" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=14;spacing=8;" parent="1" vertex="1">
-          <mxGeometry x="1830" y="1250" width="310" height="120" as="geometry" />
+          <mxGeometry x="1670" y="1250" width="310" height="120" as="geometry" />
         </mxCell>
         <mxCell id="storage-icon" style="shape=image;image=img/lib/azure2/storage/Storage_Accounts.svg;aspect=fixed;imageWidth=30;imageHeight=30;" parent="1" vertex="1">
           <mxGeometry x="2280" y="1250" width="30" height="30" as="geometry" />
