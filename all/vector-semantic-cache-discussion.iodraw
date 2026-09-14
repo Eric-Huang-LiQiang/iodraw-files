@@ -53,7 +53,7 @@
           <mxGeometry x="937.5" y="655" width="245" height="100" as="geometry" />
         </mxCell>
         <mxCell id="write-dispatch" value="W4 向已选后端写入&lt;br&gt;问题 / 向量 / 答案 / 标签 / TTL&lt;br&gt;后台重试沿用同一后端" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=15;spacing=8;" parent="1" vertex="1">
-          <mxGeometry x="1040" y="820" width="245" height="95" as="geometry" />
+          <mxGeometry x="950" y="820" width="245" height="95" as="geometry" />
         </mxCell>
         <mxCell id="query-response" value="Q5 返回当前后端的 Match&lt;br&gt;原始问题 + 答案 + 相似度；不跨后端排名&lt;br&gt;无候选 null；依赖失败明确报错" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0066CC;fontSize=15;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="760" y="995" width="525" height="85" as="geometry" />
