@@ -47,7 +47,7 @@
           <mxGeometry x="930" y="210" width="320" height="40" as="geometry" />
         </mxCell>
         <mxCell id="query-entry" value="Q1 校验 + 稳定路由&lt;br&gt;部署配置选池&lt;br&gt;RoutingDeviceId 选后端" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0066CC;fontSize=15;spacing=8;" parent="1" vertex="1">
-          <mxGeometry x="760" y="410" width="230" height="90" as="geometry" />
+          <mxGeometry x="755" y="490" width="230" height="90" as="geometry" />
         </mxCell>
         <mxCell id="query-embed" value="Q2 拆分 Messages&lt;br&gt;最后一条 = 当前问题&lt;br&gt;前面条目 = 历史" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0066CC;fontSize=15;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="1040" y="410" width="245" height="90" as="geometry" />
