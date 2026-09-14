@@ -1,6 +1,6 @@
 <mxfile host="Electron" compressed="false" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) ioDraw.com/3.6.1 Chrome/124.0.6367.49 Electron/30.0.0 Safari/537.36" version="24.7.17" pages="2">
   <diagram id="semantic-cache-discussion" name="语义缓存完整架构">
-    <mxGraphModel dx="1934" dy="1176" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2550" pageHeight="1850" math="0" shadow="0">
+    <mxGraphModel dx="2708" dy="1646" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2550" pageHeight="1850" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -91,11 +91,8 @@
         <mxCell id="cache-b-info" value="&lt;b&gt;piple line 传入&lt;span style=&quot;font-size: 18px; text-wrap: nowrap;&quot;&gt;storage account 路径&lt;/span&gt;&lt;/b&gt;&lt;div&gt;&lt;b&gt;清除已失效缓存后推送到Storage account&lt;/b&gt;&lt;span style=&quot;font-size: 18px; text-wrap: nowrap;&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;从Storage account 下载向量库并加载进内存&lt;/b&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;fontSize=14;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;spacing=8;whiteSpace=wrap;align=left;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="2130" y="305" width="320" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="cache-b" value="B：独立共享索引 + 关联记录&lt;br&gt;&lt;br&gt;与 A 执行相同查写规则&lt;br&gt;数据和备份目录各自独立&lt;br&gt;&lt;br&gt;增加后端可能改变部分设备路由&lt;br&gt;允许重新积累缓存" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=15;spacing=10;" parent="1" vertex="1">
+        <mxCell id="cache-b" value="&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Q：共享索引 + 关联记录.返回&lt;span style=&quot;background-color: initial;&quot;&gt;未过期&lt;/span&gt;&lt;div&gt;非空标签过滤 → 问题向量 Top 1&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; W：保存问题 / 向量 / 答案/到期时间&lt;/div&gt;&lt;div&gt;如果存在就更新TTL 时间&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=15;spacing=10;" parent="1" vertex="1">
           <mxGeometry x="2130" y="460" width="320" height="200" as="geometry" />
-        </mxCell>
-        <mxCell id="cache-loss" value="&lt;b&gt;允许丢失的边界&lt;/b&gt;：Vector Service 排队工作项、后端未备份修改可能随重启丢失。&lt;br&gt;发布新旧进程不可同时向同一目录提交快照；不能靠增加 worker 自动共享内存。" style="text;html=1;fontSize=14;fillColor=#FFF2CC;strokeColor=#D6B656;rounded=1;spacing=8;whiteSpace=wrap;align=left;" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="1755" y="995" width="695" height="85" as="geometry" />
         </mxCell>
         <mxCell id="pipeline" value="&lt;b&gt;发布 Pipeline → Vector Service 管理接口&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;POST /SemanticCache/Backup&lt;/b&gt;&lt;br&gt;请求：{ BackendSlotIds: integer[] }&lt;br&gt;建议 202：{ BackupId: string, Status: &amp;quot;Pending&amp;quot; }&lt;br&gt;&lt;br&gt;&lt;b&gt;GET /SemanticCache/Backup/{BackupId}&lt;/b&gt;&lt;br&gt;BackupId: string（路径参数）；无请求体&lt;br&gt;建议 200：{ BackupId: string, Status: string,&lt;br&gt; Backends: [{ BackendSlotId: integer, Status: string,&lt;br&gt; SnapshotId: string, RecordCount: integer, Revision: string,&lt;br&gt; CompletedAt: string, Error: string }] }&lt;br&gt;&lt;br&gt;Status：Pending / Running / Completed / Failed&lt;br&gt;CompletedAt 为 UTC 时间。&lt;br&gt;独立管理授权；所有目标 Completed 后才发布。" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#9673A6;fontSize=15;spacing=10;align=left;verticalAlign=top;spacing=12;fontSize=14;" parent="1" vertex="1">
           <mxGeometry x="55" y="1200" width="610" height="415" as="geometry" />
@@ -216,17 +213,6 @@
             <Array as="points">
               <mxPoint x="2470" y="1265" />
               <mxPoint x="2470" y="1537" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="restore-ready-a" value="恢复完成后开放本后端" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=block;strokeColor=#666666;fontColor=#666666;labelBackgroundColor=#FFFFFF;fontSize=12;exitX=0;exitY=0.4;entryX=0.4;entryY=1;" parent="1" source="restore" target="cache-a" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1800" y="1526" />
-              <mxPoint x="1800" y="1135" />
-              <mxPoint x="1700" y="1135" />
-              <mxPoint x="1700" y="685" />
-              <mxPoint x="1883" y="685" />
             </Array>
           </mxGeometry>
         </mxCell>
