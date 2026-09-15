@@ -1,0 +1,271 @@
+<mxfile host="Electron" compressed="false" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) ioDraw.com/3.6.1 Chrome/124.0.6367.49 Electron/30.0.0 Safari/537.36" version="24.7.17" pages="2">
+  <diagram id="semantic-cache-discussion" name="语义缓存完整架构">
+    <mxGraphModel dx="2257" dy="1372" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2550" pageHeight="1850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Vector Service 语义缓存｜Azure 部署与业务流程" style="text;html=1;align=left;fontSize=28;fontStyle=1;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="40" y="25" width="2430" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="caller-section" value="调用方与客户端" style="rounded=1;fillColor=#E0F0FF;fillOpacity=40;dashed=1;strokeColor=#0066CC;verticalAlign=top;align=left;spacing=15;fontSize=18;fontStyle=1;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="30" y="150" width="660" height="965" as="geometry" />
+        </mxCell>
+        <mxCell id="vector-section" value="统一入口与处理｜Azure App Service" style="rounded=1;fillColor=#E8F5E9;fillOpacity=40;dashed=1;strokeColor=#009900;verticalAlign=top;align=left;spacing=15;fontSize=18;fontStyle=1;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="730" y="150" width="590" height="965" as="geometry" />
+        </mxCell>
+        <mxCell id="embedding-section" value="模型处理｜Azure App Service" style="rounded=1;fillColor=#E8F5E9;fillOpacity=40;dashed=1;strokeColor=#009900;verticalAlign=top;align=left;spacing=12;fontSize=16;fontStyle=1;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="1350" y="150" width="320" height="610" as="geometry" />
+        </mxCell>
+        <mxCell id="cache-section" value="独立 SemanticCache 后端池｜当前应用内缓存部署" style="rounded=1;fillColor=#FFF8E1;fillOpacity=40;dashed=1;strokeColor=#CC6600;verticalAlign=top;align=left;spacing=15;fontSize=18;fontStyle=1;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="1720" y="150" width="770" height="965" as="geometry" />
+        </mxCell>
+        <mxCell id="maintenance-section" value="维护与发布｜每个后端独立清理、备份和恢复" style="rounded=1;fillColor=#FFF8E1;fillOpacity=40;dashed=1;strokeColor=#CC6600;verticalAlign=top;align=left;spacing=15;fontSize=18;fontStyle=1;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="730" y="1160" width="1760" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="caller-info" value="&lt;b&gt;调用vector service&lt;/b&gt;" style="text;html=1;fontSize=14;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;spacing=8;whiteSpace=wrap;align=left;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="50" y="215" width="270" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="caller-search" value="&lt;b&gt;Q1 查询｜POST /SemanticCache/Search&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#7B1FA2&quot;&gt;RoutingDeviceId: string&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#7B1FA2&quot;&gt;Locale: string&lt;/font&gt;&lt;br&gt;Messages: [{ Role: string, Value: string }]&lt;br&gt;Customer: string;&amp;nbsp;&lt;div&gt;DeviceModel: string&lt;br&gt;Language: string;&amp;nbsp;&lt;/div&gt;&lt;div&gt;DeviceId: string&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;Response：改写问题+&lt;span style=&quot;text-align: center; background-color: initial;&quot;&gt;原始问题 + 答案 + 相似度&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fad7ac;strokeColor=#b46504;fontSize=16;spacing=8;align=left;verticalAlign=top;spacing=12;fontSize=15;" parent="1" vertex="1">
+          <mxGeometry x="55" y="365" width="610" height="215" as="geometry" />
+        </mxCell>
+        <mxCell id="caller-write" value="&lt;b&gt;W1 独立写入｜POST /SemanticCache/Write&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#7B1FA2&quot;&gt;RoutingDeviceId: string&lt;/font&gt;;&amp;nbsp;&lt;div&gt;&lt;font color=&quot;#7B1FA2&quot;&gt;Locale: string&lt;/font&gt;&lt;br&gt;Messages: [{ Role: string, Value: string }]&lt;br&gt;Answer: string（最终答案）&lt;br&gt;TTL: integer（分钟；未传用后台配置默认值）&lt;br&gt;Customer: string;&amp;nbsp;&lt;/div&gt;&lt;div&gt;DeviceModel: string&lt;br&gt;Language: string;&amp;nbsp;&lt;/div&gt;&lt;div&gt;DeviceId: string&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Response: void&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fad7ac;strokeColor=#b46504;fontSize=15;spacing=8;align=left;verticalAlign=top;spacing=12;fontSize=15;" parent="1" vertex="1">
+          <mxGeometry x="55" y="655" width="610" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="vector-icon" style="shape=image;image=img/lib/azure2/app_services/App_Services.svg;aspect=fixed;imageWidth=30;imageHeight=30;" parent="1" vertex="1">
+          <mxGeometry x="795" y="215" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vector-label" value="Vector Service" style="text;html=1;fontSize=15;align=center;fontStyle=1;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="755" y="255" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vector-info" value="&lt;b&gt;Vector 平台唯一入口，所有方法无状态&lt;/b&gt;" style="text;html=1;fontSize=14;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;spacing=8;whiteSpace=wrap;align=left;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="930" y="210" width="320" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="query-entry" value="按 RoutingDeviceId 路由查询&lt;br&gt;HRW 选择 A / B 其中一个&lt;br&gt;接收并返回所选后端的结果" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0066CC;fontSize=15;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="937.5" y="500" width="230" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="4E-vALEkcteG9tEwYn_--1" value="获得向量后" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="query-embed" target="query-entry" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="query-embed" value="调用 Embeddings 获取问题向量" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0066CC;fontSize=15;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="930" y="350" width="245" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="write-worker" value="调用 Embeddings 获取问题向量" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=15;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="937.5" y="725" width="245" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="4E-vALEkcteG9tEwYn_--3" value="选 A：写入" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;exitX=1;exitY=0.3;entryX=0;entryY=0.8;" parent="1" source="write-dispatch" target="cache-a" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1660" y="938" />
+              <mxPoint x="1660" y="620" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="write-dispatch" value="按 RoutingDeviceId 路由写入&lt;br&gt;HRW 选择 A / B 其中一个" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=15;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="950" y="910" width="245" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="embedding-icon" style="shape=image;image=img/lib/azure2/app_services/App_Services.svg;aspect=fixed;imageWidth=30;imageHeight=30;" parent="1" vertex="1">
+          <mxGeometry x="1390" y="215" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="embedding-label" value="Embeddings" style="text;html=1;fontSize=15;align=center;fontStyle=1;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="1360" y="255" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="embedding-info" value="&lt;b&gt;Locale → 模型配置&lt;/b&gt;&lt;br&gt;单条不改写&lt;br&gt;多条按已有逻辑判断&lt;br&gt;Answer 不参与向量化" style="text;html=1;fontSize=13;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;spacing=7;whiteSpace=wrap;align=left;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="1500" y="210" width="150" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="embedding-query" value="问题改写 / 向量化（查询、写入共用）&lt;br&gt;返回 embedding&lt;br&gt;rewrittenQuery / modelVersion" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#0066CC;fontSize=14;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="1380" y="350" width="265" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="cache-a-icon" style="shape=image;image=img/lib/azure2/app_services/App_Services.svg;aspect=fixed;imageWidth=30;imageHeight=30;" parent="1" vertex="1">
+          <mxGeometry x="1810" y="220" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cache-a-label" value="缓存 App A" style="text;html=1;fontSize=15;align=center;fontStyle=1;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="1755" y="255" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cache-a-info" value="&lt;b&gt;Pipeline 配置各后端的 Storage 路径&lt;/b&gt;&lt;br&gt;定时清理过期缓存后备份&lt;br&gt;启动时下载本后端快照并加载内存&lt;br&gt;保留原到期时间，排除已过期记录" style="text;html=1;fontSize=14;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;spacing=8;whiteSpace=wrap;align=left;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="1755" y="305" width="315" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="cache-a" value="Q：共享索引 + 关联记录&lt;br&gt;限定兼容模型、未过期记录&lt;br&gt;非空标签过滤 → 问题向量 Top 1&lt;br&gt;&lt;br&gt;W：保存问题 / 向量 / 答案 / 到期时间" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=15;spacing=10;" parent="1" vertex="1">
+          <mxGeometry x="1755" y="460" width="320" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="cache-b-icon" style="shape=image;image=img/lib/azure2/app_services/App_Services.svg;aspect=fixed;imageWidth=30;imageHeight=30;" parent="1" vertex="1">
+          <mxGeometry x="2190" y="220" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cache-b-label" value="缓存 App B / 更多后端" style="text;html=1;fontSize=15;align=center;fontStyle=1;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="2120" y="255" width="250" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cache-b-info" value="&lt;b&gt;Pipeline 配置各后端的 Storage 路径&lt;/b&gt;&lt;br&gt;定时清理过期缓存后备份&lt;br&gt;启动时下载本后端快照并加载内存&lt;br&gt;保留原到期时间，排除已过期记录" style="text;html=1;fontSize=14;fillColor=#F5F5F5;strokeColor=#CCCCCC;rounded=1;spacing=8;whiteSpace=wrap;align=left;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="2130" y="305" width="320" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="cache-b" value="Q：共享索引 + 关联记录&lt;br&gt;限定兼容模型、未过期记录&lt;br&gt;非空标签过滤 → 问题向量 Top 1&lt;br&gt;&lt;br&gt;W：保存问题 / 向量 / 答案 / 到期时间" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=15;spacing=10;" parent="1" vertex="1">
+          <mxGeometry x="2130" y="460" width="320" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="pipeline" value="&lt;b&gt;Pipeline&lt;/b&gt;&lt;br&gt;提供 Storage Account 参数&lt;br&gt;发布前经 Vector Service 触发目标后端备份&lt;br&gt;等待所有目标备份完成后再发布" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#9673A6;fontSize=15;spacing=10;align=left;verticalAlign=top;spacing=12;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="55" y="1200" width="610" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="4E-vALEkcteG9tEwYn_--4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#CC6600;fontColor=#CC6600;labelBackgroundColor=#FFFFFF;fontSize=12;dashed=1;" parent="1" source="maintenance-trigger" target="cleanup" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="maintenance-trigger" value="B / P：每个目标后端的维护任务&lt;br&gt;定时触发或管理接口触发&lt;br&gt;同后端串行；A / B 各自执行" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=14;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="860" y="1250" width="305" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="cleanup" value="B1：先批量清理过期记录&lt;br&gt;删除向量与对应内容&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=14;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="1262.5" y="1250" width="285" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="snapshot" value="B2：备份上传" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC6600;fontSize=14;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="1670" y="1250" width="310" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="storage-icon" style="shape=image;image=img/lib/azure2/storage/Storage_Accounts.svg;aspect=fixed;imageWidth=30;imageHeight=30;" parent="1" vertex="1">
+          <mxGeometry x="2280" y="1250" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="storage-label" value="Storage Account" style="text;html=1;fontSize=16;align=center;fontStyle=1;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="2180" y="1290" width="270" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="query-request" value="Search" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=13;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="caller-search" target="query-embed" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="query-embedding-request" value="问题 / 历史 / Locale →；← 向量 / 改写问题 / 模型版本" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;startArrow=block;startFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="query-embed" target="embedding-query" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="write-request" value="Write" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=13;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="caller-write" target="write-worker" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="940" y="705" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="write-embedding-request" value="问题 / 历史 / Locale →；← 向量 / 改写问题 / 模型版本" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;startArrow=block;startFill=1;exitX=1;exitY=0.5;entryX=0.5;entryY=1;" parent="1" source="write-worker" target="embedding-query" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1510" y="775" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pipeline-backup-request" value="触发备份 / 查询状态 →；← 备份状态" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;startArrow=block;startFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="pipeline" target="backup-management" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="710" y="1280" />
+              <mxPoint x="710" y="1062" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cleanup-snapshot" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=block;strokeColor=#CC6600;fontColor=#CC6600;labelBackgroundColor=#FFFFFF;" parent="1" source="cleanup" target="snapshot" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="snapshot-upload" value="完整快照" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=block;strokeColor=#CC6600;fontColor=#CC6600;labelBackgroundColor=#FFFFFF;fontSize=13;exitX=1;exitY=0.15;entryX=0;entryY=0.5;" parent="1" source="snapshot" target="storage-icon" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2160" y="1268" />
+              <mxPoint x="2160" y="1265" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="query-backend-a" value="选 A：查询 →；← Top 1 / 无匹配" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;startArrow=block;startFill=1;exitX=1;exitY=0.3;entryX=0;entryY=0.15;" parent="1" source="query-entry" target="cache-a" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1300" y="527" />
+              <mxPoint x="1300" y="490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4E-vALEkcteG9tEwYn_--2" value="获得向量后" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="write-worker" target="write-dispatch" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="backup-management" value="Vector Service：备份 / 状态查询&lt;br&gt;按指定后端触发，返回备份状态" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#9673A6;fontSize=14;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="850" y="1030" width="380" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="query-backend-b" value="选 B：查询 →；← Top 1 / 无匹配" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;startArrow=block;startFill=1;exitX=1;exitY=0.7;entryX=0;entryY=0.15;" parent="1" source="query-entry" target="cache-b" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1280" y="563" />
+              <mxPoint x="1280" y="685" />
+              <mxPoint x="2100" y="685" />
+              <mxPoint x="2100" y="490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="query-result-to-caller" value="匹配记录的问题 / 答案 / 相似度，或无匹配" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;exitX=0;exitY=0.5;entryX=0.5;entryY=1;" parent="1" source="query-entry" target="caller-search" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="880" y="545" />
+              <mxPoint x="880" y="610" />
+              <mxPoint x="360" y="610" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="write-backend-b" value="选 B：写入" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;exitX=1;exitY=0.7;entryX=0;entryY=0.8;" parent="1" source="write-dispatch" target="cache-b" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2100" y="977" />
+              <mxPoint x="2100" y="620" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="management-trigger-backup" value="触发指定后端" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;exitX=0.37;exitY=1;entryX=0.5;entryY=0;" parent="1" source="backup-management" target="maintenance-trigger" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="990" y="1200" />
+              <mxPoint x="1012" y="1200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="backup-completed" value="上传完成后返回备份结果" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;exitX=0.5;exitY=1;entryX=0.82;entryY=1;" parent="1" source="snapshot" target="backup-management" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1825" y="1430" />
+              <mxPoint x="780" y="1430" />
+              <mxPoint x="780" y="1125" />
+              <mxPoint x="1160" y="1125" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="storage-restore-a" value="A 启动：下载本后端快照并加载" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#CC6600;fontColor=#CC6600;labelBackgroundColor=#FFFFFF;fontSize=12;dashed=1;exitX=0;exitY=0.5;entryX=0.45;entryY=1;" parent="1" source="storage-icon" target="cache-a" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2240" y="1265" />
+              <mxPoint x="2240" y="1160" />
+              <mxPoint x="2030" y="1160" />
+              <mxPoint x="2030" y="700" />
+              <mxPoint x="1900" y="700" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="storage-restore-b" value="B 启动：下载本后端快照并加载" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#CC6600;fontColor=#CC6600;labelBackgroundColor=#FFFFFF;fontSize=12;dashed=1;exitX=1;exitY=0.5;entryX=0.53;entryY=1;" parent="1" source="storage-icon" target="cache-b" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2510" y="1265" />
+              <mxPoint x="2510" y="700" />
+              <mxPoint x="2300" y="700" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lg-flow" value="蓝色 #0066CC：服务调用与结果返回（双向箭头表示请求 / 响应）　｜　橙色虚线 #CC6600：清理、备份与启动恢复&lt;br&gt;&lt;font color=&quot;#7B1FA2&quot;&gt;紫色字段：用于路由或模型选择，不作为业务筛选条件。&lt;/font&gt;" style="text;html=1;whiteSpace=wrap;align=left;fontSize=14;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="40" y="1550" width="2450" height="65" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="semantic-cache-api" name="接口签名">
+    <mxGraphModel dx="1600" dy="1350" grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1600" pageHeight="1350" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="api-title" value="Vector Service 对外接口签名" style="text;html=1;align=left;fontSize=21;fontStyle=1;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="40" y="25" width="1520" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="api-search" value="&lt;b&gt;POST /SemanticCache/Search&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;#7B1FA2&quot;&gt;RoutingDeviceId: string&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#7B1FA2&quot;&gt;Locale: string&lt;/font&gt;&lt;br&gt;Messages: [{ Role: string, Value: string }]&lt;br&gt;Customer: string; DeviceModel: string&lt;br&gt;Language: string; DeviceId: string&lt;br&gt;&lt;br&gt;&lt;b&gt;200 响应&lt;/b&gt;&lt;br&gt;{ Match: { OriginalQuestion: string,&lt;br&gt;  RewrittenQuestion: string, Answer: string,&lt;br&gt;  SimilarityScore: number } | null }&lt;br&gt;&lt;br&gt;固定 Top 1；不传 Answer / TTL / TopK。&lt;br&gt;四标签未传 / null / 空字符串 → 忽略对应条件。&lt;br&gt;返回匹配记录的问题和答案；由调用方决定使用。" style="rounded=1;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacing=16;fontSize=15;fillColor=#E0F0FF;strokeColor=#0066CC;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="740" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="api-write" value="&lt;b&gt;POST /SemanticCache/Write&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;#7B1FA2&quot;&gt;RoutingDeviceId: string&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#7B1FA2&quot;&gt;Locale: string&lt;/font&gt;&lt;br&gt;Messages: [{ Role: string, Value: string }]&lt;br&gt;Answer: string — 独立答案，不进入 Messages&lt;br&gt;TTL: integer — 单位分钟；未传用后台默认值&lt;br&gt;Customer: string; DeviceModel: string&lt;br&gt;Language: string; DeviceId: string&lt;br&gt;&lt;br&gt;&lt;b&gt;202 Accepted（建议无响应体）&lt;/b&gt;&lt;br&gt;仅表示已进入后台队列；并非最终写入成功。&lt;br&gt;后台仍须由 Vector Service 调用 Embeddings，&lt;br&gt;然后写入 Vector Service 已选择的缓存后端。&lt;br&gt;&lt;br&gt;无须先 Search；不要求未命中凭据。&lt;br&gt;TTL 建议只接受正整数，边界规则待定。" style="rounded=1;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacing=16;fontSize=15;fillColor=#FFF8E1;strokeColor=#CC6600;" vertex="1" parent="1">
+          <mxGeometry x="820" y="100" width="740" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="api-backup" value="&lt;b&gt;POST /SemanticCache/Backup（管理）&lt;/b&gt;&lt;br&gt;&lt;br&gt;BackendSlotIds: integer[] — 需要备份的后端编号&lt;br&gt;&lt;br&gt;&lt;b&gt;建议 202 响应&lt;/b&gt;&lt;br&gt;{ BackupId: string, Status: &amp;quot;Pending&amp;quot; }&lt;br&gt;&lt;br&gt;由 Vector Service 根据编号解析后端地址。&lt;br&gt;调用方不传后端 URL；不按设备身份选择单个后端。&lt;br&gt;接收任务不等于备份完成。&lt;br&gt;通过右侧状态接口查询，全部完成后才允许发布。&lt;br&gt;&lt;br&gt;独立管理授权；不调用 Embeddings。" style="rounded=1;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacing=16;fontSize=15;fillColor=#F3E5F5;strokeColor=#9673A6;" vertex="1" parent="1">
+          <mxGeometry x="40" y="610" width="740" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="api-common" value="&lt;b&gt;公共契约&lt;/b&gt;：Messages 非空；每项 Role / Value 必填；最后一项 Role=user，Value 为当前问题，其余为历史；只有一条不改写。&lt;br&gt;&lt;b&gt;建议错误状态&lt;/b&gt;：400 参数错误；413 请求过大；429 写队列满；502 / 503 下游失败或服务不可用。错误不能包装成 Match=null。&lt;br&gt;&lt;b&gt;统一入口与路由&lt;/b&gt;：调用方只知道 Vector Service 地址；RoutingDeviceId 是路由输入，不是后端地址。后端池配置、HRW 计算与 A / B 分发全部在 Vector Service。" style="rounded=1;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacing=14;fontSize=15;fillColor=#F5F5F5;strokeColor=#999999;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="40" y="1120" width="1520" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="api-backup-status" parent="1" vertex="1" style="rounded=1;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacing=16;fontSize=15;fillColor=#F3E5F5;strokeColor=#9673A6;" value="&lt;b&gt;GET /SemanticCache/Backup/{BackupId}（管理）&lt;/b&gt;&lt;br&gt;路径参数 BackupId: string；无请求体&lt;br&gt;&lt;br&gt;&lt;b&gt;建议 200 响应&lt;/b&gt;&lt;br&gt;{ BackupId: string, Status: string,&lt;br&gt;  Backends: [{ BackendSlotId: integer,&lt;br&gt;    Status: string, SnapshotId: string,&lt;br&gt;    RecordCount: integer, Revision: string,&lt;br&gt;    CompletedAt: string, Error: string }] }&lt;br&gt;&lt;br&gt;Status = Pending / Running / Completed / Failed&lt;br&gt;CompletedAt 为 UTC 时间字符串。&lt;br&gt;所有指定后端成功，总体状态才为 Completed。&lt;br&gt;支持在不同 Vector Service 实例查询同一任务。&lt;br&gt;&lt;br&gt;独立管理授权；不调用 Embeddings。">
+          <mxGeometry x="820" y="610" width="740" height="470" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
