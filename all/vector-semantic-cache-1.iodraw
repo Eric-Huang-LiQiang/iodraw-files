@@ -171,7 +171,7 @@
         <mxCell id="backup-management" value="Vector Service：备份 / 状态查询&lt;br&gt;按指定后端触发，返回备份状态" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#9673A6;fontSize=14;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="850" y="1030" width="380" height="65" as="geometry" />
         </mxCell>
-        <mxCell id="query-backend-b" value="选 B：查询 →；← Top 1 / 无匹配" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;startArrow=block;startFill=1;exitX=1;exitY=0.7;entryX=0;entryY=0.15;" parent="1" source="query-entry" target="cache-b" edge="1">
+        <mxCell id="query-backend-b" value="选 B：查询 →；← Top 1&amp;nbsp;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#0066CC;fontColor=#0066CC;labelBackgroundColor=#FFFFFF;fontSize=12;startArrow=block;startFill=1;exitX=1;exitY=0.7;entryX=0;entryY=0.15;" parent="1" source="query-entry" target="cache-b" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1280" y="563" />
