@@ -100,9 +100,6 @@
         <mxCell id="l3" value="复用那一行" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="900" y="1170" width="220" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="n9b" value="还有别的车&lt;br&gt;在用它？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#B45309;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=2;" parent="1" vertex="1">
-          <mxGeometry x="880" y="1250" width="260" height="100" as="geometry" />
-        </mxCell>
         <mxCell id="l3x" value="记入“要算向量”&lt;br&gt;（重建库时可能已清掉）" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E3F4EA;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="1185" y="1270" width="210" height="60" as="geometry" />
         </mxCell>
@@ -121,14 +118,20 @@
         <mxCell id="c3" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="n9" target="l4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="c2b" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="l3" target="n9b" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="c2b" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="l3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010.0000000000005" y="1250" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="c2c" value="是：向量在库里" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.125;entryY=0;entryDx=0;entryDy=0;" parent="1" source="n9b" target="l5" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="c2c" value="是：向量在库里" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.125;entryY=0;entryDx=0;entryDy=0;" parent="1" target="l5" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010.0000000000005" y="1350" as="sourcePoint" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="c2d" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="n9b" target="l3x" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="c2d" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="l3x" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1140.0000000000005" y="1300" as="sourcePoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="c2e" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5139;entryY=0;entryDx=0;entryDy=0;" parent="1" source="l3x" target="l5" edge="1">
           <mxGeometry relative="1" as="geometry" />
