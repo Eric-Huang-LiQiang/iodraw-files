@@ -325,7 +325,7 @@
         <mxCell id="m5e" value="返回 200&lt;br&gt;+ 空数组" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#FEF3F2;strokeColor=#B42318;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=10;" parent="1" vertex="1">
           <mxGeometry x="480" y="3125" width="160" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="m6" value="调站点 /semantic-search/search：&lt;br&gt;问句向量 + 车企、车型、DeviceId、语言" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+        <mxCell id="m6" value="调站点 SearchSemanticSearch：&lt;br&gt;问句向量 + 车企、车型、DeviceId、语言" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="60" y="3250" width="480" height="80" as="geometry" />
         </mxCell>
         <mxCell id="m7" value="按阈值、TopK 过滤后返回&lt;br&gt;Answer、Description、&lt;br&gt;SimilarityScore、ToolId" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#F5F6F8;strokeColor=#6B7280;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=10;" parent="1" vertex="1">
