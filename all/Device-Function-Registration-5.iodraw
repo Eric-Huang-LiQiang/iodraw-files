@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) ioDraw.com/3.6.1 Chrome/124.0.6367.49 Electron/30.0.0 Safari/537.36" version="24.7.17">
   <diagram id="flow" name="注册与匹配">
-    <mxGraphModel dx="2257" dy="1372" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2500" pageHeight="3630" background="#FFFFFF" math="0" shadow="0">
+    <mxGraphModel dx="3385" dy="2058" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2500" pageHeight="3630" background="#FFFFFF" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -427,9 +427,6 @@
         </mxCell>
         <mxCell id="j10" value="返回" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#D97706;fontColor=#D97706;strokeWidth=2.5;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="k8" target="m7" edge="1">
           <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="nm3" value="&lt;b&gt;为什么“车辆 → 工具”每次查、不缓存&lt;/b&gt;&lt;br&gt;按每台车 20 个工具估，10 万台车约 150 MB、100 万台约 1.5 GB，随车辆数线性增长。&lt;br&gt;向量库只跟工具行数量有关：一条 12 KB，1 万条约 0.11 GB。&lt;br&gt;本机实测：5027 条里按 Id 过滤检索 1.4 ms。" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
-          <mxGeometry x="1740" y="2970" width="730" height="130" as="geometry" />
         </mxCell>
         <mxCell id="lg-box" value="" style="rounded=1;arcSize=12;html=1;fillColor=#FAFAFA;strokeColor=#CCCCCC;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="30" y="3570" width="1600" height="44" as="geometry" />
