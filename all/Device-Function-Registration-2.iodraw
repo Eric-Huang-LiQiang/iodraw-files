@@ -153,7 +153,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="n11" value="⑥ 对照表里有、这次没提交的 function name：&lt;br&gt;软删除这条 mapping（工具行不删），记入“可能不再引用”" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E3F4EA;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+        <mxCell id="n11" value="⑥ 对照表里有、这次没提交的 function name：&lt;br&gt;软删除这条 mapping（工具行不删）" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E3F4EA;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="610" y="1680" width="520" height="80" as="geometry" />
         </mxCell>
         <mxCell id="n12" value="⑦ 提交事务" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
