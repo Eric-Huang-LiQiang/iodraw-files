@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) ioDraw.com/3.6.1 Chrome/124.0.6367.49 Electron/30.0.0 Safari/537.36" version="24.7.17">
   <diagram id="flow" name="注册与匹配">
-    <mxGraphModel dx="3869" dy="2351" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2500" pageHeight="3630" background="#FFFFFF" math="0" shadow="0">
+    <mxGraphModel dx="2708" dy="1646" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2500" pageHeight="3630" background="#FFFFFF" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -361,7 +361,7 @@
         <mxCell id="k2" value="Ⓓ 查这台车的有效 mapping（每次检索一次，走索引）&lt;br&gt;mapping JOIN 工具行：Customer、DeviceId、未删除、&lt;br&gt;Locale = 语言 → 注册集合 R" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="780" y="2740" width="560" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="nk" value="R 里的工具行，向量都在库里：注册时同步写入，站点重启时按数据库重建。&lt;br&gt;万一缺了：记日志，这次不参与比对。" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
+        <mxCell id="nk" value="R 里的工具行，向量都在库里：注册时同步写入，站点重启时按数据库重建。" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
           <mxGeometry x="1350" y="2880" width="330" height="80" as="geometry" />
         </mxCell>
         <mxCell id="k4" value="通用集合 G = 库里的通用 function&lt;br&gt;（挂在 LLM 代理模板下，Locale = 语言）" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
