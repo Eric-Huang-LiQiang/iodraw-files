@@ -165,7 +165,7 @@
         <mxCell id="n11" value="⑥ 这台车的原对照表里有、这次没提交的 function name：&lt;br&gt;软删除这条 mapping；工具行、向量都不删（站点重启时一起清）" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E3F4EA;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="590" y="1660" width="560" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="n13" value="“要算向量”&lt;br&gt;是空的？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#B45309;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=2;" parent="1" vertex="1">
+        <mxCell id="n13" value="“是否需要向量计算" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#B45309;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=2;" parent="1" vertex="1">
           <mxGeometry x="700" y="1770" width="340" height="110" as="geometry" />
         </mxCell>
         <mxCell id="n16" value="⑦ 调 embeddings App Service /embed-batch&lt;br&gt;一次算好“要算向量”的描述向量" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
@@ -217,9 +217,6 @@
               <mxPoint x="575" y="2298" />
             </Array>
           </mxGeometry>
-        </mxCell>
-        <mxCell id="na5" value="&lt;b&gt;注册成功 = 数据库 + 向量库都写好&lt;/b&gt;&lt;br&gt;站点写入成功后才提交数据库；站点失败就回滚，注册失败。&lt;br&gt;Blob 由站点后台上传、注册不等：站点重启会按数据库重建库；没重启的话，后面有变化的注册也会再整库上传。" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
-          <mxGeometry x="70" y="2020" width="480" height="140" as="geometry" />
         </mxCell>
         <mxCell id="lane-b" value="" style="rounded=1;arcSize=2;html=1;fillColor=#F3EEFB;strokeColor=#7A4FC4;dashed=1;dashPattern=8 4;strokeWidth=1.5;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="1750" y="140" width="720" height="2320" as="geometry" />
