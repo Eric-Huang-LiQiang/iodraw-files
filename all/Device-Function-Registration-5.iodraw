@@ -218,12 +218,6 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="na3" value="&lt;b&gt;就地更新的代价&lt;/b&gt;&lt;br&gt;同车企 + 车型 + 语言里共用这一行的车，描述、参数一起变，以最后一次注册为准。&lt;br&gt;一台车同一个 function name 只有一条有效 mapping，由注册代码在事务里保证。" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
-          <mxGeometry x="70" y="1660" width="480" height="150" as="geometry" />
-        </mxCell>
-        <mxCell id="na4" value="&lt;b&gt;“要算向量”包括&lt;/b&gt;&lt;br&gt;就地改了描述的；新建的。&lt;br&gt;复用的行不算：没车用的工具行和向量平时都不删、站点重启时一起删，复用到的行向量一定在库里。&lt;br&gt;只改了参数（描述没变）：就地更新 Value 和参数，不算向量，Updated 不动。" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
-          <mxGeometry x="70" y="1830" width="480" height="170" as="geometry" />
-        </mxCell>
         <mxCell id="na5" value="&lt;b&gt;注册成功 = 数据库 + 向量库都写好&lt;/b&gt;&lt;br&gt;站点写入成功后才提交数据库；站点失败就回滚，注册失败。&lt;br&gt;Blob 由站点后台上传、注册不等：站点重启会按数据库重建库；没重启的话，后面有变化的注册也会再整库上传。" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
           <mxGeometry x="70" y="2020" width="480" height="140" as="geometry" />
         </mxCell>
