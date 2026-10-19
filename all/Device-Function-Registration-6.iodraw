@@ -224,7 +224,7 @@
         <mxCell id="s1" value="收到 /library/update（同步，注册在等）&lt;br&gt;语言、车企、车型 + 工具 Id、向量" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="1810" y="190" width="600" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="s2" value="取这个库：内存里没有就按数据库建&lt;br&gt;（通用 function + 还在的注册工具行，站点调 /embed-batch 算；&lt;br&gt;不在 VECTOR_LIBRARIES 里的车型记警告）" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+        <mxCell id="s2" value="取这个库：内存里没有就按数据库建&lt;br&gt;（通用 function + 还在的注册工具行，站点调 /embed-batch 获取）" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="1810" y="290" width="600" height="90" as="geometry" />
         </mxCell>
         <mxCell id="s3" value="写锁：逐条写入，库里有这个 Id 就替换、没有就加入&lt;br&gt;（站点不算向量、不查 SQL）" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E3F4EA;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
