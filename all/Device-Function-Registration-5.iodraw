@@ -304,7 +304,7 @@
         <mxCell id="h2" value="&lt;b&gt;二、匹配：一句话进来，哪些 function 参与比对&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=22;fontColor=#7A4FC4;align=left;verticalAlign=middle;" parent="1" vertex="1">
           <mxGeometry x="30" y="2500" width="2440" height="32" as="geometry" />
         </mxCell>
-        <mxCell id="h2s" value="先按 语言 + 车企 + 车型 选库，再查这台车的注册得到集合 R；通用 function 去掉被这台车同名覆盖的，和 R 合起来就是比对范围。检索时不算描述向量（除非补缺），也不在内存里缓存“车辆 → 工具”。" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=15;fontColor=#4B5563;align=left;verticalAlign=middle;" parent="1" vertex="1">
+        <mxCell id="h2s" value="先按 语言 + 车企 + 车型 选库，再查这台车的device id得到集合 R；通用 function 去掉被这台车同名覆盖的，和 R 合起来就是比对范围。检索时不算描述向量（除非补缺），也不在内存里缓存“车辆 → 工具”。" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=15;fontColor=#4B5563;align=left;verticalAlign=middle;" parent="1" vertex="1">
           <mxGeometry x="30" y="2536" width="2440" height="26" as="geometry" />
         </mxCell>
         <mxCell id="lane-c" value="" style="rounded=1;arcSize=2;html=1;fillColor=#EDF4FD;strokeColor=#1D6FD8;dashed=1;dashPattern=8 4;strokeWidth=1.5;" parent="1" vertex="1" connectable="0">
