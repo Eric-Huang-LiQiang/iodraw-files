@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) ioDraw.com/3.6.1 Chrome/124.0.6367.49 Electron/30.0.0 Safari/537.36" version="24.7.17">
   <diagram id="flow" name="注册与匹配">
-    <mxGraphModel dx="1593" dy="968" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2500" pageHeight="3630" background="#FFFFFF" math="0" shadow="0">
+    <mxGraphModel dx="2257" dy="1372" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2500" pageHeight="3630" background="#FFFFFF" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -162,7 +162,7 @@
         <mxCell id="n11" value="⑥ 这台车的原对照表里有、这次没提交的 function name：&lt;br&gt;软删除这条 mapping；工具行、向量都不删（站点重启时一起清）" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E3F4EA;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="590" y="1660" width="560" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="n13" value="“是否需要向量计算" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#B45309;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=2;" parent="1" vertex="1">
+        <mxCell id="n13" value="&amp;nbsp; !是否“要算向量”" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#B45309;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=2;" parent="1" vertex="1">
           <mxGeometry x="700" y="1770" width="340" height="110" as="geometry" />
         </mxCell>
         <mxCell id="n16" value="⑦ 调 embeddings App Service /embed-batch&lt;br&gt;一次算好“要算向量”的描述向量" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
