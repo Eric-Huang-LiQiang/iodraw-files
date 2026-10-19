@@ -256,7 +256,7 @@
         <mxCell id="sbr-t" value="&lt;b&gt;站点启动 / 重启（发布和重启都一样）：先清数据库，再重建向量库&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=14;fontColor=#7A4FC4;align=left;verticalAlign=top;" parent="1" vertex="1">
           <mxGeometry x="1790" y="628" width="640" height="48" as="geometry" />
         </mxCell>
-        <mxCell id="r0" value="⓪ 读环境变量 VECTOR_LIBRARIES（发布流水线参数 vectorLibraries 写入）：&lt;br&gt;要建哪些 语言 + 车企 + 车型；下面 ① ~ ⑤ 逐个库做" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+        <mxCell id="r0" value="⓪ 读环境变量（发布流水线参数 vectorLibraries 写入）：&lt;br&gt;要建哪些 语言 + 车企 + 车型；下面 ① ~ ⑤ 逐个库做" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="1810" y="680" width="600" height="60" as="geometry" />
         </mxCell>
         <mxCell id="r1" value="① 拿这个 车企 + 车型 + 语言 的应用锁&lt;br&gt;（和注册同一把，这段时间注册排队）" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
