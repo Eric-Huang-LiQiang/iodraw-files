@@ -268,7 +268,7 @@
         <mxCell id="r1" value="① 拿这个 车企 + 车型 + 语言 的应用锁&lt;br&gt;（和注册同一把，这段时间注册排队）" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="1810" y="1240" width="600" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="r2" value="② 数据库：删掉没车在用的注册工具行&lt;br&gt;（不挂模板、在映射表里出现过、没有一条有效 mapping），&lt;br&gt;连同它的函数行、参数行、属性行和指向它的 mapping" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E3F4EA;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+        <mxCell id="r2" value="② 数据库：删掉没车在用的注册工具行&lt;br&gt;（在映射表里出现过、没有一条有效 mapping），&lt;br&gt;连同它的函数行、参数行、属性行和指向它的 mapping" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E3F4EA;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="1810" y="1330" width="600" height="90" as="geometry" />
         </mxCell>
         <mxCell id="r3" value="③ 从 Blob 下载这个库；Blob 没有就按数据库建" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
