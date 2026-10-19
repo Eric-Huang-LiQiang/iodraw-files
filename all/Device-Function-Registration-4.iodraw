@@ -268,9 +268,6 @@
         <mxCell id="g4" value="后台" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;dashPattern=6 4;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="s4" target="s5" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="nb1" value="&lt;b&gt;失败了怎么办&lt;/b&gt;&lt;br&gt;站点写入失败：库不变，向量服务回滚数据库，注册失败（503），车机下次启动重来。&lt;br&gt;站点写入成功、数据库提交失败（极少）：库里多几条或描述较新的向量。检索按 mapping 过滤，多出来的不影响结果；Updated 对不上的，检索补缺时重算。&lt;br&gt;Blob 还没传上去站点就重启：重启时按数据库补齐，不丢。" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
-          <mxGeometry x="1770" y="730" width="680" height="140" as="geometry" />
-        </mxCell>
         <mxCell id="nb2" value="&lt;b&gt;向量什么时候变（没有过期时间）&lt;/b&gt;&lt;br&gt;注册：“要算向量”的由向量服务算好传来，加入或替换&lt;br&gt;没有车在用的工具：平时不删（检索按 mapping 过滤，不影响结果），站点重启按数据库重建时才清掉&lt;br&gt;通用 function 描述改了：/refresh 或站点重启时重算&lt;br&gt;换 embedding 模型：整库重算" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
           <mxGeometry x="1770" y="900" width="680" height="130" as="geometry" />
         </mxCell>
