@@ -70,7 +70,7 @@
         <mxCell id="r1" value="none" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=12;fontColor=#1F2937;align=center;verticalAlign=middle;spacing=6;" parent="1" vertex="1">
           <mxGeometry x="920" y="600" width="260" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="n1" value="新建函数行 + 工具行&lt;br&gt;PromptTemplateId 空，Locale = Language" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=12;fontColor=#1F2937;align=center;verticalAlign=middle;spacing=6;" parent="1" vertex="1">
+        <mxCell id="n1" value="mapping 表增加mapping 记录" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=12;fontColor=#1F2937;align=center;verticalAlign=middle;spacing=6;" parent="1" vertex="1">
           <mxGeometry x="600" y="730" width="260" height="80" as="geometry" />
         </mxCell>
         <mxCell id="d6" value="这台车有这个工具的&lt;br&gt;已删除映射？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#B45309;strokeWidth=1.5;fontSize=12;fontColor=#1F2937;spacing=4;" parent="1" vertex="1">
