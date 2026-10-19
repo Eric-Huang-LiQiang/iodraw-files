@@ -52,7 +52,7 @@
         <mxCell id="c7" value="&lt;b&gt;逐个处理这次提交的名字（忽略大小写）&lt;/b&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=12;fontColor=#1F2937;align=center;verticalAlign=middle;spacing=6;" parent="1" vertex="1">
           <mxGeometry x="60" y="880" width="300" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="d3" value="这台车已有&lt;br&gt;相关记录？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#B45309;strokeWidth=1.5;fontSize=12;fontColor=#1F2937;spacing=4;" parent="1" vertex="1">
+        <mxCell id="d3" value="同车企 + 车型 + 语言+device id&lt;br&gt;名字相同的注册行？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#B45309;strokeWidth=1.5;fontSize=12;fontColor=#1F2937;spacing=4;" parent="1" vertex="1">
           <mxGeometry x="600" y="210" width="260" height="100" as="geometry" />
         </mxCell>
         <mxCell id="d4" value="描述相同？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#B45309;strokeWidth=1.5;fontSize=12;fontColor=#1F2937;spacing=4;" parent="1" vertex="1">
