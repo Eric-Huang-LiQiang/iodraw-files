@@ -1,0 +1,527 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) ioDraw.com/3.6.1 Chrome/124.0.6367.49 Electron/30.0.0 Safari/537.36" version="24.7.17">
+  <diagram id="flow" name="注册与匹配">
+    <mxGraphModel dx="2083" dy="1266" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2500" pageHeight="3630" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;车机 Function：注册时怎么更新数据库和向量库，匹配时怎么筛选比对范围&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=28;fontColor=#111827;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="30" y="14" width="2440" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="h1" value="&lt;b&gt;一、注册：车机提交全量 MCP 后，数据库和向量库怎么更新&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=22;fontColor=#1D6FD8;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="30" y="64" width="2440" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="h1s" value="以 function name 为依据，和这台车的对照表逐个比较；④ ~ ⑨ 在同一个数据库事务里。数据库和站点的向量库都写好才算注册成功：站点写入成功后才提交，失败就回滚。Blob 由站点后台上传，注册不等。" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=15;fontColor=#4B5563;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="30" y="100" width="2440" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="lane-a" value="" style="rounded=1;arcSize=2;html=1;fillColor=#EDF4FD;strokeColor=#1D6FD8;dashed=1;dashPattern=8 4;strokeWidth=1.5;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="30" y="140" width="1680" height="2320" as="geometry" />
+        </mxCell>
+        <mxCell id="lane-a-title" value="&lt;b&gt;车机 → 设备网关 → 向量服务：比对并写数据库&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=15;fontColor=#1D6FD8;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="46" y="150" width="1648" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="n1" value="① 车机提交全量 MCP&lt;br&gt;请求头：customer、DeviceId、DeviceModel、Language" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#F5F6F8;strokeColor=#6B7280;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=10;" parent="1" vertex="1">
+          <mxGeometry x="590" y="180" width="560" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="n2" value="② 设备网关：api-key 鉴权后，转发向量服务" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F5F6F8;strokeColor=#6B7280;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="640" y="268" width="460" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="n3" value="车企、车型、语言&lt;br&gt;是否不为空？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#B45309;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=2;" parent="1" vertex="1">
+          <mxGeometry x="700" y="348" width="340" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="n3e" value="返回 400" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#FEF3F2;strokeColor=#B42318;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=10;" parent="1" vertex="1">
+          <mxGeometry x="1100" y="378" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="n4" value="③ 解析 MCP：不合格的跳过，记入 skipped；&lt;br&gt;同一请求里同名的只留第一个" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="640" y="486" width="460" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="n5" value="④ 开事务，按 车企 + 车型 + 语言 加锁（同时注册的车排队）&lt;br&gt;查一次库，读出两张对照表（之后只查内存）：&lt;br&gt;&lt;b&gt;这台车的&lt;/b&gt;：有效 mapping 连工具行，按 function name 找&lt;br&gt;&lt;b&gt;共用的&lt;/b&gt;：同车企 + 车型 + 语言所有车用过的工具行（软删除的&lt;br&gt;mapping 也算），按 function name + 描述找，带上还有没有车在用" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="590" y="576" width="560" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="na1" value="&lt;b&gt;mapping 和两张对照表&lt;/b&gt;&lt;br&gt;mapping：映射表 [Device].[DeviceToolMapping] 的一行，表示这台车用哪一行工具。&lt;br&gt;这台车的对照表：只看这台车，软删除的 mapping 不算。&lt;br&gt;共用对照表：同车企 + 车型 + 语言的所有车，软删除的 mapping 也算。工具行上没有车企、车型，只有 mapping 记着它属于谁；不算的话，没车再用的行就找不到，会重复建一样的行。&lt;br&gt;比较：function name 忽略大小写，描述逐字符严格比较。&lt;br&gt;参数：inputSchema 拆进参数行、属性行（和通用 function 一样）；取值范围、默认值、数组元素、嵌套对象存不下，只留在 Value。" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
+          <mxGeometry x="70" y="180" width="480" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="na2" value="&lt;b&gt;注册全程不碰&lt;/b&gt;&lt;br&gt;通用 function（挂在 LLM 代理模板下的 27 行）：不改、不删，不参与按 function name 比较。&lt;br&gt;注册流程只新建或就地更新工具行；不删工具行，也不删向量。" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
+          <mxGeometry x="1270" y="180" width="420" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="n1" target="n2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="n2" target="n3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="n3" target="n4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a3e" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#B42318;fontColor=#B42318;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="n3" target="n3e" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="n4" target="n5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="loop" value="" style="rounded=1;arcSize=2;html=1;fillColor=#FFFFFF;strokeColor=#1D6FD8;dashed=1;dashPattern=8 4;strokeWidth=1.5;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="70" y="730" width="1620" height="890" as="geometry" />
+        </mxCell>
+        <mxCell id="loop-t" value="&lt;b&gt;对这次提交的每个 function name 做一遍&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=14;fontColor=#1D6FD8;align=left;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="90" y="738" width="600" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="n6" value="⑤ 取下一个 function name" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="720" y="780" width="300" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="n7" value="这台车的对照表里&lt;br&gt;有这个 function name？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#B45309;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=2;" parent="1" vertex="1">
+          <mxGeometry x="670" y="866" width="400" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="a5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="n5" target="n6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="n6" target="n7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n8" value="描述相同？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#B45309;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=2;" parent="1" vertex="1">
+          <mxGeometry x="260" y="1010" width="280" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="n8b" value="原始 JSON&lt;br&gt;也相同？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#B45309;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=2;" parent="1" vertex="1">
+          <mxGeometry x="150" y="1150" width="220" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="l1" value="不动" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="180" y="1290" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="l1b" value="就地更新 Value、&lt;br&gt;参数行、属性行&lt;br&gt;（不算向量）" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E3F4EA;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="390" y="1160" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="l2" value="&lt;b&gt;就地更新&lt;/b&gt;工具行 + 函数行的&lt;br&gt;描述、Value、参数和属性行、&lt;br&gt;Updated&lt;br&gt;（记入“要算向量”）" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E3F4EA;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="590" y="1170" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="b1" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="n7" target="n8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="n8" target="n8b" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b2b" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="n8b" target="l1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b2c" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="n8b" target="l1b" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b3" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="n8" target="l2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n9" value="共用对照表里有&lt;br&gt;function name + 描述&lt;br&gt;都相同的行？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#B45309;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=2;" parent="1" vertex="1">
+          <mxGeometry x="1090" y="1005" width="400" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="l3" value="复用那一行&lt;br&gt;（原始 JSON 不同，&lt;br&gt;就地更新参数）" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="895" y="1170" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="l5" value="&lt;b&gt;给这台车加 mapping&lt;/b&gt;&lt;br&gt;（以前软删除过就恢复）" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E3F4EA;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="895" y="1290" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l4" value="新建工具行 + 函数行 + 参数行、&lt;br&gt;属性行 + mapping 行&lt;br&gt;（PromptTemplateId 空，&lt;br&gt;Locale = 语言）&lt;br&gt;记入“要算向量”" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E3F4EA;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="1405" y="1170" width="270" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c1" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="n7" target="n9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="n9" target="l3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="n9" target="l4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="l3" target="l5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bar" value="这个 function name 处理完" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F5F6F8;strokeColor=#374151;strokeWidth=1;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="130" y="1400" width="1480" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="n10" value="还有没处理的&lt;br&gt;function name？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#B45309;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=2;" parent="1" vertex="1">
+          <mxGeometry x="720" y="1480" width="300" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="d1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.08784;entryY=0;entryDx=0;entryDy=0;" parent="1" source="l1" target="bar" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d1b" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.23649;entryY=0;entryDx=0;entryDy=0;" parent="1" source="l1b" target="bar" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.40541;entryY=0;entryDx=0;entryDy=0;" parent="1" source="l2" target="bar" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.60135;entryY=0;entryDx=0;entryDy=0;" parent="1" source="l5" target="bar" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d3b" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.9527;entryY=0;entryDx=0;entryDy=0;" parent="1" source="l4" target="bar" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="bar" target="n10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d5" value="是：取下一个 function name" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="n10" target="n6" edge="1">
+          <mxGeometry x="-0.7" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="100" y="1535" />
+              <mxPoint x="100" y="808" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n11" value="⑥ 这台车的对照表里有、这次没提交的 function name：&lt;br&gt;软删除这条 mapping；工具行、向量都不删（站点重启时一起清）" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E3F4EA;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="590" y="1660" width="560" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="n13" value="“要算向量”&lt;br&gt;是空的？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#B45309;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=2;" parent="1" vertex="1">
+          <mxGeometry x="700" y="1770" width="340" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="n16" value="⑦ 调 embeddings App Service /embed-batch&lt;br&gt;一次算好“要算向量”的描述向量" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="610" y="1910" width="520" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="n14" value="⑧ 查路由（内存里查一次）：车企 + 车型 + 语言&lt;br&gt;（路由表里车型为空的行 = 该车企所有车型通用）&lt;br&gt;同步调站点 /library/update：工具 Id + 向量 + Updated" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="610" y="2010" width="520" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="n17" value="站点写入&lt;br&gt;成功？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#B45309;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=2;" parent="1" vertex="1">
+          <mxGeometry x="720" y="2130" width="300" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="n17e" value="回滚事务，返回 503&lt;br&gt;（车机下次启动再注册）" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#FEF3F2;strokeColor=#B42318;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=10;" parent="1" vertex="1">
+          <mxGeometry x="1080" y="2155" width="380" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n18" value="⑨ 提交事务（同时释放锁）" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E3F4EA;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="640" y="2270" width="460" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="n15" value="⑩ 返回 registered、unchanged、skipped&lt;br&gt;（不等 Blob 上传）" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#F5F6F8;strokeColor=#6B7280;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=10;" parent="1" vertex="1">
+          <mxGeometry x="640" y="2356" width="460" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="f1" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="n10" target="n11" edge="1">
+          <mxGeometry x="-0.5" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="n11" target="n13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f3" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="n13" target="n16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="n16" target="n14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="n14" target="n17" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f7" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="n17" target="n18" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f8" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#B42318;fontColor=#B42318;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="n17" target="n17e" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="n18" target="n15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f6" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="n13" target="n18" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="575" y="1825" />
+              <mxPoint x="575" y="2298" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="na3" value="&lt;b&gt;就地更新的代价&lt;/b&gt;&lt;br&gt;同车企 + 车型 + 语言里共用这一行的车，描述、参数一起变，以最后一次注册为准。&lt;br&gt;一台车同一个 function name 只有一条有效 mapping，由注册代码在事务里保证。" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
+          <mxGeometry x="70" y="1660" width="480" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="na4" value="&lt;b&gt;“要算向量”包括&lt;/b&gt;&lt;br&gt;就地改了描述的；新建的。&lt;br&gt;复用的行不算：没车用的工具行和向量平时都不删、站点重启时一起删，复用到的行向量一定在库里。&lt;br&gt;只改了参数（描述没变）：就地更新 Value 和参数，不算向量，Updated 不动。" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
+          <mxGeometry x="70" y="1830" width="480" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="na5" value="&lt;b&gt;注册成功 = 数据库 + 向量库都写好&lt;/b&gt;&lt;br&gt;站点写入成功后才提交数据库；站点失败就回滚，注册失败。&lt;br&gt;Blob 由站点后台上传、注册不等：站点重启会按数据库重建库；没重启的话，后面有变化的注册也会再整库上传。" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
+          <mxGeometry x="70" y="2020" width="480" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="lane-b" value="" style="rounded=1;arcSize=2;html=1;fillColor=#F3EEFB;strokeColor=#7A4FC4;dashed=1;dashPattern=8 4;strokeWidth=1.5;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="1750" y="140" width="720" height="2320" as="geometry" />
+        </mxCell>
+        <mxCell id="lane-b-title" value="&lt;b&gt;语义检索站点：更新向量库（一个 语言 + 车企 + 车型 一个库）&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=15;fontColor=#7A4FC4;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1766" y="150" width="688" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" value="收到 /library/update（同步，注册在等）&lt;br&gt;语言、车企、车型 + 工具 Id、向量、Updated" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="1810" y="190" width="600" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="取这个库：内存里没有 → 从 Blob 下载；&lt;br&gt;Blob 也没有 → 按 SQL 建（只含通用 function，&lt;br&gt;站点调 embeddings App Service /embed-batch 算）" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="1810" y="290" width="600" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="写锁：逐条写入，库里有这个 Id 就替换、没有就加入；&lt;br&gt;记下传来的 Updated（站点不算向量、不查 SQL）" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E3F4EA;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="1810" y="410" width="600" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s4" value="返回成功（有一条写不进就整批不写，返回失败）" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="1810" y="510" width="600" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="s5" value="后台线程整库上传 Blob：&lt;br&gt;vector/semanticsearch/{语言}/{车企}/{车型}/vectorDatabase/&lt;br&gt;多次变化合并成一次；失败重试；注册不等它" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="1810" y="600" width="600" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="g0" value="⑧ 同步调站点" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#D97706;fontColor=#D97706;strokeWidth=2.5;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="n14" target="s1" edge="1">
+          <mxGeometry x="-0.85" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1730" y="2055" />
+              <mxPoint x="1730" y="225" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="s1" target="s2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="s2" target="s3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="s3" target="s4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g4" value="后台" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;dashPattern=6 4;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="s4" target="s5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nb1" value="&lt;b&gt;失败了怎么办&lt;/b&gt;&lt;br&gt;站点写入失败：库不变，向量服务回滚数据库，注册失败（503），车机下次启动重来。&lt;br&gt;站点写入成功、数据库提交失败（极少）：库里多几条或描述较新的向量。检索按 mapping 过滤，多出来的不影响结果；Updated 对不上的，检索补缺时重算。&lt;br&gt;Blob 还没传上去站点就重启：重启时按数据库补齐，不丢。" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
+          <mxGeometry x="1770" y="730" width="680" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="nb2" value="&lt;b&gt;向量什么时候变（没有过期时间）&lt;/b&gt;&lt;br&gt;注册：“要算向量”的由向量服务算好传来，加入或替换&lt;br&gt;没有车在用的工具：平时工具行和向量都不删（检索按 mapping 过滤，不影响结果）；站点重启时一起删&lt;br&gt;通用 function 描述改了：/refresh 或站点重启时重算&lt;br&gt;换 embedding 模型：整库重算" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
+          <mxGeometry x="1770" y="900" width="680" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="nb3" value="&lt;b&gt;站点自己算向量的地方&lt;/b&gt;&lt;br&gt;新车型第一次建库、站点启动和 SQL 比对补齐、/refresh、检索时补缺：站点调 embeddings App Service /embed-batch 算。这些变化同样后台上传 Blob。" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
+          <mxGeometry x="1770" y="1060" width="680" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="sbr" value="" style="rounded=1;arcSize=2;html=1;fillColor=#FFFFFF;strokeColor=#7A4FC4;dashed=1;dashPattern=8 4;strokeWidth=1.5;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="1770" y="1180" width="680" height="550" as="geometry" />
+        </mxCell>
+        <mxCell id="sbr-t" value="&lt;b&gt;站点重启：先清数据库，再重建向量库（逐个库做）&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=14;fontColor=#7A4FC4;align=left;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="1790" y="1188" width="640" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="r1" value="① 拿这个 车企 + 车型 + 语言 的应用锁&lt;br&gt;（和注册同一把，这段时间注册排队）" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="1810" y="1240" width="600" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="r2" value="② 数据库：删掉没车在用的注册工具行&lt;br&gt;（不挂模板、在映射表里出现过、没有一条有效 mapping），&lt;br&gt;连同它的函数行、参数行、属性行和指向它的 mapping" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E3F4EA;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="1810" y="1330" width="600" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="r3" value="③ 从 Blob 下载这个库；Blob 没有就按数据库建" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="1810" y="1450" width="600" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="r4" value="④ 按数据库对齐向量库：数据库里没有的删掉；&lt;br&gt;缺的、Updated 对不上的调 /embed-batch 算" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E3F4EA;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="1810" y="1540" width="600" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="r5" value="⑤ 释放锁；有变化就后台上传 Blob；&lt;br&gt;全部库做完，/health 才返回 200" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="1810" y="1640" width="600" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="r12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="r1" target="r2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="r2" target="r3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="r3" target="r4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r45" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="r4" target="r5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="h2" value="&lt;b&gt;二、匹配：一句话进来，哪些 function 参与比对&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=22;fontColor=#7A4FC4;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="30" y="2500" width="2440" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="h2s" value="先按 语言 + 车企 + 车型 选库，再查这台车的注册得到集合 R；通用 function 去掉被这台车同名覆盖的，和 R 合起来就是比对范围。检索时不算描述向量（除非补缺），也不在内存里缓存“车辆 → 工具”。" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=15;fontColor=#4B5563;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="30" y="2536" width="2440" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="lane-c" value="" style="rounded=1;arcSize=2;html=1;fillColor=#EDF4FD;strokeColor=#1D6FD8;dashed=1;dashPattern=8 4;strokeWidth=1.5;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="30" y="2580" width="620" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="lane-c-title" value="&lt;b&gt;调用方 → 向量服务&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=15;fontColor=#1D6FD8;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="46" y="2590" width="588" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="m1" value="调用方（如网关的意图分类器）&lt;br&gt;Customer、DeviceModel、DeviceId、&lt;br&gt;Language、问句" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#F5F6F8;strokeColor=#6B7280;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=10;" parent="1" vertex="1">
+          <mxGeometry x="40" y="2630" width="520" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="m2" value="车型是否&lt;br&gt;不为空？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#B45309;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=2;" parent="1" vertex="1">
+          <mxGeometry x="160" y="2755" width="280" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="m2e" value="返回 400" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#FEF3F2;strokeColor=#B42318;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=10;" parent="1" vertex="1">
+          <mxGeometry x="490" y="2785" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="m3" value="Ⓐ 问句交 embeddings App Service：&lt;br&gt;多轮先改写，再算问句向量" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="60" y="2900" width="480" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="m4" value="Ⓑ 查路由（内存里查一次）：车企 + 车型 + 语言&lt;br&gt;（路由表里车型为空的行 = 该车企所有车型通用）" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="60" y="3000" width="480" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="m5" value="查得到&lt;br&gt;路由？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#B45309;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=2;" parent="1" vertex="1">
+          <mxGeometry x="160" y="3100" width="280" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="m5e" value="返回 200&lt;br&gt;+ 空数组" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#FEF3F2;strokeColor=#B42318;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=10;" parent="1" vertex="1">
+          <mxGeometry x="480" y="3125" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="m6" value="调站点 /semantic-search/search：&lt;br&gt;问句向量 + 车企、车型、DeviceId、语言" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="60" y="3250" width="480" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="m7" value="按阈值、TopK 过滤后返回&lt;br&gt;Answer、Description、&lt;br&gt;SimilarityScore、ToolId" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#F5F6F8;strokeColor=#6B7280;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=10;" parent="1" vertex="1">
+          <mxGeometry x="40" y="3415" width="520" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="h1e" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m1" target="m2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="h2e" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m2" target="m3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="h2x" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#B42318;fontColor=#B42318;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="m2" target="m2e" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="h3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m3" target="m4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="h4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m4" target="m5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="h5" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="m5" target="m6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="h5x" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#B42318;fontColor=#B42318;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="m5" target="m5e" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lane-d" value="" style="rounded=1;arcSize=2;html=1;fillColor=#F3EEFB;strokeColor=#7A4FC4;dashed=1;dashPattern=8 4;strokeWidth=1.5;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="690" y="2580" width="1010" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="lane-d-title" value="&lt;b&gt;语义检索站点：确定比对范围并检索&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=15;fontColor=#7A4FC4;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="706" y="2590" width="978" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="k1" value="Ⓒ 选库：语言 + 车企 + 车型&lt;br&gt;不在内存 → 从 Blob 下载；Blob 也没有 → 按 SQL 建" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="780" y="2630" width="560" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="k2" value="Ⓓ 查这台车的有效 mapping（每次检索一次，走索引）&lt;br&gt;mapping JOIN 工具行：Customer、DeviceId、未删除、&lt;br&gt;Locale = 语言 → 注册集合 R" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="780" y="2740" width="560" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="k3" value="R 的每个工具行 Id 都在库里，&lt;br&gt;且库里记下的 Updated&lt;br&gt;等于刚查出的 Updated？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#B45309;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=2;" parent="1" vertex="1">
+          <mxGeometry x="850" y="2860" width="420" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="k3b" value="补缺：缺的、Updated 对不上的，&lt;br&gt;站点调 embeddings App Service 算向量，&lt;br&gt;写锁加入或替换，后台上传 Blob" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E3F4EA;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="1310" y="2880" width="370" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="k4" value="通用集合 G = 库里的通用 function&lt;br&gt;（挂在 LLM 代理模板下，Locale = 语言）" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="780" y="3040" width="560" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="k5" value="同名覆盖：从 G 去掉 function name 和 R 里相同的&lt;br&gt;（忽略大小写）→ G&#39;" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="780" y="3140" width="560" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="k6" value="&lt;b&gt;Ⓔ 比对范围 A = R ∪ G&#39;&lt;/b&gt;" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EAF6EF;strokeColor=#7A4FC4;strokeWidth=2.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="780" y="3240" width="560" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k7" value="Ⓕ FAISS 只在 A 里检索：&lt;br&gt;问句向量和描述向量算内积，取前 topK" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="780" y="3330" width="560" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="k8" value="返回 name、description、score、toolId" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7A4FC4;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="780" y="3430" width="560" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="j0" value="调站点" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#D97706;fontColor=#D97706;strokeWidth=2.5;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="m6" target="k1" edge="1">
+          <mxGeometry x="-0.9" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="670" y="3290" />
+              <mxPoint x="670" y="2670" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="k1" target="k2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="j2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="k2" target="k3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="j3" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="k3" target="k3b" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="j4" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="k3" target="k4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="j5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="k3b" target="k4" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1495" y="3015" />
+              <mxPoint x="1060" y="3015" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="k4" target="k5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="j7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="k5" target="k6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="j8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="k6" target="k7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="j9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="k7" target="k8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="j10" value="返回" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#D97706;fontColor=#D97706;strokeWidth=2.5;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="k8" target="m7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nm1" value="&lt;b&gt;例：rox / mce / en-US 这个库&lt;/b&gt;&lt;br&gt;车 A 注册了 AC、climate_fan_speed：&lt;br&gt;　R = {注册的 AC, climate_fan_speed}&lt;br&gt;　G&#39; = 通用 27 个去掉通用 AC = 26 个&lt;br&gt;　A = 28 个，比对时只用注册的 AC 描述&lt;br&gt;车 B 没注册：R 为空，A = 通用 27 个（和现在一样）&lt;br&gt;车 C 注册了 climate_ac：function name 不同，不覆盖通用 AC，两条都参与比对&lt;br&gt;车 A 切到 de-DE：选的是 de-DE 的库，en-US 注册的工具不参与" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
+          <mxGeometry x="1740" y="2580" width="730" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="nm2" value="&lt;b&gt;不在比对范围内的&lt;/b&gt;&lt;br&gt;别的车注册的工具，即使在同一个库里&lt;br&gt;别的语言、别的车企、别的车型的工具（不在这个库）&lt;br&gt;被这台车同名覆盖的通用 function&lt;br&gt;这台车已软删除 mapping 的工具" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
+          <mxGeometry x="1740" y="2810" width="730" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="nm3" value="&lt;b&gt;为什么“车辆 → 工具”每次查、不缓存&lt;/b&gt;&lt;br&gt;按每台车 20 个工具估，10 万台车约 150 MB、100 万台约 1.5 GB，随车辆数线性增长。&lt;br&gt;向量库只跟工具行数量有关：一条 12 KB，1 万条约 0.11 GB。&lt;br&gt;本机实测：5027 条里按 Id 过滤检索 1.4 ms。" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
+          <mxGeometry x="1740" y="2970" width="730" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="lg-box" value="" style="rounded=1;arcSize=12;html=1;fillColor=#FAFAFA;strokeColor=#CCCCCC;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="30" y="3570" width="1600" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="lg-title" value="&lt;b&gt;图例&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=13;fontColor=#333333;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="46" y="3570" width="50" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="lg-s0" value="" style="line;html=1;strokeWidth=2;strokeColor=#374151;" parent="1" vertex="1">
+          <mxGeometry x="106" y="3587" width="40" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="lg-t0" value="流程" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=12;fontColor=#333333;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="154" y="3570" width="36" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="lg-s1" value="" style="line;html=1;strokeWidth=2;strokeColor=#374151;dashed=1;dashPattern=6 4;" parent="1" vertex="1">
+          <mxGeometry x="214" y="3587" width="40" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="lg-t1" value="后台进行" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=12;fontColor=#333333;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="262" y="3570" width="60" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="lg-s2" value="" style="line;html=1;strokeWidth=2;strokeColor=#D97706;" parent="1" vertex="1">
+          <mxGeometry x="346" y="3587" width="40" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="lg-t2" value="跨服务调用" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=12;fontColor=#333333;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="394" y="3570" width="72" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="lg-s3" value="" style="line;html=1;strokeWidth=2;strokeColor=#B42318;" parent="1" vertex="1">
+          <mxGeometry x="490" y="3587" width="40" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="lg-t3" value="出错返回" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=12;fontColor=#333333;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="538" y="3570" width="60" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="lg-s4" value="" style="rounded=1;html=1;fillColor=#F5F6F8;strokeColor=#6B7280;strokeWidth=1.5;" parent="1" vertex="1">
+          <mxGeometry x="622" y="3583" width="40" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="lg-t4" value="车机、设备网关、调用方" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=12;fontColor=#333333;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="670" y="3570" width="144" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="lg-s5" value="" style="rounded=1;html=1;fillColor=#FFFFFF;strokeColor=#1D6FD8;strokeWidth=1.5;" parent="1" vertex="1">
+          <mxGeometry x="838" y="3583" width="40" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="lg-t5" value="向量服务" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=12;fontColor=#333333;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="886" y="3570" width="60" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="lg-s6" value="" style="rounded=1;html=1;fillColor=#FFFFFF;strokeColor=#7A4FC4;strokeWidth=1.5;" parent="1" vertex="1">
+          <mxGeometry x="970" y="3583" width="40" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="lg-t6" value="语义检索站点" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=12;fontColor=#333333;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1018" y="3570" width="84" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="lg-s7" value="" style="rounded=1;html=1;fillColor=#FFF7E6;strokeColor=#B45309;strokeWidth=1.5;" parent="1" vertex="1">
+          <mxGeometry x="1126" y="3583" width="40" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="lg-t7" value="判断" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=12;fontColor=#333333;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1174" y="3570" width="36" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="lg-s8" value="" style="rounded=1;html=1;fillColor=#E3F4EA;strokeColor=#374151;strokeWidth=1.5;" parent="1" vertex="1">
+          <mxGeometry x="1234" y="3583" width="40" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="lg-t8" value="会改数据库或向量库的步骤" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=12;fontColor=#333333;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1282" y="3570" width="156" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="lg-s9" value="" style="rounded=1;html=1;fillColor=#FFFFFF;strokeColor=#1D6FD8;strokeWidth=1.5;dashed=1;dashPattern=4 3;" parent="1" vertex="1">
+          <mxGeometry x="1462" y="3583" width="40" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="lg-t9" value="循环：逐个处理" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=12;fontColor=#333333;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1510" y="3570" width="96" height="44" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
