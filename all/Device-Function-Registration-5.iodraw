@@ -304,7 +304,7 @@
         <mxCell id="lane-c-title" value="&lt;b&gt;调用方 → 向量服务&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=15;fontColor=#1D6FD8;align=left;verticalAlign=middle;" parent="1" vertex="1">
           <mxGeometry x="46" y="2590" width="588" height="28" as="geometry" />
         </mxCell>
-        <mxCell id="m1" value="调用方（如网关的意图分类器）&lt;br&gt;Customer、DeviceModel、DeviceId、&lt;br&gt;Language、问句" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#F5F6F8;strokeColor=#6B7280;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=10;" parent="1" vertex="1">
+        <mxCell id="m1" value="调用方（gateway）&lt;br&gt;Customer、DeviceModel、DeviceId、&lt;br&gt;Language、问句" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#F5F6F8;strokeColor=#6B7280;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=10;" parent="1" vertex="1">
           <mxGeometry x="40" y="2630" width="520" height="90" as="geometry" />
         </mxCell>
         <mxCell id="m2" value="车型是否&lt;br&gt;不为空？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#B45309;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=2;" parent="1" vertex="1">
