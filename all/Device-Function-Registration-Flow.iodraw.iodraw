@@ -31,7 +31,7 @@
         <mxCell id="c2" value="② 设备网关：api-key 解密须等于 DeviceId，转发向量服务" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F5F6F8;strokeColor=#6B7280;strokeWidth=1.5;fontSize=12;fontColor=#1F2937;align=center;verticalAlign=middle;spacing=6;" parent="1" vertex="1">
           <mxGeometry x="60" y="310" width="300" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="c3" value="车企、车型、语言&lt;br&gt;合法？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#B45309;strokeWidth=1.5;fontSize=12;fontColor=#1F2937;spacing=4;" parent="1" vertex="1">
+        <mxCell id="c3" value="车企、车型、语言&lt;br&gt;是否不为空" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#B45309;strokeWidth=1.5;fontSize=12;fontColor=#1F2937;spacing=4;" parent="1" vertex="1">
           <mxGeometry x="60" y="400" width="300" height="100" as="geometry" />
         </mxCell>
         <mxCell id="e1" value="返回 400" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#FEF3F2;strokeColor=#B42318;strokeWidth=1.5;fontSize=12;fontColor=#1F2937;spacing=6;" parent="1" vertex="1">
