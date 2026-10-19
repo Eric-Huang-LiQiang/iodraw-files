@@ -1,10 +1,10 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) ioDraw.com/3.6.1 Chrome/124.0.6367.49 Electron/30.0.0 Safari/537.36" version="24.7.17">
   <diagram id="flow" name="注册与匹配">
-    <mxGraphModel dx="1857" dy="1372" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2500" pageHeight="3630" background="#FFFFFF" math="0" shadow="0">
+    <mxGraphModel dx="2257" dy="1372" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2500" pageHeight="3630" background="#FFFFFF" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="title" value="&lt;b&gt;MCP Tool 注册和匹配流程图&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=28;fontColor=#111827;align=left;verticalAlign=middle;" parent="1" vertex="1">
+        <mxCell id="title" value="&lt;b&gt;MCP Tool 注册和匹配流程图&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=28;fontColor=#111827;align=center;verticalAlign=middle;" parent="1" vertex="1">
           <mxGeometry x="30" width="2440" height="54" as="geometry" />
         </mxCell>
         <mxCell id="h1" value="&lt;b&gt;一、注册&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=22;fontColor=#1D6FD8;align=left;verticalAlign=middle;" parent="1" vertex="1">
@@ -258,15 +258,6 @@
         </mxCell>
         <mxCell id="g4" value="后台" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;dashPattern=6 4;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="s4" target="s5" edge="1">
           <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="nb1" value="&lt;b&gt;失败了怎么办&lt;/b&gt;&lt;br&gt;站点写入失败：库不变，向量服务回滚数据库，注册失败（503），车机下次启动重来。&lt;br&gt;站点写入成功、数据库提交失败（极少）：库里多几条或描述较新的向量。检索按 mapping 过滤，多出来的不影响结果；Updated 对不上的，检索补缺时重算。&lt;br&gt;Blob 还没传上去站点就重启：重启时按数据库补齐，不丢。" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
-          <mxGeometry x="1770" y="730" width="680" height="140" as="geometry" />
-        </mxCell>
-        <mxCell id="nb2" value="&lt;b&gt;向量什么时候变（没有过期时间）&lt;/b&gt;&lt;br&gt;注册：“要算向量”的由向量服务算好传来，加入或替换&lt;br&gt;没有车在用的工具：平时工具行和向量都不删（检索按 mapping 过滤，不影响结果）；站点重启时一起删&lt;br&gt;通用 function 描述改了：/refresh 或站点重启时重算&lt;br&gt;换 embedding 模型：整库重算" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
-          <mxGeometry x="1770" y="900" width="680" height="130" as="geometry" />
-        </mxCell>
-        <mxCell id="nb3" value="&lt;b&gt;站点自己算向量的地方&lt;/b&gt;&lt;br&gt;新车型第一次建库、站点启动和 SQL 比对补齐、/refresh、检索时补缺：站点调 embeddings App Service /embed-batch 算。这些变化同样后台上传 Blob。" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
-          <mxGeometry x="1770" y="1060" width="680" height="90" as="geometry" />
         </mxCell>
         <mxCell id="sbr" value="" style="rounded=1;arcSize=2;html=1;fillColor=#FFFFFF;strokeColor=#7A4FC4;dashed=1;dashPattern=8 4;strokeWidth=1.5;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="1770" y="1180" width="680" height="550" as="geometry" />
