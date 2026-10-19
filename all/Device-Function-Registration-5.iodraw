@@ -37,9 +37,6 @@
         <mxCell id="n5" value="④ 开事务，按 车企 + 车型 + 语言 加锁（同时注册的车排队）&lt;br&gt;查一次库，读出两张对照表（之后只查内存）：&lt;br&gt;&lt;b&gt;这台车的&lt;/b&gt;：有效 mapping 连工具行，按 function name 找&lt;br&gt;&lt;b&gt;共用的&lt;/b&gt;：同车企 + 车型 + 语言所有车用过的工具行（软删除的&lt;br&gt;mapping 也算），按 function name + 描述找，带上还有没有车在用" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="590" y="576" width="560" height="140" as="geometry" />
         </mxCell>
-        <mxCell id="na1" value="&lt;b&gt;mapping 和两张对照表&lt;/b&gt;&lt;br&gt;mapping：映射表 [Device].[DeviceToolMapping] 的一行，表示这台车用哪一行工具。&lt;br&gt;这台车的对照表：只看这台车，软删除的 mapping 不算。&lt;br&gt;共用对照表：同车企 + 车型 + 语言的所有车，软删除的 mapping 也算。工具行上没有车企、车型，只有 mapping 记着它属于谁；不算的话，没车再用的行就找不到，会重复建一样的行。&lt;br&gt;比较：function name 忽略大小写，描述逐字符严格比较。&lt;br&gt;参数：inputSchema 拆进参数行、属性行（和通用 function 一样）；取值范围、默认值、数组元素、嵌套对象存不下，只留在 Value。" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
-          <mxGeometry x="70" y="180" width="480" height="250" as="geometry" />
-        </mxCell>
         <mxCell id="na2" value="通用 function（挂在 LLM 代理模板下的 27 行）：不参与注册过程的匹配。&lt;br&gt;注册流程只新建或就地更新工具行；不删工具行，也不删向量。" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
           <mxGeometry x="1270" y="180" width="420" height="130" as="geometry" />
         </mxCell>
