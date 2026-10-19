@@ -428,12 +428,6 @@
         <mxCell id="j10" value="返回" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#D97706;fontColor=#D97706;strokeWidth=2.5;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="k8" target="m7" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="nm1" value="&lt;b&gt;例：rox / mce / en-US 这个库&lt;/b&gt;&lt;br&gt;车 A 注册了 AC、climate_fan_speed：&lt;br&gt;　R = {注册的 AC, climate_fan_speed}&lt;br&gt;　G&#39; = 通用 27 个去掉通用 AC = 26 个&lt;br&gt;　A = 28 个，比对时只用注册的 AC 描述&lt;br&gt;车 B 没注册：R 为空，A = 通用 27 个（和现在一样）&lt;br&gt;车 C 注册了 climate_ac：function name 不同，不覆盖通用 AC，两条都参与比对&lt;br&gt;车 A 切到 de-DE：选的是 de-DE 的库，en-US 注册的工具不参与" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
-          <mxGeometry x="1740" y="2580" width="730" height="200" as="geometry" />
-        </mxCell>
-        <mxCell id="nm2" value="&lt;b&gt;不在比对范围内的&lt;/b&gt;&lt;br&gt;别的车注册的工具，即使在同一个库里&lt;br&gt;别的语言、别的车企、别的车型的工具（不在这个库）&lt;br&gt;被这台车同名覆盖的通用 function&lt;br&gt;这台车已软删除 mapping 的工具" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
-          <mxGeometry x="1740" y="2810" width="730" height="130" as="geometry" />
-        </mxCell>
         <mxCell id="nm3" value="&lt;b&gt;为什么“车辆 → 工具”每次查、不缓存&lt;/b&gt;&lt;br&gt;按每台车 20 个工具估，10 万台车约 150 MB、100 万台约 1.5 GB，随车辆数线性增长。&lt;br&gt;向量库只跟工具行数量有关：一条 12 KB，1 万条约 0.11 GB。&lt;br&gt;本机实测：5027 条里按 Id 过滤检索 1.4 ms。" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
           <mxGeometry x="1740" y="2970" width="730" height="130" as="geometry" />
         </mxCell>
