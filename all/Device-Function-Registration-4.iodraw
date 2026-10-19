@@ -104,7 +104,7 @@
           <mxGeometry x="1420" y="1170" width="260" height="100" as="geometry" />
         </mxCell>
         <mxCell id="l5" value="&lt;b&gt;给这台车加 mapping&lt;/b&gt;（以前软删除过就恢复）" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E3F4EA;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
-          <mxGeometry x="886" y="1380" width="260" height="50" as="geometry" />
+          <mxGeometry x="880" y="1380" width="260" height="50" as="geometry" />
         </mxCell>
         <mxCell id="c1" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="n7" target="n9" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -138,7 +138,7 @@
         <mxCell id="d2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.35135;entryY=0;entryDx=0;entryDy=0;" parent="1" source="l2" target="bar" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="d3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.603;entryY=0.134;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="l5" target="bar" edge="1">
+        <mxCell id="d3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.595;entryY=0.069;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="l5" target="bar" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1050" y="1560" as="targetPoint" />
           </mxGeometry>
