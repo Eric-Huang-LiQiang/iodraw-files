@@ -7,7 +7,7 @@
         <mxCell id="title" value="&lt;b&gt;车机 Function：注册时怎么更新数据库和向量库，匹配时怎么筛选比对范围&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=28;fontColor=#111827;align=left;verticalAlign=middle;" parent="1" vertex="1">
           <mxGeometry x="30" y="14" width="2440" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="h1" value="&lt;b&gt;一、注册：车机提交全量 MCP 后，数据库和向量库怎么更新&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=22;fontColor=#1D6FD8;align=left;verticalAlign=middle;" parent="1" vertex="1">
+        <mxCell id="h1" value="&lt;b&gt;一、注册&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=22;fontColor=#1D6FD8;align=left;verticalAlign=middle;" parent="1" vertex="1">
           <mxGeometry x="30" y="64" width="2440" height="32" as="geometry" />
         </mxCell>
         <mxCell id="h1s" value="以 function name 为依据，和这台车的对照表逐个比较；④ ~ ⑨ 在同一个数据库事务里。数据库和站点的向量库都写好才算注册成功：站点写入成功后才提交，失败就回滚。Blob 由站点后台上传，注册不等。" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=15;fontColor=#4B5563;align=left;verticalAlign=middle;" parent="1" vertex="1">
@@ -301,7 +301,7 @@
         <mxCell id="r45" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="r4" target="r5" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="h2" value="&lt;b&gt;二、匹配：一句话进来，哪些 function 参与比对&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=22;fontColor=#7A4FC4;align=left;verticalAlign=middle;" parent="1" vertex="1">
+        <mxCell id="h2" value="&lt;b&gt;二、匹配&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=22;fontColor=#7A4FC4;align=left;verticalAlign=middle;" parent="1" vertex="1">
           <mxGeometry x="30" y="2500" width="2440" height="32" as="geometry" />
         </mxCell>
         <mxCell id="h2s" value="先按 语言 + 车企 + 车型 选库，再查这台车的device id得到集合 R；通用 function 去掉被这台车同名覆盖的，和 R 合起来就是比对范围。检索时不算描述向量（除非补缺），也不在内存里缓存“车辆 → 工具”。" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=15;fontColor=#4B5563;align=left;verticalAlign=middle;" parent="1" vertex="1">
