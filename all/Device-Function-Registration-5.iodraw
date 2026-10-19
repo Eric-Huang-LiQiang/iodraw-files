@@ -1,11 +1,11 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) ioDraw.com/3.6.1 Chrome/124.0.6367.49 Electron/30.0.0 Safari/537.36" version="24.7.17">
   <diagram id="flow" name="注册与匹配">
-    <mxGraphModel dx="2257" dy="1372" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2500" pageHeight="3630" background="#FFFFFF" math="0" shadow="0">
+    <mxGraphModel dx="1857" dy="1372" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2500" pageHeight="3630" background="#FFFFFF" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="title" value="&lt;b&gt;车机 Function：注册时怎么更新数据库和向量库，匹配时怎么筛选比对范围&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=28;fontColor=#111827;align=left;verticalAlign=middle;" parent="1" vertex="1">
-          <mxGeometry x="30" y="14" width="2440" height="40" as="geometry" />
+        <mxCell id="title" value="&lt;b&gt;MCP Tool 注册和匹配流程图&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=28;fontColor=#111827;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="30" width="2440" height="54" as="geometry" />
         </mxCell>
         <mxCell id="h1" value="&lt;b&gt;一、注册&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=22;fontColor=#1D6FD8;align=left;verticalAlign=middle;" parent="1" vertex="1">
           <mxGeometry x="30" y="64" width="2440" height="32" as="geometry" />
