@@ -307,7 +307,7 @@
         <mxCell id="m1" value="调用方（gateway）&lt;br&gt;Customer、DeviceModel、DeviceId、&lt;br&gt;Language、问句" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#F5F6F8;strokeColor=#6B7280;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=10;" parent="1" vertex="1">
           <mxGeometry x="40" y="2630" width="520" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="m2" value="车型是否&lt;br&gt;不为空？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#B45309;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=2;" parent="1" vertex="1">
+        <mxCell id="m2" value="参数是否&lt;br&gt;不为空？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#B45309;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=2;" parent="1" vertex="1">
           <mxGeometry x="160" y="2755" width="280" height="110" as="geometry" />
         </mxCell>
         <mxCell id="m2e" value="返回 400" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#FEF3F2;strokeColor=#B42318;strokeWidth=1.5;fontSize=15;fontColor=#111827;spacing=10;" parent="1" vertex="1">
