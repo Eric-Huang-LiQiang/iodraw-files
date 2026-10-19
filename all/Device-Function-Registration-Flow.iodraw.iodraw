@@ -64,7 +64,7 @@
         <mxCell id="u1" value="&lt;b&gt;就地更新&lt;/b&gt;工具行 + 函数行：描述、Value、Updated&lt;br&gt;记入“描述变了” → 下一个名字" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#EAF6EF;strokeColor=#1D6FD8;strokeWidth=2.5;fontSize=12;fontColor=#1F2937;align=center;verticalAlign=middle;spacing=6;" parent="1" vertex="1">
           <mxGeometry x="920" y="420" width="260" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="d5" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#B45309;strokeWidth=1.5;fontSize=12;fontColor=#1F2937;spacing=4;" parent="1" vertex="1">
+        <mxCell id="d5" value="device id 是否相同" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#B45309;strokeWidth=1.5;fontSize=12;fontColor=#1F2937;spacing=4;" parent="1" vertex="1">
           <mxGeometry x="600" y="570" width="260" height="120" as="geometry" />
         </mxCell>
         <mxCell id="r1" value="复用这一行" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=12;fontColor=#1F2937;align=center;verticalAlign=middle;spacing=6;" parent="1" vertex="1">
