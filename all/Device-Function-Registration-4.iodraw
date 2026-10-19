@@ -106,7 +106,7 @@
         <mxCell id="l3x" value="记入“要算向量”&lt;br&gt;（重建库时可能已清掉）" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E3F4EA;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="1185" y="1270" width="210" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="l4" value="新建工具行 + 函数行&lt;br&gt;（PromptTemplateId 空，&lt;br&gt;Locale = 语言）&lt;br&gt;记入“要算向量”" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E3F4EA;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
+        <mxCell id="l4" value="新建工具行 + mapping行&lt;br&gt;（PromptTemplateId 空，&lt;br&gt;Locale = 语言）&lt;br&gt;记入“要算向量”" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E3F4EA;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="1420" y="1170" width="260" height="100" as="geometry" />
         </mxCell>
         <mxCell id="l5" value="&lt;b&gt;给这台车加 mapping&lt;/b&gt;（以前软删除过就恢复）" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E3F4EA;strokeColor=#1D6FD8;strokeWidth=1.5;fontSize=15;fontColor=#111827;align=center;verticalAlign=middle;spacing=8;" parent="1" vertex="1">
@@ -267,12 +267,6 @@
         </mxCell>
         <mxCell id="g4" value="后台" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;endSize=5;strokeColor=#374151;fontColor=#374151;strokeWidth=2;fontSize=14;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;dashPattern=6 4;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="s4" target="s5" edge="1">
           <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="nb2" value="&lt;b&gt;向量什么时候变（没有过期时间）&lt;/b&gt;&lt;br&gt;注册：“要算向量”的由向量服务算好传来，加入或替换&lt;br&gt;没有车在用的工具：平时不删（检索按 mapping 过滤，不影响结果），站点重启按数据库重建时才清掉&lt;br&gt;通用 function 描述改了：/refresh 或站点重启时重算&lt;br&gt;换 embedding 模型：整库重算" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
-          <mxGeometry x="1770" y="900" width="680" height="130" as="geometry" />
-        </mxCell>
-        <mxCell id="nb3" value="&lt;b&gt;站点自己算向量的地方&lt;/b&gt;&lt;br&gt;新车型第一次建库、站点启动和 SQL 比对补齐、/refresh、检索时补缺：站点调 embeddings App Service /embed-batch 算。这些变化同样后台上传 Blob。" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F7F7F7;strokeColor=#CCCCCC;fontSize=14;fontColor=#333333;align=left;verticalAlign=top;spacing=12;" parent="1" vertex="1">
-          <mxGeometry x="1770" y="1060" width="680" height="90" as="geometry" />
         </mxCell>
         <mxCell id="h2" value="&lt;b&gt;二、匹配：一句话进来，哪些 function 参与比对&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;spacing=0;strokeColor=none;fillColor=none;fontSize=22;fontColor=#7A4FC4;align=left;verticalAlign=middle;" parent="1" vertex="1">
           <mxGeometry x="30" y="2670" width="2440" height="32" as="geometry" />
